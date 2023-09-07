@@ -1,0 +1,15 @@
+.footer {
+    background-color: rgb(48, 48, 48);
+    height: 300px;
+}
+
+.footer-content {
+    padding-top: 2em;
+    /* border-top: 1px solid rgb(255, 255, 255); */
+}
+
+.footer-logo {
+    max-width: 10em;
+    height: auto;
+    padding: 0 45%;
+}
