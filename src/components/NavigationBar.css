@@ -1,0 +1,30 @@
+.navigation {
+  background-color: rgb(255, 255, 255);
+  /* background-color: aqua; */
+  height: 74px;
+  border-bottom: 1px solid rgb(146, 146, 146);
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.navigation a {
+  color: rgb(48, 48, 48);
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0 1em;
+}
+
+.navbar {
+  /* background-color: rosybrown; */
+  padding: 1em;
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.navigation a:not(:first-child):hover {
+  text-decoration: underline rgb(214, 66, 66) 2px solid;
+}
+
+.logo {
+  height: 3.3em;
+}
