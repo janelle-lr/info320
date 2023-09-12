@@ -2,7 +2,7 @@ import React from 'react';
 import './RequestForm.css';
 
 import logo from './images/contactLogo.png';
-import Reqform from './components/Reqform'; 
+
 
 
 // function App() {
@@ -66,6 +66,8 @@ export const Form = () => {
 
                   {/* <Reqform /> */}
                 </div>
+
+                
 
                 <div className="Next-button">
                     <div className="overlap-group">
