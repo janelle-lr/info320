@@ -1,0 +1,37 @@
+
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Define styles for the entire app container */
+  .app-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header styles */
+  .app-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  /* Main content styles */
+  .app-main {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Footer styles */
+  .app-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  

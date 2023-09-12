@@ -1,8 +1,18 @@
 import React from "react";
 import "./RequestForm.css";
+import { Link } from "react-router-dom";
+
 
 import logo from "../images/contactLogo.png";
-import Reqform from "../components/Reqform";
+
+// Components
+import "../components/Layout.css";
+import "../components/Texts.css";
+import NavigationBar from "../components/NavigationBar";
+import Button from "../components/Button";
+import locationIcon from "../images/locationIcon.svg";
+import HeroImage from "../components/HeroImage";
+import Footer from "../components/Footer";
 
 // function App() {
 //   return (
@@ -30,6 +40,8 @@ export const Form = () => {
       <div className="form-sub">
         <div className="header">
           {/* <img className="image" src="320/src/contactLogo.png"/> */}
+          {/* <NavigationBar /> */}
+
           <img src={logo} className="image" />
         </div>
 
@@ -64,17 +76,26 @@ export const Form = () => {
             experienced to lead their intended activity.
           </p>
 
-          {/* <Reqform /> */}
         </div>
 
-        <div className="Next-button">
+        
+
+        {/* <div className="Next-button">
           <div className="overlap-group">
-            <button type="button" className="Next" onClick={Form}>
+            <button type="button" className="Next">
               {" "}
               Next
             </button>
           </div>
-        </div>
+        </div> */}
+
+
+            <button variant= "button-primary" id="toForm"> 
+                <Link to="/intialForm">
+              Next
+             </Link>
+            
+            </button>
 
         <div className="Cancel-button">
           <div className="div-wrapper">
