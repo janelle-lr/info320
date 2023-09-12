@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
-import NavigationBar from "../components/NavigationBar";
 import Button from "../components/Button";
 import locationIcon from "../images/locationIcon.svg";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
+import NavigationBar from "../components/NavigationBar";
 
 function Information () {
   return (

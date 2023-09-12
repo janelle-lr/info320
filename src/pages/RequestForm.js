@@ -1,8 +1,12 @@
 import React from "react";
 import "./RequestForm.css";
 
+// Components
 import logo from "../images/contactLogo.png";
 import Reqform from "../components/Reqform";
+import "../components/Layout.css";
+import "../components/Texts.css";
+import Button from "../components/Button";
 
 // function App() {
 //   return (
@@ -37,7 +41,7 @@ export const Form = () => {
           <div className="notice">Notice</div>
 
           <p className="contact-about-form">
-            <br></br>
+            <br />
             Contact Energy will consider any and all Flow and/or Level Requests
             from the community. This form and its information is used to
             determine if the request can be granted. <br />

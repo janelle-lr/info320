@@ -1,7 +1,13 @@
 /* temp solution for stopping the weird horizontal scrolling */
 body {
   overflow-x: hidden;
+  /* margin-top: 74px; */
+
 }
+
+/* NavigationBar {
+  position: fixed;
+} */
 
 .locations h5 {
   margin: 0;
