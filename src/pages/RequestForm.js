@@ -89,13 +89,20 @@ export const Form = () => {
           </div>
         </div> */}
 
-
-            <button variant= "button-primary" id="toForm"> 
+            <button> 
                 <Link to="/intialForm">
               Next
              </Link>
             
             </button>
+
+
+            {/* <Button variant= "button-primary"> 
+                <Link to="/intialForm">
+              Next
+             </Link>
+            
+            </Button> */}
 
         <div className="Cancel-button">
           <div className="div-wrapper">
