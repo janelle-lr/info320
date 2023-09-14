@@ -1,0 +1,48 @@
+
+
+.hero {
+  width: 100%;
+  max-height: 40em;
+  background-color: pink;
+  color: rgba(255, 255, 255);
+}
+
+.frame {
+  position: relative; /* Add this to establish a positioning context */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-height: 330px;
+  background-color: rgba(48, 48, 48);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  top: 0;
+  opacity: 0.5;
+}
+
+.overlay-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* Center vertically within the frame */
+  padding: 3em 10em;
+  /* background-color: red; */
+  text-align: center;
+  transform: translateY(-50%); /* Adjust vertical positioning */
+}
+
+.overlay-text .header-h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.overlay-text .pgraph-header-subtext {
+  font-size: 1em;
+  font-weight: 400;
+  margin-top: 1.5em;
+}

@@ -1,0 +1,61 @@
+/* temp solution for stopping the weird horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+.locations h5 {
+  margin: 0;
+}
+
+.locations .subtitle {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.flow-requests {
+  background-color: saddlebrown;
+  /* height: 100px; */
+}
+
+.flow-requests .section-container {
+  background-color: rgb(247, 247, 247);
+  /* padding: auto; */
+  padding-bottom: 0;
+  /* background-color: blueviolet; */
+}
+
+.flow-requests .layout-column {
+  /* background-color: blueviolet; */
+  flex-wrap: wrap;
+}
+
+/* .four-columns {
+    padding: 10px;
+    margin: 5px;
+    flex: 22%;
+    background-color: blueviolet;
+  } */
+
+table {
+  /* background-color: aqua; */
+  width: 100%;
+  margin: auto;
+}
+
+.active-requests td {
+  /* background-color: saddlebrown; */
+  width: 3em;
+}
+
+.current-flows tr {
+  height: 3.5em;
+}
+
+.active-requests tr {
+  height: 3.5em;
+}
+
+.flow-requests .two-columns:first-child {
+  /* background-color: chartreuse; */
+  border-right: 2px solid rgb(146, 146, 146);
+}
