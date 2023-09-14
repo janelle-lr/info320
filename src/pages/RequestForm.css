@@ -37,6 +37,11 @@
   }
 } */
 
+.form .Button {
+  margin-left: 85%;
+  margin-top: 48%;
+  }
+
 .form {
     background-color: #ffffff;
     display: flex;
