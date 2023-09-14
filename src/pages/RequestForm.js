@@ -15,21 +15,6 @@ import locationIcon from "../images/locationIcon.svg";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>contact project form</h1>
-
-//       <form>
-//       <label>Enter your name:
-//         <input type="text" />
-//       </label>
-//     </form>
-
-//     </div>
-//   );
-// }
-
 export const Form = () => {
   const backButtonClick = () => {
     // Add your desired functionality here, e.g., go back in history
