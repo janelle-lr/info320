@@ -2,75 +2,71 @@
   .form input::placeholder = place holder text within  */
 
 .form .Button {
-margin-left: 85%;
-margin-top: 48%;
+  margin-left: 85%;
+  margin-top: 48%;
+}
+
+.form {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.form .form-v {
+  background-color: #ffffff;
+  height: 982px;
+  position: relative;
+  width: 1512px;
+}
+
+.form .overlap {
+  background-color: #ffffff;
+  height: 124px;
+  left: 0;
+  position: absolute;
+  top: -13px;
+  width: 1512px;
+}
+
+.form .image {
+  height: 76px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 37px;
+  width: 1512px;
+}
+
+.form .form-title {
+  color: #303030;
+  font-family: "Montserrat-SemiBold", Helvetica;
+  font-size: 36px;
+  font-weight: 600;
+  height: 44px;
+  left: 126px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 166px;
 }
 
 
+.form input::placeholder {
+  color: #595959;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 1.5em;
+  font-weight: 500;
+  left: 27px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 23px;
+  width: 491px;
+}
 
-
-  .form {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .form .form-v {
-    background-color: #ffffff;
-    height: 982px;
-    position: relative;
-    width: 1512px;
-  }
-  
-  .form .overlap {
-    background-color: #ffffff;
-    height: 124px;
-    left: 0;
-    position: absolute;
-    top: -13px;
-    width: 1512px;
-  }
-  
-  .form .image {
-    height: 76px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 37px;
-    width: 1512px;
-  }
-  
-   .form .form-title {
-    color: #303030;
-    font-family: "Montserrat-SemiBold", Helvetica;
-    font-size: 36px;
-    font-weight: 600;
-    height: 44px;
-    left: 126px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 166px;
-  } 
-  
-   .form input::placeholder{
-    color: #595959;
-    font-family: "Montserrat-Medium", Helvetica;
-    font-size: 1.5em;
-    font-weight: 500;
-    left: 27px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 23px;
-    width: 491px;
-  } 
-
- 
-  
-    /* .form .text-input {
+/* .form .text-input {
     border: 2px solid;
     border-color: #ededed;
     height: 77px;
@@ -79,28 +75,27 @@ margin-top: 48%;
     top: 236px;
     width: 716px;
   }   */
-  
-  .form .last-name {
-    border: 2px solid;
-    border-color: #ededed;
-    height: 7.9%;
-    left: 46.1%;
-    position: absolute;
-    top: 24%;
-    width: 45.5%;
-    font-size: 1.0em;
-  }
-  
-  .form .firstName {
-    height: 10%;
-    left: 8.5%;
-    position: absolute;
-    top: 24%;
-    width: 46%;
-    
-  }
-  
-  /* .form .div {
+
+.form .last-name {
+  border: 2px solid;
+  border-color: #ededed;
+  height: 7.9%;
+  left: 46.1%;
+  position: absolute;
+  top: 24%;
+  width: 45.5%;
+  font-size: 1em;
+}
+
+.form .firstName {
+  height: 10%;
+  left: 8.5%;
+  position: absolute;
+  top: 24%;
+  width: 46%;
+}
+
+/* .form .div {
     color: #595959;
     font-family: "Montserrat-Medium", Helvetica;
     font-size: 24px;
@@ -112,41 +107,37 @@ margin-top: 48%;
     top: 23px;
     width: 491px;
   } */
-  
-  .form input {
-    border: 2px solid;
-    border-color: #ededed;
-    height: 77px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    padding-left: 2%;
 
-    
-  }
+.form input {
+  border: 2px solid;
+  border-color: #ededed;
+  height: 77px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  padding-left: 2%;
+}
 
-  .form .half-width {
-        width: 77%;
-        font-size: 1.0em;
-        padding-left: 2%;
+.form .half-width {
+  width: 77%;
+  font-size: 1em;
+  padding-left: 2%;
+}
 
-  }
-  
-  .form .full-width {
-    /* height: 10%; */
-    /* left: 8.5%; */
-    margin: auto;
-    position: absolute;
-    top: 34%;
-    width: 90%;
-    font-size: 1.0em;
+.form .full-width {
+  /* height: 10%; */
+  /* left: 8.5%; */
+  margin: auto;
+  position: absolute;
+  top: 34%;
+  width: 90%;
+  font-size: 1em;
 
-
-    /* border: 2px solid;
+  /* border: 2px solid;
     border-color: #ededed; */
-  }
-  
-  /* .form .rectangle-2 {
+}
+
+/* .form .rectangle-2 {
     border: 2px solid;
     border-color: #ededed;
     height: 77px;
@@ -155,161 +146,155 @@ margin-top: 48%;
     top: 0;
     width: 1259px;
   } */
-  
-  .form .address {
-    height: 5%;
-    top: 42%;
-    left: 8.5%;
-    position: absolute;
-    width: 92.5%;
-  }
-  
-  .form .organization {
-    height: 5%;
-    top: 32%;
-    left: 8.5%;
-    position: absolute;
-    width: 92.5%;
 
-  }
-  
-  
-  .form .email {
-    height: 5%;
-    top: 54%;
-    left: 8.5%;
-    position: absolute;
-    width: 88.5%;
-    
-  }
-  
-  .form .email-width {
-    border: 2px solid;
-    border-color: #ededed;
-    height: 160%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 50%;
-    font-size: 1.0em;
+.form .address {
+  height: 5%;
+  top: 42%;
+  left: 8.5%;
+  position: absolute;
+  width: 92.5%;
+}
 
-  }
-  
-  .form .cell-number {
-    height: 5%;
-    top: 54%;
-    left: 55.7%;
-    position: absolute;
-    width: 92.5%;
-  }
-  
-  .form .cell-width{
-    border: 2px solid;
-    border-color: #ededed;
-    height: 160%;
-    position: absolute;
-    width: 39%;
-    font-size: 1.0em;
+.form .organization {
+  height: 5%;
+  top: 32%;
+  left: 8.5%;
+  position: absolute;
+  width: 92.5%;
+}
 
-    /* 7.9%;
+.form .email {
+  height: 5%;
+  top: 54%;
+  left: 8.5%;
+  position: absolute;
+  width: 88.5%;
+}
+
+.form .email-width {
+  border: 2px solid;
+  border-color: #ededed;
+  height: 160%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+  font-size: 1em;
+}
+
+.form .cell-number {
+  height: 5%;
+  top: 54%;
+  left: 55.7%;
+  position: absolute;
+  width: 92.5%;
+}
+
+.form .cell-width {
+  border: 2px solid;
+  border-color: #ededed;
+  height: 160%;
+  position: absolute;
+  width: 39%;
+  font-size: 1em;
+
+  /* 7.9%;
     left: 44.3%;
     position: absolute;
     top: 24%;
     width: 47.5%; */
+}
 
+.form .Next-button {
+  height: 72px;
+  left: 80%;
+  position: absolute;
+  top: 85%;
+  width: 176px;
+}
 
-  }
-  
-  .form .Next-button {
-    height: 72px;
-    left: 80%;
-    position: absolute;
-    top: 85%;
-    width: 176px;
-  }
-  
-  .form .overlap-group .Next {
-    background-color: #d54141;
-    border-radius: 15px;
-    height: 72px;
-    position: relative;
-    width: 174px;
-    font-family: "Montserrat-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .form .div-wrapper {
-    background-color: fffff;
-    border: 3px solid;
-    border-color: #9b9b9b;
-    border-radius: 15px;
-    height: 72px;
-    position: relative;
-    width: 174px;
-  }
-  
-  .form .text-wrapper-2 {
-    color: #ffffff;
-    font-family: "Montserrat-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-    height: 20px;
-    left: 20px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 26px;
-    white-space: nowrap;
-    width: 135px;
-  }
-  
-  .form .Cancel-button {
-    height: 72px;
-    left: 5%;
-    position: absolute;
-    top: 85%;
-    width: 176px;
-  }
-  
-  .form .overlap-6 {
-    background-color: #ffffff;
-    border: 3px solid;
-    border-color: #9b9b9b;
-    border-radius: 15px;
-    height: 72px;
-    position: relative;
-    width: 174px;
-  }
-  
-  .form .cancel-text {
-    color: #9b9b9b;
-    font-family: "Montserrat-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-    height: 20px;
-    left: 17px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 23px;
-    white-space: nowrap;
-    width: 135px;
-  }
-  
-  .form .page-no {
-    color: #595959;
-    font-family: "Montserrat-Medium", Helvetica;
-    font-size: 24px;
-    font-weight: 500;
-    height: 29px;
-    left: 40%;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 87%;
-    width: 251px;
-  }
+.form .overlap-group .Next {
+  background-color: #d54141;
+  border-radius: 15px;
+  height: 72px;
+  position: relative;
+  width: 174px;
+  font-family: "Montserrat-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form .div-wrapper {
+  background-color: fffff;
+  border: 3px solid;
+  border-color: #9b9b9b;
+  border-radius: 15px;
+  height: 72px;
+  position: relative;
+  width: 174px;
+}
+
+.form .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Montserrat-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  height: 20px;
+  left: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 26px;
+  white-space: nowrap;
+  width: 135px;
+}
+
+.form .Cancel-button {
+  height: 72px;
+  left: 5%;
+  position: absolute;
+  top: 85%;
+  width: 176px;
+}
+
+.form .overlap-6 {
+  background-color: #ffffff;
+  border: 3px solid;
+  border-color: #9b9b9b;
+  border-radius: 15px;
+  height: 72px;
+  position: relative;
+  width: 174px;
+}
+
+.form .cancel-text {
+  color: #9b9b9b;
+  font-family: "Montserrat-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  height: 20px;
+  left: 17px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 23px;
+  white-space: nowrap;
+  width: 135px;
+}
+
+.form .page-no {
+  color: #595959;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 24px;
+  font-weight: 500;
+  height: 29px;
+  left: 40%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 87%;
+  width: 251px;
+}
