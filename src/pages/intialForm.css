@@ -219,6 +219,15 @@ margin-top: 48%;
 
 
   }
+
+
+  .form .Qualifications {
+    height: 5%;
+    top: 63%;
+    left: 8.5%;
+    position: absolute;
+    width: 92.5%;
+  }
   
   .form .Next-button {
     height: 72px;

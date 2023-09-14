@@ -111,7 +111,7 @@ export const Form = () => {
             </label>
           </div>
         </div>
-        <div className="page-no">1 of 5</div>
+        <div className="page-no">1 of 7</div>
       </div>
     </div>
   );

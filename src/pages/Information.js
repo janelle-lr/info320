@@ -111,7 +111,6 @@ function Information () {
                 </tr>
               </table>
             </div>
-
             <Button
               id="toForm"
               variant="button-primary"

@@ -10,7 +10,7 @@ import NavigationBar from "../components/NavigationBar";
 import Button from '../components/Button';
 
 
-export const Formpage1 = () => {
+export const Formpage3 = () => {
   const backButtonClick = () => {
     // Add your desired functionality here, e.g., go back in history
     window.history.back();
@@ -19,7 +19,7 @@ export const Formpage1 = () => {
     <div className="form">
       <div className="form-v">
         < NavigationBar/>
-        <div className="form-title">Applicant Details</div>
+        <div className="form-title"> KRIS YOURS</div>
         
         <div className="firstName">
           <label htmlFor="firstName">
@@ -99,7 +99,7 @@ export const Formpage1 = () => {
 
         <div className="Button">
           <Button variant="button-primary">
-              <Link to="/SecondForm">
+              <Link to="/FourthForm">
               Next
              </Link>
           </Button>
@@ -113,10 +113,10 @@ export const Formpage1 = () => {
             <div className="cancel-text" onClick={backButtonClick}>Back</div>
           </div>
         </div>
-        <div className="page-no" >2 of 7</div>
+        <div className="page-no" >4 of 7</div>
       </div>
     </div>
   );
 };
 
-export default Formpage1;
+export default Formpage3;
