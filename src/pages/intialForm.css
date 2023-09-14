@@ -203,98 +203,109 @@
     position: absolute;
     top: 24%;
     width: 47.5%; */
-}
 
-.form .Next-button {
-  height: 72px;
-  left: 80%;
-  position: absolute;
-  top: 85%;
-  width: 176px;
-}
 
-.form .overlap-group .Next {
-  background-color: #d54141;
-  border-radius: 15px;
-  height: 72px;
-  position: relative;
-  width: 174px;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 24px;
-  font-weight: 600;
-}
+  }
 
-.form .div-wrapper {
-  background-color: fffff;
-  border: 3px solid;
-  border-color: #9b9b9b;
-  border-radius: 15px;
-  height: 72px;
-  position: relative;
-  width: 174px;
-}
 
-.form .text-wrapper-2 {
-  color: #ffffff;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 24px;
-  font-weight: 600;
-  height: 20px;
-  left: 20px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 26px;
-  white-space: nowrap;
-  width: 135px;
-}
-
-.form .Cancel-button {
-  height: 72px;
-  left: 5%;
-  position: absolute;
-  top: 85%;
-  width: 176px;
-}
-
-.form .overlap-6 {
-  background-color: #ffffff;
-  border: 3px solid;
-  border-color: #9b9b9b;
-  border-radius: 15px;
-  height: 72px;
-  position: relative;
-  width: 174px;
-}
-
-.form .cancel-text {
-  color: #9b9b9b;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 24px;
-  font-weight: 600;
-  height: 20px;
-  left: 17px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 23px;
-  white-space: nowrap;
-  width: 135px;
-}
-
-.form .page-no {
-  color: #595959;
-  font-family: "Montserrat-Medium", Helvetica;
-  font-size: 24px;
-  font-weight: 500;
-  height: 29px;
-  left: 40%;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 87%;
-  width: 251px;
-}
+  .form .Qualifications {
+    height: 5%;
+    top: 63%;
+    left: 8.5%;
+    position: absolute;
+    width: 92.5%;
+  }
+  
+  .form .Next-button {
+    height: 72px;
+    left: 80%;
+    position: absolute;
+    top: 85%;
+    width: 176px;
+  }
+  
+  .form .overlap-group .Next {
+    background-color: #d54141;
+    border-radius: 15px;
+    height: 72px;
+    position: relative;
+    width: 174px;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .form .div-wrapper {
+    background-color: fffff;
+    border: 3px solid;
+    border-color: #9b9b9b;
+    border-radius: 15px;
+    height: 72px;
+    position: relative;
+    width: 174px;
+  }
+  
+  .form .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    height: 20px;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 26px;
+    white-space: nowrap;
+    width: 135px;
+  }
+  
+  .form .Cancel-button {
+    height: 72px;
+    left: 5%;
+    position: absolute;
+    top: 85%;
+    width: 176px;
+  }
+  
+  .form .overlap-6 {
+    background-color: #ffffff;
+    border: 3px solid;
+    border-color: #9b9b9b;
+    border-radius: 15px;
+    height: 72px;
+    position: relative;
+    width: 174px;
+  }
+  
+  .form .cancel-text {
+    color: #9b9b9b;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    height: 20px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+    width: 135px;
+  }
+  
+  .form .page-no {
+    color: #595959;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 24px;
+    font-weight: 500;
+    height: 29px;
+    left: 40%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 87%;
+    width: 251px;
+  }
