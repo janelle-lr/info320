@@ -11,6 +11,7 @@
 .button-primary {
   background-color: rgb(214, 66, 66);
   color: rgb(247, 247, 247);
+  border: 2px solid rgb(214, 66, 66);
 }
 
 .button-primary:hover {
@@ -22,7 +23,8 @@
   color: rgb(214, 66, 66);
   border: 1px solid rgb(214, 66, 66); */
   color: rgb(48, 48, 48);
-  border: 1px solid rgb(48, 48, 48);
+  border: 2px solid rgb(48, 48, 48);
+  background-color: inherit;
 }
 
 .button-secondary:hover {
@@ -30,11 +32,11 @@
 }
 
 .button Link {
-  position: absolute;
-  text-decoration: none;
+  /* position: absolute;
+  text-decoration: none; */
   /* background-color: rgb(247, 247, 247); */
 }
 
 .button a {
-  color: rgb(247, 247, 247);
+  color: inherit;
 }
