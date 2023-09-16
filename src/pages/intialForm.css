@@ -6,64 +6,92 @@
   margin-top: 48%;
 }
 
-.form {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
+  .form {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .form .form-v {
+    background-color: #ffffff;
+    height: 982px;
+    position: relative;
+    width: 1512px;
+  }
+  
+  .form .overlap {
+    background-color: #ffffff;
+    height: 124px;
+    left: 0;
+    position: absolute;
+    top: -13px;
+    width: 1512px;
+  }
+  
+  .form .image {
+    height: 76px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 37px;
+    width: 1512px;
+  }
+  
+   .form .form-title {
+    color: #303030;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 36px;
+    font-weight: 600;
+    height: 44px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 166px;
+  } 
 
-.form .form-v {
-  background-color: #ffffff;
-  height: 982px;
-  position: relative;
-  width: 1512px;
-}
+  .form .form-title-secondary {
+    color: #303030;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 28px;
+    font-weight: 600;
+    height: 44px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 220px;
+  } 
 
-.form .overlap {
-  background-color: #ffffff;
-  height: 124px;
-  left: 0;
-  position: absolute;
-  top: -13px;
-  width: 1512px;
-}
+  .form .form-text {
+    color: #303030;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    height: 44px;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 258px;
+    width:1256px
+  } 
 
-.form .image {
-  height: 76px;
-  left: 0;
-  object-fit: cover;
-  position: absolute;
-  top: 37px;
-  width: 1512px;
-}
-
-.form .form-title {
-  color: #303030;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 36px;
-  font-weight: 600;
-  height: 44px;
-  left: 126px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 166px;
-}
-
-.form input::placeholder {
-  color: #595959;
-  font-family: "Montserrat-Medium", Helvetica;
-  font-size: 1.5em;
-  font-weight: 500;
-  left: 27px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 23px;
-  width: 491px;
-}
+  
+   .form input::placeholder{
+    color: #595959;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 1.5em;
+    font-weight: 500;
+    left: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 23px;
+    width: 491px;
+  } 
 
 /* .form .text-input {
     border: 2px solid;
