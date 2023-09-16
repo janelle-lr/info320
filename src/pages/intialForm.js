@@ -1,119 +1,43 @@
-import React from 'react';
-import './intialForm.css';
-import { Link } from "react-router-dom";
-
+import React from "react";
+import "./FifthForm.css";
 
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
-import NavigationBar from "../components/NavigationBar";
-import Button from '../components/Button';
-
+import BottomButtons from "../components/FormButtons";
+import logo from "../images/contactLogo.png";
 
 export const Formpage1 = () => {
-  const backButtonClick = () => {
-    // Add your desired functionality here, e.g., go back in history
-    window.history.back();
-  };
   return (
-    <div className="form">
-      <div className="form-v">
-        < NavigationBar/>
-        <div className="form-title">Applicant Details</div>
-        
-        <div className="firstName">
-          <label htmlFor="firstName">
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className="half-width"
-            placeholder="First Name"
-            />
-        </div>
-        
-        <div className="text-input">
-          <label htmlFor="lastName">
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="last-name"
-            placeholder="Last Name"
-          />
-        </div>
-
-        <div className="organization">
-          <label htmlFor="organization" >
-          </label>
-          <input
-            type="text"
-            id="organization"
-            name="organization"
-            className="full-width"
-            placeholder="Enter your organization"
-          />
-        </div>
-        <div className="address">
-          <label htmlFor="address">
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            className="full-width"
-            placeholder="Enter your address"
-          />
-        </div>
-        
-        <div className="email">
-          <label htmlFor="email">
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="email-width"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div className="cell-number">
-          <label htmlFor="cellPhone">
-          </label>
-          <input
-            type="number"
-            id="cellPhone"
-            name="cellPhone"
-            className="cell-width"
-            placeholder="Enter your cell phone number"
-          />
-        </div>
-
-        {/* <div className="Next-button">
-          <div className="overlap-group">
-            <button type='button' className="Next"> Next</button>
+    <div className="request-form">
+      <div className="first-form main-content">
+        <img src={logo} className="form-contact-logo" />
+        <h1 className="form-heading">Applicant Details</h1>
+        <form className="container label-invisible">
+          <div className="row">
+            <label htmlFor="firstName">First Name</label>
+            <input className="text-box five-twelfths" type="text" name="firstName" placeholder="First Name" />
+            <label htmlFor="lastName">Last Name</label>
+            <input className="text-box seven-twelfths" type="text" name="lastName" placeholder="Last Name" />
           </div>
-        </div>  */}
+          
+          <label htmlFor="organization">Organization</label>
+          <input className="text-box full-width" type="text" name="organization" placeholder="Organization" />
+          
+          <label htmlFor="address">Address</label>
+          <input className="text-box full-width" type="text" name="address" placeholder="Full Address" />
 
-        <div className="Button">
-          <Button variant="button-primary">
-              <Link to="/SecondForm">
-              Next
-             </Link>
-          </Button>
-        </div>
-
-
-
-
-        <div className="Cancel-button">
-          <div className="div-wrapper">
-            <div className="cancel-text" onClick={backButtonClick}>Back</div>
+          <div className="row">
+            <label htmlFor="email">Email</label>
+            <input className="text-box seven-twelfths" type="email" name="email" placeholder="Email" />
+            
+            <label htmlFor="phoneNumber">Mobile Number</label>
+            <input className="text-box five-twelfths" type="tel" name="phoneNumber" placeholder="Mobile Number" />
           </div>
-        </div>
-        <div className="page-no" >2 of 7</div>
+          
+        </form>
+
+        <BottomButtons page="2" leftButton="Back" leftButtonDest="/RequestForm" rightButton="Next" rightButtonDest="/SecondForm" />
       </div>
     </div>
   );

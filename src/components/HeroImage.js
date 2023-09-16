@@ -1,6 +1,6 @@
 import "./HeroImage.css";
 import React from "react";
-import image from "../images/heroImagePlaceholder.svg";
+import image from "../images/haweaWaveBanner.png";
 
 const HeroImage = () => {
   return (

@@ -1,6 +1,6 @@
 /* temp solution for stopping the weird horizontal scrolling */
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* margin-top: 74px; */
 
 }
@@ -16,6 +16,15 @@ body {
 .locations .subtitle {
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.locations img {
+  width: 35%;
+  height: auto;
+}
+
+.locations .two-columns:first-child {
+  border-right: none;
 }
 
 .flow-requests {
@@ -42,26 +51,26 @@ body {
     background-color: blueviolet;
   } */
 
-table {
+.flow-requests table {
   /* background-color: aqua; */
-  width: 100%;
   margin: auto;
 }
 
 .active-requests td {
   /* background-color: saddlebrown; */
-  width: 3em;
+  width: 6.5em;
 }
 
-.current-flows tr {
-  height: 3.5em;
+.current-flows tr, .active-requests tr {
+  height: 3.5em;  
 }
 
-.active-requests tr {
-  height: 3.5em;
+.current-flows td {
+  width: 10em;
 }
 
-.flow-requests .two-columns:first-child {
+.two-columns:first-child {
   /* background-color: chartreuse; */
   border-right: 2px solid rgb(146, 146, 146);
 }
+

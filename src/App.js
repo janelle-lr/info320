@@ -9,12 +9,6 @@ import ThirdFormPage from "./pages/ThirdForm";
 import FourthFormPage from "./pages/FourthForm";
 import FifthFormPage from "./pages/FifthForm";
 import ConfirmationPage from "./pages/Conformation";
-
-
-
-
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
