@@ -1,9 +1,6 @@
 import React from "react";
-import "./intialForm.css";
 
 // Components
-import "../components/Layout.css";
-import "../components/Texts.css";
 import BottomButtons from "../components/FormButtons";
 import logo from "../images/contactLogo.png";
 
@@ -13,30 +10,24 @@ export const Formpage3 = () => {
       <div className="first-form main-content">
         <img src={logo} className="form-contact-logo" />
         <h1 className="form-heading">Flow and Activity Details</h1>
-        <form className="container label-invisible">
-          <div className="row">
-            <label htmlFor="firstName">First Name</label>
-            <input className="text-box five-twelfths" type="text" name="firstName" placeholder="First Name" />
-            <label htmlFor="lastName">Last Name</label>
-            <input className="text-box seven-twelfths" type="text" name="lastName" placeholder="Last Name" />
-          </div>
-          
-          <label htmlFor="organization">Organization</label>
-          <input className="text-box full-width" type="text" name="organization" placeholder="Organization" />
-          
-          <label htmlFor="address">Address</label>
-          <input className="text-box full-width" type="text" name="address" placeholder="Full Address" />
+        <h2 className="form-title-secondary">First Preference Flow Details</h2>
 
-          <div className="row">
-            <label htmlFor="email">Email</label>
-            <input className="text-box seven-twelfths" type="email" name="email" placeholder="Email" />
-            
-            <label htmlFor="phoneNumber">Mobile Number</label>
-            <input className="text-box five-twelfths" type="tel" name="phoneNumber" placeholder="Mobile Number" />
+        <form className="container">
+          <div className="label-invisible">
+            <label htmlFor="flowLevel">Required flow/level range (e.g. 30 - 40 m&sup3;/s)</label>
+            <input type="text" name="flowLevel" className="text-box full-width" placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)" />
+
+            <label htmlFor="requestArea">Area of Request</label>
+            <input type="text" name="requestArea" className="text-box full-width" placeholder="Area of Request" />
           </div>
 
-          <label htmlFor="qualifications">Qualifications</label>
-          <input className="text-box full-width" type="text" name="qualifications" placeholder="Qualifications" />
+          <div className="row">
+            <label htmlFor="startDateTime">Start date & time</label>
+            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" />
+
+            <label htmlFor="endDateTime">End date & time</label>
+            <input type="datetime-local" name="endDateTime" className="text-box six-twelfths" placeholder="End date & time (DD/MM/YYYY 00:00)" />
+          </div>
         </form>
 
         <BottomButtons page="4" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" />

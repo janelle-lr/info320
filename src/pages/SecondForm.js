@@ -1,9 +1,6 @@
 import React from "react";
-import "./intialForm.css";
 
 // Components
-import "../components/Layout.css";
-import "../components/Texts.css";
 import BottomButtons from "../components/FormButtons";
 import logo from "../images/contactLogo.png";
 

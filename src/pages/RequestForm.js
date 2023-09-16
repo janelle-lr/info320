@@ -1,20 +1,11 @@
 import React from "react";
-import "./FifthForm.css";
-import { Link } from "react-router-dom";
+import "./Form.css";
 
 // Components
 import logo from "../images/contactLogo.png";
-import "../components/Layout.css";
-import "../components/Texts.css";
-import Button from "../components/Button";
 import BottomButtons from "../components/FormButtons";
 
 export const Form = () => {
-  const backButtonClick = () => {
-    // Add your desired functionality here, e.g., go back in history
-    window.history.back();
-  };
-
   return (
     <div className="request-form">
       <div className="first-form main-content">
@@ -48,13 +39,7 @@ export const Form = () => {
           Leader. The Trip Leader must be appropriately trained and experienced
           to lead their intended activity.
         </p>
-        <BottomButtons
-          page="1"
-          leftButton="Cancel"
-          leftButtonDest="/Information"
-          rightButton="Next"
-          rightButtonDest="/intialForm"
-        />
+        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" rightButton="Next" rightButtonDest="/intialForm" />
       </div>
     </div>
   );

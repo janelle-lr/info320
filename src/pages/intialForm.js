@@ -1,9 +1,6 @@
 import React from "react";
-import "./FifthForm.css";
 
 // Components
-import "../components/Layout.css";
-import "../components/Texts.css";
 import BottomButtons from "../components/FormButtons";
 import logo from "../images/contactLogo.png";
 
@@ -17,6 +14,7 @@ export const Formpage1 = () => {
           <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input className="text-box five-twelfths" type="text" name="firstName" placeholder="First Name" />
+
             <label htmlFor="lastName">Last Name</label>
             <input className="text-box seven-twelfths" type="text" name="lastName" placeholder="Last Name" />
           </div>
@@ -34,7 +32,6 @@ export const Formpage1 = () => {
             <label htmlFor="phoneNumber">Mobile Number</label>
             <input className="text-box five-twelfths" type="tel" name="phoneNumber" placeholder="Mobile Number" />
           </div>
-          
         </form>
 
         <BottomButtons page="2" leftButton="Back" leftButtonDest="/RequestForm" rightButton="Next" rightButtonDest="/SecondForm" />
