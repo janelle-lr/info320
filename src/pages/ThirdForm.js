@@ -1,12 +1,17 @@
 import React from 'react';
 import './intialForm.css';
 import { Link } from "react-router-dom";
+import Dropdown from '../components/Dropdown.js';
+import Calander from '../components/Calander.js';
+
+
 
 
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
 import NavigationBar from "../components/NavigationBar";
+import FormButton from '../components/FormButtons.js';
 import Button from '../components/Button';
 
 
@@ -19,75 +24,81 @@ export const Formpage3 = () => {
     <div className="form">
       <div className="form-v">
         < NavigationBar/>
-        <div className="form-title"> KRIS YOURS</div>
-        
-        <div className="firstName">
-          <label htmlFor="firstName">
+        <div className="form-title1"> Form and Activity Details</div>
+        <div className="FristPreference">First Preference Flow Details</div>
+
+        <div className="FlowRange">
+          <label htmlFor="FlowRange" >
           </label>
           <input
             type="text"
-            id="firstName"
-            name="firstName"
-            className="half-width"
-            placeholder="First Name"
-            />
-        </div>
-        
-        <div className="text-input">
-          <label htmlFor="lastName">
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="last-name"
-            placeholder="Last Name"
+            id="FlowRange"
+            name="FlowRange"
+            className="full-width"
+            placeholder="Required Flow/Level & Range (e.g. 30 - 40 m&sup3;/s) "
           />
+
+        </div>
+        <div className="AreaReq">
+          <label htmlFor="AreaReq">
+          </label>
+          <Dropdown/>
         </div>
 
-        <div className="organization">
-          <label htmlFor="organization" >
+        {/* < Calander/> */}
+
+        <div className="calander">
+          <label htmlFor="calander" >
           </label>
           <input
-            type="text"
-            id="organization"
-            name="organization"
-            className="full-width"
-            placeholder="Enter your organization"
+            type="datetime-local"
+            id="calander"
+            name="calander"
+            className="full-width1"
+            placeholder=""
           />
+
         </div>
-        <div className="address">
-          <label htmlFor="address">
+
+
+
+        
+        <div className="ActivityDetails">Activity Details</div>
+
+        <div className="Breif">
+          <label htmlFor="Breif" >
           </label>
-          <input
+          <textarea
             type="text"
-            id="address"
-            name="address"
+            id="Breif"
+            name="Breif"
             className="full-width"
-            placeholder="Enter your address"
+            placeholder="Breif activity description"
           />
+
+
         </div>
         
-        <div className="email">
-          <label htmlFor="email">
+        <div className="particpants">
+          <label htmlFor="particpants">
           </label>
           <input
-            type="email"
-            id="email"
-            name="email"
+            type="particpants"
+            id="particpants"
+            name="particpants"
             className="email-width"
-            placeholder="Enter your email"
+            placeholder="Breif particpant(s) description"
           />
         </div>
-        <div className="cell-number">
-          <label htmlFor="cellPhone">
+        <div className="NoParticpants">
+          <label htmlFor="NoParticpants">
           </label>
           <input
             type="number"
-            id="cellPhone"
-            name="cellPhone"
+            id="NoParticpants"
+            name="NoParticpants"
             className="cell-width"
-            placeholder="Enter your cell phone number"
+            placeholder="Enter number of particpants"
           />
         </div>
 
@@ -96,10 +107,11 @@ export const Formpage3 = () => {
             <button type='button' className="Next"> Next</button>
           </div>
         </div>  */}
+        <FormButton  page="3" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" />
 
         <div className="Button">
           <Button variant="button-primary">
-              <Link to="/FourthForm">
+              <Link to="/intialForm">
               Next
              </Link>
           </Button>

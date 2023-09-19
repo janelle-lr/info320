@@ -1,7 +1,7 @@
 /* For anything to do with text or fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Nunito:wght@800&display=swap");
 
-body, button {
+body, button, label, #dropdown, textarea {
   font-family: "Montserrat", Helvetica;
   color: rgb(48, 48, 48);
 }
@@ -13,5 +13,10 @@ body, button {
   text-align: center;
   margin: 0 0 1.5em 0;
 }
+
+label, #dropdown  {
+  font-size: 26px;
+}
+
 
 

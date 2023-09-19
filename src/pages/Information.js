@@ -32,11 +32,6 @@ function Information () {
             <h3>Albert Park</h3>
             <p>Time for flow requested to reach location: 5 Hours </p>
           </div>
-          <div className="three-columns">
-            <img src={locationIcon} alt="Hero Image" />
-            <h3>Camphill</h3>
-            <p>Description</p>
-          </div>
         </div>
       </div>
 
