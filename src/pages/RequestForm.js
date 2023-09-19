@@ -7,7 +7,7 @@ import BottomButtons from "../components/FormButtons";
 
 export const Form = () => {
   return (
-    <div className="request-form">
+    <div className="request-form section-container">
       <div className="first-form main-content">
         <img src={logo} className="form-contact-logo" />
         <h1 className="form-heading">Notice</h1>

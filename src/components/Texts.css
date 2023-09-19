@@ -14,4 +14,23 @@ body, button, input, select {
   margin: 0 0 1.5em 0;
 }
 
+p {
+  font-size: 1em;
+}
+
+/* Tablets */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .subsection-heading {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subsection-heading {
+    font-size: 1.45em;
+    margin-bottom: 0.25em;
+  }
+}
+
 

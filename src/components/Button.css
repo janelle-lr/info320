@@ -19,9 +19,6 @@
 }
 
 .button-secondary {
-  /* background-color: rgb(247, 247, 247);
-  color: rgb(214, 66, 66);
-  border: 1px solid rgb(214, 66, 66); */
   color: rgb(48, 48, 48);
   border: 2px solid rgb(48, 48, 48);
   background-color: inherit;
@@ -31,12 +28,14 @@
   background-color: rgb(48, 48, 48, 0.2);
 }
 
-.button Link {
-  /* position: absolute;
-  text-decoration: none; */
-  /* background-color: rgb(247, 247, 247); */
-}
-
 .button a {
   color: inherit;
+}
+
+/* Mobile and small devices */
+@media only screen and (max-width: 600px) {
+  .button {
+    font-size: 0.8em;
+    padding: 10px 20px;
+  }
 }

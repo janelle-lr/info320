@@ -6,7 +6,7 @@ import logo from "../images/contactLogo.png";
 
 export const Formpage2 = () => {
   return (
-    <div className="request-form">
+    <div className="request-form section-container">
       <div className="first-form main-content">
         <img src={logo} className="form-contact-logo" />
         <h1 className="form-heading">Trip Leader</h1>

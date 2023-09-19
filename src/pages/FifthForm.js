@@ -6,13 +6,13 @@ import BottomButtons from "../components/FormButtons"
 
 export const Formpage5 = () => {
   return (
-    <div className="request-form">
+    <div className="request-form section-container">
       <div className="fifth-form main-content">
         <img src={logo} className="form-contact-logo" />
         <h1 className="form-heading">Health and Safety</h1>
-        <form>
+        <form className="label-visible">
           <input className="checkbox" type="checkbox" name="riverFreq" value="" />
-          <label className="label-visible" for="riverFreq"> Have you been down the river before?</label>
+          <label for="riverFreq"> Have you been down the river before?</label>
           <br />
           <input className="checkbox" type="checkbox" name="riverHazard" value="" />
 

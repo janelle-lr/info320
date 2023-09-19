@@ -21,21 +21,25 @@ function Information() {
       <div className="section-container locations">
         <h2 className="subsection-heading">Key Locations</h2>
         <div className="layout-column main-content">
-          <div className="two-columns">
+          <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
-            <div>
-              <h3 className="subtitle">Hawea Flat</h3>
-              <h5>(The Wave)</h5>
-            </div>
+            <div className="location-text">
+              <div>
+                <h3 className="subtitle">Hawea Flat</h3>
+                <h5>(The Wave)</h5>
+              </div>
 
-            <p>Time for flow requested to reach location: 1.5 Hours </p>
+              <p>Time for flow requested to reach location: 1.5 Hours </p>
+            </div>
           </div>
-          <div className="two-columns">
+          <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
-            <h3>Albert Park</h3>
-            <br />
-            <p>Time for flow requested to reach location: 5 Hours </p>
-          </div>
+            <div className="location-text">
+              <h3 className="subtitle">Albert Park</h3>
+              {/* <br /> */}
+              <p className="location-paragraph">Time for flow requested to reach location: 5 Hours </p>
+              </div>
+            </div>
         </div>
       </div>
 
@@ -43,7 +47,7 @@ function Information() {
         <div className="section-container">
           <div className="layout-column">
             <div className="two-columns">
-              <h2 className="subsection-heading">Active Requests</h2>
+              <h2 className="subsection-heading">Active Flow Requests</h2>
               <div className="">
                 <table className="active-requests">
                   <tr>
