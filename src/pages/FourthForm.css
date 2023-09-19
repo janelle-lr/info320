@@ -6,9 +6,7 @@
     margin-top: 48%;
     }
     
-    
-    
-    
+
       .form {
         background-color: #ffffff;
         display: flex;
@@ -65,7 +63,7 @@
         letter-spacing: 0;
         line-height: normal;
         position: absolute;
-        top: 220px;
+        top: 235px;
       } 
     
       .form .form-text {
@@ -78,7 +76,7 @@
         letter-spacing: 0;
         line-height: normal;
         position: absolute;
-        top: 258px;
+        top: 297px;
         width:1256px
       } 
     
@@ -165,7 +163,7 @@
         /* left: 8.5%; */
         margin: auto;
         position: absolute;
-        top: 34%;
+        top: 38%;
         width: 90%;
         font-size: 1.0em;
     
@@ -186,15 +184,27 @@
       
       .form .address {
         height: 5%;
-        top: 42%;
+        top: 46%;
         left: 8.5%;
         position: absolute;
         width: 92.5%;
       }
-      
+
+      .address label {
+         color: #595959;
+        font-family: "Montserrat-Medium", Helvetica;
+        font-size: 1.5em;
+        font-weight: 500;
+        left: 27px;
+        letter-spacing: 0;
+        line-height: normal;
+        position: absolute;
+        top: 23px;
+        width: 491px;
+      }
       .form .organization {
         height: 5%;
-        top: 32%;
+        top: 36%;
         left: 8.5%;
         position: absolute;
         width: 92.5%;
@@ -204,7 +214,7 @@
       
       .form .email {
         height: 5%;
-        top: 54%;
+        top: 58%;
         left: 8.5%;
         position: absolute;
         width: 88.5%;
@@ -218,15 +228,15 @@
         left: 0;
         position: absolute;
         top: 0;
-        width: 50%;
+        width: 44%;
         font-size: 1.0em;
     
       }
       
       .form .cell-number {
         height: 5%;
-        top: 54%;
-        left: 55.7%;
+        top: 58%;
+        left: 51.21%;
         position: absolute;
         width: 92.5%;
       }
@@ -236,7 +246,7 @@
         border-color: #ededed;
         height: 160%;
         position: absolute;
-        width: 39%;
+        width: 44%;
         font-size: 1.0em;
     
         /* 7.9%;
@@ -244,10 +254,7 @@
         position: absolute;
         top: 24%;
         width: 47.5%; */
-    
-    
       }
-    
     
       .form .Qualifications {
         height: 5%;
