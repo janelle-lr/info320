@@ -7,7 +7,7 @@
 .request-form .main-content {
   /* background-color: blue; */
   position: relative;
-  height: 90vh;
+  height: 85vh;
   padding: 0;
 }
 
@@ -92,6 +92,15 @@
 .full-width {
   width: calc(100%);
 }
+
+/* THIRD FORM STYLING */
+.request-form .third-form {
+  /* background-color: rebeccapurple; */
+  position: relative;
+  height: 50vw;
+  padding: 0;
+}
+
 
 /* FOURTH FORM STYLING */
 

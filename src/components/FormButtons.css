@@ -31,6 +31,13 @@
 
 }
 
+.third-form .form-bottom-buttons {
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 0;
+  top: 85%;
+}
+
 .form-bottom-buttons .button-primary, .form-bottom-buttons .button-secondary {
   margin: auto 0;
 }
