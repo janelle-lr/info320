@@ -10,7 +10,7 @@ const Button = ({ variant, children, onClick, destination }) => {
     //   {/* {children} */}
     //   <Link to={to}>{children}</Link>
     // </button>
-    <Link className={classNames} to={destination}>
+    <Link className={classNames} to={destination} onClick={onClick}>
       {children}
     </Link>
   );

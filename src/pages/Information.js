@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./Information.css";
 import { Link } from "react-router-dom";
@@ -13,6 +13,14 @@ import Footer from "../components/Footer";
 import NavigationBar from "../components/NavigationBar";
 
 function Information() {
+    // const [message, setMessage] = useState("");
+
+    // useEffect(() => {
+    //   fetch("http://localhost:5000/")
+    //     .then((res) => res.json())
+    //     .then((data) => setMessage(data.message));
+    // }, []);
+
   return (
     <>
       <NavigationBar />
@@ -20,6 +28,7 @@ function Information() {
 
       <div className="section-container locations">
         <h2 className="subsection-heading">Key Locations</h2>
+        {/* <h2 className="subsection-heading">{message}</h2> */}
         <div className="layout-column main-content">
           <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
