@@ -1,11 +1,12 @@
 .navigation {
+  /* margin-top: 0; */
   background-color: rgb(255, 255, 255);
   /* background-color: aqua; */
   height: 74px;
   border-bottom: 1px solid rgb(146, 146, 146);
   display: flex;
   align-items: center; /* Center vertically */
-  /* position: sticky; */
+  /* position: fixed; */
 }
 
 .navigation a {
@@ -20,6 +21,7 @@
   padding: 1em;
   display: flex;
   align-items: center; /* Center vertically */
+  flex-wrap: wrap;
 }
 
 .navigation a:not(:first-child):hover {
@@ -28,4 +30,20 @@
 
 .logo {
   height: 3.3em;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .navigation {
+    background-color: rgb(255, 255, 255);
+    height: 45px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+    display: flex;
+    align-items: center;
+  }
+  
+  .navigation a:not(:first-child) {
+    display: none;
+  }
+  
 }
