@@ -122,7 +122,7 @@
 // export default Formpage1;
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './intialForm.css';
 
 // Components
@@ -174,7 +174,7 @@ export const Formpage1 = () => {
   };
 
 
-  // const handleNextClick = () => {
+  // const nextClick = () => {
   //   const newErrors = validateForm();
   //   if (Object.keys(newErrors).length === 0) {
   //     // Validation passed, navigate to the next form page
@@ -187,9 +187,9 @@ export const Formpage1 = () => {
   //   }
   // };
 
-// handleNextClick triggers the repsonse from the next button at the button 
+// nextClick triggers the repsonse from the next button at the button 
 
-  const handleNextClick = () => {
+  const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       // Validation passed, navigate to the next form page
@@ -199,17 +199,31 @@ export const Formpage1 = () => {
   
       // Reset the errors state to clear error messages
       setErrors({});
+      saveFormData();
+      window.location.href = "/SecondForm";
     } else {
       // Validation failed, set the errors state to display error messages
       setErrors(newErrors);
     }
   };
+
+    // Load saved form data from localStorage when the component mounts
+    useEffect(() => {
+      const savedFormData = JSON.parse(localStorage.getItem("formData")) || {};
+      setFormData(savedFormData);
+    }, []); // The empty dependency array ensures this effect runs once when the component mounts
+  
   
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  const saveFormData = () => {
+    localStorage.setItem("formData", JSON.stringify(formData));
+  };
+
 
   return (
     <div className="form">
@@ -240,14 +254,14 @@ export const Formpage1 = () => {
             value={formData.lastName}
             onChange={handleChange}
           />
-
 {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-          {errors.firstName && <div className="error-message">{errors.firstName}</div>}
+{errors.firstName && <div className="error-message">{errors.firstName}</div>}
           {errors.lastName && <div className="error-message">{errors.lastName}</div>}
           {errors.organization && <div className="error-message">{errors.organization}</div>}
           {errors.address && <div className="error-message">{errors.address}</div>}
           {errors.email && <div className="error-message">{errors.email}</div>}
           {errors.cellPhone && <div className="error-message">{errors.cellPhone}</div>}
+         
 
         </div>
 
@@ -306,13 +320,18 @@ export const Formpage1 = () => {
         {/* this part below is the button in terms of the validation - i have tried to 
         enable it to the FormButton but my one doesnt work as of now, if you want to see the validation work uncomment below section! */}
 
-        <div className="Button">
-          <Button variant="button-primary" onClick={handleNextClick}>
+        {/* <div className="Button">
+          <Button variant="button-primary" onClick={nextClick} >
             Next
           </Button>
-        </div>
+        </div> */}
 
-        {/* <FormButton  onClick={handleNextClick}  page="2" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" /> */}
+        <FormButton  page="2" leftButton="Back" leftButtonDest="/RequestForm" rightButton="Next" rightOnClick={nextClick} />
+
+
+{/* this button is for saving data intially before merging it  */}
+
+        {/* <FormButton  onClick={nextClick}  page="2" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" /> */}
       </div>
     </div>
   );

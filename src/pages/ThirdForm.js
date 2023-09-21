@@ -109,23 +109,6 @@ export const Formpage3 = () => {
         </div>  */}
         <FormButton  page="3" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" />
 
-        <div className="Button">
-          <Button variant="button-primary">
-              <Link to="/intialForm">
-              Next
-             </Link>
-          </Button>
-        </div>
-
-
-
-
-        <div className="Cancel-button">
-          <div className="div-wrapper">
-            <div className="cancel-text" onClick={backButtonClick}>Back</div>
-          </div>
-        </div>
-        <div className="page-no" >4 of 7</div>
       </div>
     </div>
   );

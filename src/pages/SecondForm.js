@@ -7,14 +7,12 @@ import { Link } from "react-router-dom";
 import "../components/Layout.css";
 import "../components/Texts.css";
 import NavigationBar from "../components/NavigationBar";
-import Button from '../components/Button';
+import FormButton from '../components/FormButtons.js';
+
 
 
 export const Formpage2 = () => {
-  const backButtonClick = () => {
-    // Add your desired functionality here, e.g., go back in history
-    window.history.back();
-  };
+
   return (
     <div className="form">
       <div className="form-v">
@@ -109,23 +107,12 @@ export const Formpage2 = () => {
           </div>
         </div>  */}
 
-        <div className="Button">
-          <Button variant="button-primary">
-              <Link to="/ThirdForm">
-              Next
-             </Link>
-          </Button>
-        </div>
+<FormButton  page="2" leftButton="Back" leftButtonDest="/intialForm" rightButton="Next" rightButtonDest="/ThirdForm" />
 
 
+        
 
-
-        <div className="Cancel-button">
-          <div className="div-wrapper">
-            <div className="cancel-text" onClick={backButtonClick}>Back</div>
-          </div>
-        </div>
-        <div className="page-no" >3 of 7</div>
+      
       </div>
     </div>
   );
