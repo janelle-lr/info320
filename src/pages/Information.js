@@ -10,6 +10,7 @@ import Button from "../components/Button";
 import locationIcon from "../images/locationIcon.svg";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
+import data from "../components/river.json"
 import NavigationBar from "../components/NavigationBar";
 
 function Information() {
@@ -20,6 +21,18 @@ function Information() {
     //     .then((res) => res.json())
     //     .then((data) => setMessage(data.message));
     // }, []);
+
+  const flows = data.river
+
+   // sort the flows by "READING_NZST_DATETIME" and get the last three items
+   const sortedFlows = flows
+   .slice()
+   .sort((a, b) => {
+    const dateA = new Date(a["READING_NZST_DATETIME"]);
+    const dateB = new Date(b["READING_NZST_DATETIME"]);
+    return dateB - dateA;
+  })
+   .slice(0, 3);
 
   return (
     <>
@@ -65,42 +78,24 @@ function Information() {
                     <th>Location</th>
                     <th>Flow Level</th>
                   </tr>
-                  <tr>
-                    <td>
-                      Mon
-                      <br />
-                      Aug 14
+                  {sortedFlows.map((post) => (
+                  <tr key={post.id}>
+                    <td> 
+                    {post.Day}
+                      <br/>
+                    {post.Month_Date}
                     </td>
-                    <td>00:00 pm</td>
-                    <td>Hawea Flat</td>
-                    <td>000cm&sup2;</td>
+                    <td>{post.Time}</td>
+                    <td>{post.TELEMETRY_LOCATION}</td>
+                    <td>{post.READING_VALUE}ms&sup3;</td>
                   </tr>
-                  <tr>
-                    <td>
-                      Mon
-                      <br />
-                      Aug 14
-                    </td>
-                    <td>00:00 pm</td>
-                    <td>Hawea Flat</td>
-                    <td>000cm&sup2;</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Mon
-                      <br />
-                      Aug 14
-                    </td>
-                    <td>00:00 pm</td>
-                    <td>Hawea Flat</td>
-                    <td>000cm&sup2;</td>
-                  </tr>
+                ))}
                 </table>
               </div>
             </div>
 
             <div className="two-columns">
-              <h2 className="subsection-heading">Current Flows</h2>
+              <h2 className="subsection-heading">Active Requests</h2>
               <table className="current-flows">
                 <tr>
                   <th>Day</th>
