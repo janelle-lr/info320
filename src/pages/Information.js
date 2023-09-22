@@ -22,17 +22,17 @@ function Information() {
     //     .then((data) => setMessage(data.message));
     // }, []);
 
-  const flows = data.river
+  const flows = data.river;
 
-   // sort the flows by "READING_NZST_DATETIME" and get the last three items
-   const sortedFlows = flows
-   .slice()
-   .sort((a, b) => {
-    const dateA = new Date(a["READING_NZST_DATETIME"]);
-    const dateB = new Date(b["READING_NZST_DATETIME"]);
-    return dateB - dateA;
-  })
-   .slice(0, 3);
+  // sort the flows by "READING_NZST_DATETIME" and get the last three items
+  const sortedFlows = flows
+    .slice()
+    .sort((a, b) => {
+      const dateA = new Date(a["READING_NZST_DATETIME"]);
+      const dateB = new Date(b["READING_NZST_DATETIME"]);
+      return dateB - dateA;
+    })
+    .slice(0, 3);
 
   return (
     <>

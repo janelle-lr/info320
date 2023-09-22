@@ -5,6 +5,7 @@ const cors = require("cors");
 const fs = require("fs");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const nodemailer = require("nodemailer");
 
 app.use(express.json());
 app.use(cors());
@@ -80,7 +81,7 @@ function postData(req, res, schema, input) {
         let item2 = JSON.parse(data);
         // const jsonObj1 = JSON.stringify(item2);
         const jsonObj1 = item2;
-        
+
         console.log(jsonObj1[0]);
         jsonArray.push(jsonObj1);
         jsonArray.push(jsonObj2);
@@ -107,6 +108,7 @@ function postData(req, res, schema, input) {
       }
     });
   }
+
   //   const schemaModel = schema;
   //   const item = input;
   //   const items = JSON.stringify(item);
@@ -143,20 +145,20 @@ function loadServer(req, res) {
 }
 
 app.post("/initialForm/postData", (req, res) => {
-//   const schemaModel = new Schema({
-//     applicantDetails: {
-//       firstName: String,
-//       lastName: String,
-//       organization: String,
-//       address: String,
-//       email: String,
-//       phoneNumber: Number,
-//     },
-//   });
+  //   const schemaModel = new Schema({
+  //     applicantDetails: {
+  //       firstName: String,
+  //       lastName: String,
+  //       organization: String,
+  //       address: String,
+  //       email: String,
+  //       phoneNumber: Number,
+  //     },
+  //   });
 
-//   const Model = mongoose.model("Model", schemaModel);
+  //   const Model = mongoose.model("Model", schemaModel);
 
-  const input = new form1Model ({
+  const input = new form1Model({
     applicantDetails: {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -166,7 +168,32 @@ app.post("/initialForm/postData", (req, res) => {
       phoneNumber: req.body.phoneNumber,
     },
   });
-  postData(req, res, form1Schema, input);
+
+  console.log("email = " + input.applicantDetails.email);
+  // Create a transport using a local SMTP server (e.g., MailHog)
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587, // SMTP server port (MailHog default)
+    ignoreTLS: true, // Disable TLS (for local testing)
+  });
+
+  // Define email data
+  const mailOptions = {
+    from: "limrajane@gmail.com", // Sender's email address
+    to: input.applicantDetails.email, // Recipient's email address
+    subject: "Test Email", // Email subject
+    text: "This is a test email sent without authentication.", // Plain text body
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+    } else {
+      console.log("Email sent:", info.response);
+    }
+  });
+  //postData(req, res, form1Schema, input);
   //   let items = JSON.stringify(item);
 
   //   fs.writeFile("items.json", items, (err) => {
@@ -179,20 +206,20 @@ app.post("/initialForm/postData", (req, res) => {
 });
 
 app.post("/SecondForm/postData", (req, res) => {
-//   const schemaModel = new Schema({
-//     tripLeader: {
-//       firstName: String,
-//       lastName: String,
-//       organization: String,
-//       address: String,
-//       email: String,
-//       phoneNumber: Number,
-//       qualifications: String,
-//     },
-//   });
+  //   const schemaModel = new Schema({
+  //     tripLeader: {
+  //       firstName: String,
+  //       lastName: String,
+  //       organization: String,
+  //       address: String,
+  //       email: String,
+  //       phoneNumber: Number,
+  //       qualifications: String,
+  //     },
+  //   });
 
-//   const Leader = mongoose.model("Leader", schemaModel);
-  const input = new form2Model ({
+  //   const Leader = mongoose.model("Leader", schemaModel);
+  const input = new form2Model({
     tripLeader: {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
