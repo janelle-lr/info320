@@ -52,7 +52,6 @@ function Information () {
           </div>
         </div>
       </div>
-
       <div className="flow-requests">
         <div className="section-container">
           <div className="layout-column">

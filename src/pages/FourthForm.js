@@ -1,5 +1,5 @@
 import React from 'react';
-import './intialForm.css';
+import './FourthForm.css';
 import { Link } from "react-router-dom";
 
 
@@ -16,35 +16,14 @@ export const Formpage4 = () => {
     window.history.back();
   };
   return (
-    <div className="form">
+    <div className="form-4">
       <div className="form-v">
         < NavigationBar/>
-        <div className="form-title"> MARK YOURS </div>
-        
-        <div className="firstName">
-          <label htmlFor="firstName">
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            className="half-width"
-            placeholder="First Name"
-            />
-        </div>
-        
-        <div className="text-input">
-          <label htmlFor="lastName">
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            className="last-name"
-            placeholder="Last Name"
-          />
-        </div>
-
+        <div className="form-title"> Flow and Activity Details </div>
+          <div className="form-title-secondary">Secondary Preference Flow Details</div>
+            <div className="form-text">In case your preferred flow request gets declined, 
+            please provide other suitable times and areas the activity can be undertake.</div>
+  
         <div className="organization">
           <label htmlFor="organization" >
           </label>
@@ -53,7 +32,7 @@ export const Formpage4 = () => {
             id="organization"
             name="organization"
             className="full-width"
-            placeholder="Enter your organization"
+            placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
           />
         </div>
         <div className="address">
@@ -64,7 +43,7 @@ export const Formpage4 = () => {
             id="address"
             name="address"
             className="full-width"
-            placeholder="Enter your address"
+            placeholder="Area of Request"
           />
         </div>
         
@@ -72,22 +51,22 @@ export const Formpage4 = () => {
           <label htmlFor="email">
           </label>
           <input
-            type="email"
+            type="Date"
             id="email"
             name="email"
             className="email-width"
-            placeholder="Enter your email"
+            placeholder="Start date & time (DD/MM/YYYY 00:00)"
           />
         </div>
         <div className="cell-number">
           <label htmlFor="cellPhone">
           </label>
           <input
-            type="number"
+            type="date"
             id="cellPhone"
             name="cellPhone"
             className="cell-width"
-            placeholder="Enter your cell phone number"
+            placeholder="End date & time (DD/MM/YYYY 00:00)"
           />
         </div>
 
