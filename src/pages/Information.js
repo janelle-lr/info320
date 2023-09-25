@@ -106,9 +106,7 @@ function Information () {
             <Button
               id="toForm"
               variant="button-primary"
-            //   to="/RequestForm"
-              
-            //   onClick=""
+
             >
                 <Link to="/RequestForm">
               Send a wave request
