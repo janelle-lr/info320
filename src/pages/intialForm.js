@@ -4,6 +4,7 @@ import "./Form.css";
 import BottomButtons from "../components/FormButtons";
 import Button from "../components/Button";
 import logo from "../images/contactLogo.png";
+import NavigationBarForm from "../components/NavivagtionBarForms";
 
 export const Formpage1 = () => {
   const [message, setMessage] = useState("");
@@ -54,7 +55,7 @@ export const Formpage1 = () => {
     organization: "",
     address: "",
     email: "",
-    cellPhone: "",
+    phoneNumber: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -85,10 +86,10 @@ export const Formpage1 = () => {
     // } else if (!/^\d{20}$/.test(formData.cellPhone)) {
     //   newErrors.cellPhone = "Invalid cell phone number format";
     // }
-    if (!formData.cellPhone) {
-      newErrors.cellPhone = "Moblie number is required";
-    } else if (!/^\d{6,15}$/.test(formData.cellPhone)) {
-      newErrors.cellPhone = "Mobile number is invalid";
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = "Moblie number is required";
+    } else if (!/^\d{6,15}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Mobile number is invalid";
     }
 
     return newErrors;
@@ -172,24 +173,19 @@ export const Formpage1 = () => {
               onChange={handleChange}
             />
             {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-            {errors.firstName && (
-              <div className="error-message">{errors.firstName}</div>
-            )}
-            {errors.lastName && (
-              <div className="error-message">{errors.lastName}</div>
-            )}
-            {errors.organization && (
-              <div className="error-message">{errors.organization}</div>
-            )}
-            {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
-            {errors.email && (
-              <div className="error-message">{errors.email}</div>
-            )}
-            {errors.cellPhone && (
-              <div className="error-message">{errors.cellPhone}</div>
-            )}
+
+            {/* 
+            
+            
+             */}
+          </div>
+          <div className="row">
+          {errors.firstName && (
+            <div className="error-message five-twelfths">{errors.firstName}</div>
+          )}
+          {errors.lastName && (
+            <div className="error-message seven-twelfths">{errors.lastName}</div>
+          )}
           </div>
 
           <label htmlFor="organization">Organization</label>
@@ -201,6 +197,9 @@ export const Formpage1 = () => {
             value={formData.organization}
             onChange={handleChange}
           />
+          {errors.organization && (
+              <div className="error-message">{errors.organization}</div>
+            )}
 
           <label htmlFor="address">Address</label>
           <input
@@ -211,6 +210,9 @@ export const Formpage1 = () => {
             value={formData.address}
             onChange={handleChange}
           />
+          {errors.address && (
+              <div className="error-message">{errors.address}</div>
+            )}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -229,10 +231,19 @@ export const Formpage1 = () => {
               type="tel"
               name="phoneNumber"
               placeholder="Mobile Number"
-              value={formData.cellPhone}
+              value={formData.phoneNumber}
               onChange={handleChange}
             />
           </div>
+
+          <div className="row">
+          {errors.email && (
+              <div className="error-message seven-twelfths">{errors.email}</div>
+            )}
+            {errors.phoneNumber && (
+              <div className="error-message five-twelfths">{errors.phoneNumber}</div>
+            )}
+            </div>
           {/* this part below is the button in terms of the validation - i have tried to 
         enable it to the FormButton but my one doesnt work as of now, if you want to see the validation work uncomment below section! */}
 
@@ -242,9 +253,9 @@ export const Formpage1 = () => {
           </Button>
         </div> */}
         </form>
-        <Button variant="button-primary" onClick={postData}>
+        {/* <Button variant="button-primary" onClick={postData}>
           Post
-        </Button>
+        </Button> */}
         {/* <BottomButtons
           page="2"
           leftButton="Back"
