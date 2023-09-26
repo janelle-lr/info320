@@ -128,7 +128,6 @@ import './intialForm.css';
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
-import Button from '../components/Button';
 import FormButton from '../components/FormButtons.js';
 import NavigationBarForm from '../components/NavivagtionBarForms';
 
@@ -165,11 +164,18 @@ export const Formpage1 = () => {
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-    if (!formData.cellPhone) {
-      newErrors.cellPhone = "Cell phone number is required";
+    // if (!formData.cellPhone) {
+    //   newErrors.cellPhone = "Cell phone number is required";
     // } else if (!/^\d{20}$/.test(formData.cellPhone)) {
     //   newErrors.cellPhone = "Invalid cell phone number format";
+    // }
+    if (!formData.cellPhone) {
+      newErrors.cellPhone = "Moblie number is required";
+    } else if (!/^\d{6,15}$/.test(formData.cellPhone)) {
+      newErrors.cellPhone = "Mobile number is invalid";
     }
+    
+    
     return newErrors;
   };
 
@@ -254,8 +260,8 @@ export const Formpage1 = () => {
             value={formData.lastName}
             onChange={handleChange}
           />
-{/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-{errors.firstName && <div className="error-message">{errors.firstName}</div>}
+          {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
+          {errors.firstName && <div className="error-message">{errors.firstName}</div>}
           {errors.lastName && <div className="error-message">{errors.lastName}</div>}
           {errors.organization && <div className="error-message">{errors.organization}</div>}
           {errors.address && <div className="error-message">{errors.address}</div>}
@@ -311,7 +317,7 @@ export const Formpage1 = () => {
             id="cellPhone"
             name="cellPhone"
             className="cell-width"
-            placeholder="Enter your cell phone number"
+            placeholder="Enter your Moblie number"
             value={formData.cellPhone}
             onChange={handleChange}
           />

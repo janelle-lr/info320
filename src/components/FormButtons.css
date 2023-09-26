@@ -1,45 +1,57 @@
 .form-bottom-buttons {
-    /* display: flex;
-      flex-direction: row; */
-    justify-content: center;
-    /* wrap: nowrap;
-      align-items: center; */
-    display: flex;
-    flex-direction: row;
-    width: inherit;
-    /* background-color: brown; */
-    position: absolute;
-    bottom: 0;
-    height: 25%;
-  }
+  /* display: flex;
+    flex-direction: row; */
+  justify-content: space-between;
+  /* wrap: nowrap;
+    align-items: center; */
+  display: flex;
+  flex-direction: row;
+  /* width: inherit; */
+  /* width: 59.6%; */
+  /* height: 90%; */
   
-  .form-bottom-buttons .button-primary {
-    /* background-color: blueviolet;    */
-    position: absolute;
-    right: 5%;
+  /* background-color: pink; */
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* position: absolute;
+  bottom: 7%;
+  left: 11em;
+  right: 11em; */
+  /* height: 50%; */
+  /* margin-top: 100vh; */
+}
 
-  }
-  
-  .form-bottom-buttons .button-secondary {
-    /* background-color: blueviolet; */
-    /* margin-left: 5%;
-          margin-right: 10%; */
-    position: absolute;
-    left: 5%;
-  }
-  
-  .form-bottom-buttons h4 {
-    font-weight: 600;
-    /* background-color: blue; */
-    /* padding: 0 37.5%; */
-    padding: 5% 0;
-  }
+.form-bottom-buttons {
+  /* wrap: nowrap;
+    align-items: center; */
+  position: absolute;
+  bottom: 27%;
+  /* background-color: aqua; */
+  width: 85.5%;
+  left: 8.5%;
+}
 
-      /*This doesnt work @Janelle - how do i make it come up */
-  .form-bottom-buttons .page-no {
-    height: 25%;
+.third-form .form-bottom-buttons {
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 0;
+  top: 85%;
+}
 
-  } 
+.form-bottom-buttons .button-primary, .form-bottom-buttons .button-secondary {
+  margin: auto 0;
+}
 
+.form-bottom-buttons h4 {
+  font-weight: 600;
+  /* background-color: blue; */
+  /* padding: 0 37.5%; */
+  /* padding: 5% 0; */
+  /* margin: 2%; */
+  display: inherit;
+  align-items: center;
+}
 
-  
+/* Mobile and small devices */
+@media only screen and (max-width: 600px) {
+}
