@@ -1,10 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Components
+import "../components/Layout.css";
+import "../components/Texts.css";
+// Components
 import logo from "../images/contactLogo.png";
-import BottomButtons from "../components/FormButtons"
+import BottomButtons from "../components/FormButtons";
+import NavigationBarForms from "../components/NavivagtionBarForms.js";
+import Button from '../components/Button';
 
-export const Formpage4 = () => {
+function MyForm() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lname: '',
+    email: '',
+    password: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const [submittedData, setSubmittedData] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length === 0) {
+      // Form is valid, save the data
+      setSubmittedData(formData);
+    } else {
+      // Form is invalid, display errors
+      setErrors(validationErrors);
+    }
+  };
+
+  const validateForm = () => {
+    // Implement your form validation logic here
+    const errors = {};
+    if (!formData.firstName.trim()) {
+      errors.firstName = 'first name is required';
+    }
+    if (!formData.lname.trim()) {
+      errors.lname = 'Last Name is required';
+    }
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!isValidEmail(formData.email)) {
+      errors.email = 'Invalid email address';
+    }
+    if (!formData.password.trim()) {
+      errors.password = 'Password is required';
+    }
+    return errors;
+  };
+
+  const isValidEmail = (email) => {
+    // Implement email validation logic (e.g., regex)
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
@@ -35,6 +96,6 @@ export const Formpage4 = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Formpage4;
+export default MyForm;

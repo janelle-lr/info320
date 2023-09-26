@@ -2,8 +2,7 @@
   /* margin-top: 0; */
   background-color: rgb(255, 255, 255);
   /* background-color: aqua; */
-  height: 74px;
-  border-bottom: 1px solid rgb(146, 146, 146);
+  height: 7.4%;
   display: flex;
   align-items: center; /* Center vertically */
   /* position: fixed; */
@@ -18,18 +17,18 @@
 
 .navbar {
   /* background-color: rosybrown; */
-  padding: 1em;
+  height: 7.4%;
   display: flex;
   align-items: center; /* Center vertically */
   flex-wrap: wrap;
 }
 
 .navigation a:not(:first-child):hover {
-  text-decoration: underline rgb(214, 66, 66) 2px solid;
+  text-decoration: underline rgb(214, 66, 66);
 }
 
 .logo {
-  height: 3.3em;
+  height: 4.3em;
 }
 
 
