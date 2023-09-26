@@ -40,93 +40,92 @@
 .form .Button {
   margin-left: 85%;
   margin-top: 48%;
-  }
+}
 
 .form {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .form .form-sub  {
-    background-color: #ffffff;
-    height: 100%;
-    position: fixed;
-    width: 100%;
-  }
-  
-  .form .Nav {
-    background-color: #ffffff;
-    height: 17%;
-    position: absolute;
-    top: -2%;
-    width: 100%;
-  }
-  
-  .form .image {
-    height: 46px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 37px;
-    width: 128px;
-  }
-  
-  .form .notice {
-    color: #303030;
-    margin-top: 0.25%;
-    font-family: "Montserrat", Helvetica;
-    font-size: 2.5em;
-    font-weight: 600;
-    height: 0%;
-    left: 5%;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 15%;
-  }
-  
-  .main {
-    color:#61dafb
-  }
-  
-  
-  .form .contact-about-form {
-    color: #1e1e1e;
-    font-family: "Montserrat", Helvetica;
-    font-size: 1.25em;
-    font-weight: 400;
-    left: 5%;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 20%;
-    width: 87%;
-  }
-  
-  .form .Next-button {
-    height: 72px;
-    left: 80%;
-    position: absolute;
-    top: 85%;
-    width: 176px;
-  }
-  
-  .form .overlap-group .Next {
-    background-color: #d54141;
-    border-radius: 15px;
-    height: 72px;
-    position: relative;
-    width: 174px;
-    font-family: "Montserrat-SemiBold", Helvetica;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  /* .form .Next {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.form .form-sub {
+  background-color: #ffffff;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.form .Nav {
+  background-color: #ffffff;
+  height: 17%;
+  position: absolute;
+  top: -2%;
+  width: 100%;
+}
+
+.form .form-logo {
+  height: 46px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 37px;
+  width: 128px;
+}
+
+.form .notice {
+  color: #303030;
+  margin-top: 0.25%;
+  font-family: "Montserrat", Helvetica;
+  font-size: 2.5em;
+  font-weight: 600;
+  height: 0%;
+  left: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 15%;
+}
+
+.main {
+  color: #61dafb;
+}
+
+.form .form-paragraph {
+  color: #1e1e1e;
+  font-family: "Montserrat", Helvetica;
+  font-size: 1.25em;
+  font-weight: 400;
+  left: 5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 20%;
+  width: 87%;
+}
+
+.form .Next-button {
+  height: 72px;
+  left: 80%;
+  position: absolute;
+  top: 85%;
+  width: 176px;
+}
+
+.form .overlap-group .Next {
+  background-color: #d54141;
+  border-radius: 15px;
+  height: 72px;
+  position: relative;
+  width: 174px;
+  font-family: "Montserrat-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* .form .Next {
     font-family: "Montserrat-SemiBold", Helvetica;
     font-size: 24px;
     font-weight: 600;
@@ -190,4 +189,7 @@
     width: 251px;
   }
   
+  .BottomButtons {
+    top: 10%;
+  }
   

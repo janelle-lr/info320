@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./Information.css";
 import { Link } from "react-router-dom";
@@ -6,25 +6,33 @@ import { Link } from "react-router-dom";
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
-import NavigationBar from "../components/NavigationBar";
 import Button from "../components/Button";
 import locationIcon from "../images/locationIcon.svg";
 import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
 import data from "../components/river.json"
+import NavigationBar from "../components/NavigationBar";
 
-function Information () {
-  const flows = data.river
+function Information() {
+    // const [message, setMessage] = useState("");
 
-   // sort the flows by "READING_NZST_DATETIME" and get the last three items
-   const sortedFlows = flows
-   .slice()
-   .sort((a, b) => {
-    const dateA = new Date(a["READING_NZST_DATETIME"]);
-    const dateB = new Date(b["READING_NZST_DATETIME"]);
-    return dateB - dateA;
-  })
-   .slice(0, 3);
+    // useEffect(() => {
+    //   fetch("http://localhost:5000/")
+    //     .then((res) => res.json())
+    //     .then((data) => setMessage(data.message));
+    // }, []);
+
+  const flows = data.river;
+
+  // sort the flows by "READING_NZST_DATETIME" and get the last three items
+  const sortedFlows = flows
+    .slice()
+    .sort((a, b) => {
+      const dateA = new Date(a["READING_NZST_DATETIME"]);
+      const dateB = new Date(b["READING_NZST_DATETIME"]);
+      return dateB - dateA;
+    })
+    .slice(0, 3);
 
   return (
     <>
@@ -33,31 +41,35 @@ function Information () {
 
       <div className="section-container locations">
         <h2 className="subsection-heading">Key Locations</h2>
+        {/* <h2 className="subsection-heading">{message}</h2> */}
         <div className="layout-column main-content">
-          <div className="three-columns">
+          <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
-            <h3 className="subtitle">Hawea Flat</h3>
-            <h5>(The Wave)</h5>
-            <p>Time for flow requested to reach location: 1.5 Hours </p>
+            <div className="location-text">
+              <div>
+                <h3 className="subtitle">Hawea Flat Whitewater Waterpark</h3>
+                <h5>(The Wave)</h5>
+              </div>
+
+              <p>Time for flow requested to reach location: 1.5 Hours </p>
+            </div>
           </div>
-          <div className="three-columns middle-column">
+          <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
-            <h3>Albert Park</h3>
-            <p>Time for flow requested to reach location: 5 Hours </p>
-          </div>
-          <div className="three-columns">
-            <img src={locationIcon} alt="Hero Image" />
-            <h3>Camphill</h3>
-            <p>Description</p>
-          </div>
+            <div className="location-text">
+              <h3 className="subtitle">Albert Town Campground</h3>
+              {/* <br /> */}
+              <p className="location-paragraph">Time for flow requested to reach location: 2 Hours </p>
+              </div>
+            </div>
         </div>
       </div>
       <div className="flow-requests">
         <div className="section-container">
           <div className="layout-column">
             <div className="two-columns">
-              <h2 className="subsection-heading">Current Flows</h2>
-              <div className="layout-column">
+              <h2 className="subsection-heading">Active Flow Requests</h2>
+              <div className="">
                 <table className="active-requests">
                   <tr>
                     <th>Day</th>
@@ -102,7 +114,11 @@ function Information () {
                 </tr>
               </table>
             </div>
-            <Button
+            <Button variant="button-primary" destination="/RequestForm">
+              Send a wave request
+            </Button>
+
+            {/* <Button
               id="toForm"
               variant="button-primary"
 
@@ -110,7 +126,7 @@ function Information () {
                 <Link to="/RequestForm">
               Send a wave request
              </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
