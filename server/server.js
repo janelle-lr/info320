@@ -6,6 +6,11 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const nodemailer = require("nodemailer");
+let formInputsMap = {};
+
+// // Add key-value pairs
+// hashMap['key1'] = 'value1';
+// hashMap['key2'] = 'value2';
 
 app.use(express.json());
 app.use(cors());
@@ -65,15 +70,26 @@ function getData(req, res) {
   }
 }
 
-function postData(req, res, schema, input) {
+function postData(req, res, schema, input, key) {
   const fileName = "formInput.json";
   const schemaModel = schema;
   const item = input;
   //   const jsonObj2 = JSON.stringify(item);
   const jsonObj2 = item;
   const jsonArray = [];
+  // const newJsonEntry = input;
 
   if (fs.existsSync(fileName)) {
+    // if (key in formInputsMap){
+    //   console.log("key exists");
+    // }
+
+    fs.readFile(fileName, (err, data) => {
+      if (err) {
+        res.status(500).json(err);
+      } else {
+      }
+    });
     fs.readFile(fileName, (err, data) => {
       if (err) {
         res.status(500).json(err);
@@ -107,6 +123,15 @@ function postData(req, res, schema, input) {
         console.log("saved to formInput.json");
       }
     });
+    // fs.writeFile(fileName, JSON.stringify(newJsonEntry), (err) => {
+    //   if (err) {
+    //     res.status(500).json(err);
+    //   } else {
+    //     res.status(200).send("saved to formInput.json");
+    //     console.log("saved to formInput.json");
+    //     formInputsMap[key] = newJsonEntry;
+    //   }
+    // });
   }
 
   //   const schemaModel = schema;
@@ -169,31 +194,31 @@ app.post("/initialForm/postData", (req, res) => {
     },
   });
 
-  console.log("email = " + input.applicantDetails.email);
-  // Create a transport using a local SMTP server (e.g., MailHog)
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587, // SMTP server port (MailHog default)
-    ignoreTLS: true, // Disable TLS (for local testing)
-  });
+  // console.log("email = " + input.applicantDetails.email);
+  // // Create a transport using a local SMTP server (e.g., MailHog)
+  // const transporter = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port: 587, // SMTP server port (MailHog default)
+  //   ignoreTLS: true, // Disable TLS (for local testing)
+  // });
 
-  // Define email data
-  const mailOptions = {
-    from: "limrajane@gmail.com", // Sender's email address
-    to: input.applicantDetails.email, // Recipient's email address
-    subject: "Test Email", // Email subject
-    text: "This is a test email sent without authentication.", // Plain text body
-  };
+  // // Define email data
+  // const mailOptions = {
+  //   from: "limrajane@gmail.com", // Sender's email address
+  //   to: input.applicantDetails.email, // Recipient's email address
+  //   subject: "Test Email", // Email subject
+  //   text: "This is a test email sent without authentication.", // Plain text body
+  // };
 
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending email:", error);
-    } else {
-      console.log("Email sent:", info.response);
-    }
-  });
-  //postData(req, res, form1Schema, input);
+  // // Send the email
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     console.error("Error sending email:", error);
+  //   } else {
+  //     console.log("Email sent:", info.response);
+  //   }
+  // });
+  postData(req, res, form1Schema, input, "applicantDetails");
   //   let items = JSON.stringify(item);
 
   //   fs.writeFile("items.json", items, (err) => {

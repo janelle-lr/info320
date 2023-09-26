@@ -47,7 +47,7 @@ function Information() {
             <img src={locationIcon} alt="Hero Image" />
             <div className="location-text">
               <div>
-                <h3 className="subtitle">Hawea Flat</h3>
+                <h3 className="subtitle">Hawea Flat Whitewater Waterpark</h3>
                 <h5>(The Wave)</h5>
               </div>
 
@@ -57,9 +57,9 @@ function Information() {
           <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
             <div className="location-text">
-              <h3 className="subtitle">Albert Park</h3>
+              <h3 className="subtitle">Albert Town Campground</h3>
               {/* <br /> */}
-              <p className="location-paragraph">Time for flow requested to reach location: 5 Hours </p>
+              <p className="location-paragraph">Time for flow requested to reach location: 2 Hours </p>
               </div>
             </div>
         </div>
