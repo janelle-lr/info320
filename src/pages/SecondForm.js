@@ -99,6 +99,44 @@ const saveFormData2 = () => {
   }
 };
 
+// converting to csv const
+const convertToCSV = () => {
+  // data from form output in one object
+  const { firstName, lastName, organization, address, email, phoneNumber, qualifications} = formData2;
+// headers + data
+  const csvData = [
+    ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
+    [firstName, lastName, organization, address, email, phoneNumber, qualifications]
+  ];
+
+  // converts two-dimensional array into csv format 
+    // map iterates over each row, and joins each row into a string, with each element separated by a comma.
+  return csvData.map(row => row.join(',')).join('\n');
+};
+
+
+// download csv
+const downloadCSV = () => {
+  // converts object that has been formatted in csv to actual csv
+  const csvData = convertToCSV();
+  // creates blob with two arguments, first is the array containing data, second specifies the type of data
+  const csvBlob = new Blob([csvData], { type: 'text/csv' });
+  // generates url for downloading csv
+  const csvUrl = URL.createObjectURL(csvBlob);
+
+  // downloads with url
+  const a = document.createElement('a');
+  a.style.display = 'none';
+  a.href = csvUrl;
+  a.download = 'form_data.csv';
+  document.body.appendChild(a);
+
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(csvUrl);
+};
+
 
   function postData() {
     const firstName = document.getElementsByName("firstName")[0].value;

@@ -64,7 +64,6 @@ function Information() {
             </div>
         </div>
       </div>
-
       <div className="flow-requests">
         <div className="section-container">
           <div className="layout-column">
@@ -122,9 +121,7 @@ function Information() {
             {/* <Button
               id="toForm"
               variant="button-primary"
-            //   to="/RequestForm"
-              
-            //   onClick=""
+
             >
                 <Link to="/RequestForm">
               Send a wave request
