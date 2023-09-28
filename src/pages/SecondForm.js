@@ -106,7 +106,7 @@ const saveFormData2 = () => {
     const organization = document.getElementsByName("organization")[0].value;
     const address = document.getElementsByName("address")[0].value;
     const email = document.getElementsByName("email")[0].value;
-    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
+    const cellPhone = document.getElementsByName("cellPhone")[0].value;
     const qualifications = document.getElementsByName("qualifications")[0].value;
   
     const formData = {
@@ -115,7 +115,7 @@ const saveFormData2 = () => {
       organization,
       address,
       email,
-      phoneNumber,
+      cellPhone,
       qualifications,
     };
     alert(JSON.stringify(formData));
@@ -207,7 +207,7 @@ const saveFormData2 = () => {
 
           </div>
 
-          {errors.organization && (
+          {errors.address && (
               <div className="error-message">{errors.address}</div>
             )}
 
@@ -226,7 +226,8 @@ const saveFormData2 = () => {
               className="text-box five-twelfths"
               type="tel"
               name="cellPhone"
-              placeholder="Mobile Number" value={formData2.cellPhone}
+              placeholder="Mobile Number" 
+              value={formData2.cellPhone}
               onChange={handleChange}
             />
           </div>
@@ -247,6 +248,8 @@ const saveFormData2 = () => {
             type="text"
             name="qualifications"
             placeholder="Qualifications"
+            value={formData2.qualifications}
+            onChange={handleChange}
           />
         </form>
         <Button variant="button-primary" onClick={postData}>
