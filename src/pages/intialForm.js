@@ -10,7 +10,7 @@ export const Formpage1 = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/initialForm").then((res) => res.json());
+    fetch("http://localhost:5500/initialForm").then((res) => res.json());
     // .then((data) => setMessage(data.message));
   }, []);
 
@@ -32,7 +32,7 @@ export const Formpage1 = () => {
     };
     alert(JSON.stringify(formData));
 
-    fetch("http://localhost:5000/initialForm/postData", {
+    fetch("http://localhost:5500/initialForm/postData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -145,8 +145,8 @@ export const Formpage1 = () => {
 
   return (
     <div className="request-form section-container">
+      <NavigationBarForm />
       <div className="first-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Applicant Details</h1>
         {/* <h1 className="form-heading">{message}</h1> */}

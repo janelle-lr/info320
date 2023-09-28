@@ -16,7 +16,7 @@ export const Formpage2 = () => {
     address: "",
     email: "",
     cellPhone: "",
-    Qualifications: ""
+    qualifications: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -144,7 +144,7 @@ const downloadCSV = () => {
     const organization = document.getElementsByName("organization")[0].value;
     const address = document.getElementsByName("address")[0].value;
     const email = document.getElementsByName("email")[0].value;
-    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
+    const cellPhone = document.getElementsByName("cellPhone")[0].value;
     const qualifications = document.getElementsByName("qualifications")[0].value;
   
     const formData = {
@@ -153,12 +153,12 @@ const downloadCSV = () => {
       organization,
       address,
       email,
-      phoneNumber,
+      cellPhone,
       qualifications,
     };
     alert(JSON.stringify(formData));
   
-    fetch("http://localhost:5000/SecondForm/postData", {
+    fetch("http://localhost:5500/SecondForm/postData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -177,14 +177,15 @@ const downloadCSV = () => {
   }
   return (
     <div className="request-form section-container">
+    <NavigationBarForm />
       <div className="first-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Trip Leader</h1>
         <form className="container label-invisible">
-          <div className="row">
+        <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
+              id="posting"
               className="text-box five-twelfths"
               type="text"
               name="firstName"
@@ -192,6 +193,7 @@ const downloadCSV = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+
             <label htmlFor="lastName">Last Name</label>
             <input
               className="text-box seven-twelfths"
@@ -201,29 +203,25 @@ const downloadCSV = () => {
               value={formData2.lastName}
               onChange={handleChange}
             />
-          </div>
-          <div className="errorMessage">
             {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-            {errors.firstName && (
-              <div className="error-message">{errors.firstName}</div>
-            )}
-            {errors.lastName && (
-              <div className="error-message">{errors.lastName}</div>
-            )}
-            {errors.organization && (
-              <div className="error-message">{errors.organization}</div>
-            )}
-            {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
-            {errors.email && (
-              <div className="error-message">{errors.email}</div>
-            )}
-            {errors.cellPhone && (
-              <div className="error-message">{errors.cellPhone}</div>
-            )}
+
+            {/* 
+            
+            
+             */}
           </div>
 
+          <div className="row">
+          {errors.firstName && (
+            <div className="error-message five-twelfths">{errors.firstName}</div>
+          )}
+          {errors.lastName && (
+            <div className="error-message seven-twelfths">{errors.lastName}</div>
+          )}
+          </div>
+
+
+          <div class="row">
           <label htmlFor="organization">Organization</label>
           <input
             className="text-box full-width"
@@ -232,6 +230,9 @@ const downloadCSV = () => {
             placeholder="Organization" value={formData2.organization}
             onChange={handleChange}
           />
+           {errors.organization && (
+              <div className="error-message">{errors.organization}</div>
+            )}
 
           <label htmlFor="address">Address</label>
           <input
@@ -241,6 +242,12 @@ const downloadCSV = () => {
             placeholder="Full Address" value={formData2.address}
             onChange={handleChange}
           />
+
+          </div>
+
+          {errors.address && (
+              <div className="error-message">{errors.address}</div>
+            )}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -256,10 +263,21 @@ const downloadCSV = () => {
             <input
               className="text-box five-twelfths"
               type="tel"
-              name="phoneNumber"
-              placeholder="Mobile Number" value={formData2.cellPhone}
+              name="cellPhone"
+              placeholder="Mobile Number" 
+              value={formData2.cellPhone}
               onChange={handleChange}
             />
+          </div>
+
+
+          <div className="row">
+          {errors.email && (
+            <div className="error-message seven-twelfths">{errors.email}</div>
+          )}
+          {errors.cellPhone && (
+            <div className="error-message five-twelfths">{errors.cellPhone}</div>
+          )}
           </div>
 
           <label htmlFor="qualifications">Qualifications</label>
@@ -268,6 +286,8 @@ const downloadCSV = () => {
             type="text"
             name="qualifications"
             placeholder="Qualifications"
+            value={formData2.qualifications}
+            onChange={handleChange}
           />
         </form>
         <Button variant="button-primary" onClick={postData}>
