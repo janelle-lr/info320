@@ -82,68 +82,13 @@ export const Formpage4 = () => {
   };
   
   return (
-<<<<<<< HEAD
-    <div className="form-4">
-      <div className="form-v">
-        < NavigationBar/>
-        <div className="form-title"> Flow and Activity Details </div>
-          <div className="form-title-secondary">Secondary Preference Flow Details</div>
-            <div className="form-text">In case your preferred flow request gets declined, 
-            please provide other suitable times and areas the activity can be undertake.</div>
-  
-        <div className="organization">
-          <label htmlFor="organization" >
-          </label>
-          <input
-            type="text"
-            id="organization"
-            name="organization"
-            className="full-width"
-            placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
-          />
-        </div>
-        <div className="address">
-          <label htmlFor="address">
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            className="full-width"
-            placeholder="Area of Request"
-          />
-        </div>
-        
-        <div className="email">
-          <label htmlFor="email">
-          </label>
-          <input
-            type="Date"
-            id="email"
-            name="email"
-            className="email-width"
-            placeholder="Start date & time (DD/MM/YYYY 00:00)"
-          />
-        </div>
-        <div className="cell-number">
-          <label htmlFor="cellPhone">
-          </label>
-          <input
-            type="date"
-            id="cellPhone"
-            name="cellPhone"
-            className="cell-width"
-            placeholder="End date & time (DD/MM/YYYY 00:00)"
-          />
-        </div>
-=======
     <div className="request-form section-container">
       <NavigationBarForms/>
       <div className="first-form main-content">
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">Secondary Preference Flow Details</h2>
         <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertake.</p>
->>>>>>> 7774d4cc8b2850331d6c202543f5ab58b40926d4
+
 
         <form className="container">
           <div className="label-invisible">
