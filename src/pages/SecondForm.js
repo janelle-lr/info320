@@ -120,7 +120,7 @@ const saveFormData2 = () => {
     };
     alert(JSON.stringify(formData));
   
-    fetch("http://localhost:5000/SecondForm/postData", {
+    fetch("http://localhost:5500/SecondForm/postData", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
