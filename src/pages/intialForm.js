@@ -145,8 +145,8 @@ export const Formpage1 = () => {
 
   return (
     <div className="request-form section-container">
+      <NavigationBarForm />
       <div className="first-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Applicant Details</h1>
         {/* <h1 className="form-heading">{message}</h1> */}

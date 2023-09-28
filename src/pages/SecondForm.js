@@ -16,7 +16,7 @@ export const Formpage2 = () => {
     address: "",
     email: "",
     cellPhone: "",
-    Qualifications: ""
+    qualifications: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -139,14 +139,15 @@ const saveFormData2 = () => {
   }
   return (
     <div className="request-form section-container">
+    <NavigationBarForm />
       <div className="first-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Trip Leader</h1>
         <form className="container label-invisible">
-          <div className="row">
+        <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
+              id="posting"
               className="text-box five-twelfths"
               type="text"
               name="firstName"
@@ -154,6 +155,7 @@ const saveFormData2 = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+
             <label htmlFor="lastName">Last Name</label>
             <input
               className="text-box seven-twelfths"
@@ -163,29 +165,25 @@ const saveFormData2 = () => {
               value={formData2.lastName}
               onChange={handleChange}
             />
-          </div>
-          <div className="errorMessage">
             {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-            {errors.firstName && (
-              <div className="error-message">{errors.firstName}</div>
-            )}
-            {errors.lastName && (
-              <div className="error-message">{errors.lastName}</div>
-            )}
-            {errors.organization && (
-              <div className="error-message">{errors.organization}</div>
-            )}
-            {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
-            {errors.email && (
-              <div className="error-message">{errors.email}</div>
-            )}
-            {errors.cellPhone && (
-              <div className="error-message">{errors.cellPhone}</div>
-            )}
+
+            {/* 
+            
+            
+             */}
           </div>
 
+          <div className="row">
+          {errors.firstName && (
+            <div className="error-message five-twelfths">{errors.firstName}</div>
+          )}
+          {errors.lastName && (
+            <div className="error-message seven-twelfths">{errors.lastName}</div>
+          )}
+          </div>
+
+
+          <div class="row">
           <label htmlFor="organization">Organization</label>
           <input
             className="text-box full-width"
@@ -194,6 +192,9 @@ const saveFormData2 = () => {
             placeholder="Organization" value={formData2.organization}
             onChange={handleChange}
           />
+           {errors.organization && (
+              <div className="error-message">{errors.organization}</div>
+            )}
 
           <label htmlFor="address">Address</label>
           <input
@@ -203,6 +204,12 @@ const saveFormData2 = () => {
             placeholder="Full Address" value={formData2.address}
             onChange={handleChange}
           />
+
+          </div>
+
+          {errors.organization && (
+              <div className="error-message">{errors.address}</div>
+            )}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -218,10 +225,20 @@ const saveFormData2 = () => {
             <input
               className="text-box five-twelfths"
               type="tel"
-              name="phoneNumber"
+              name="cellPhone"
               placeholder="Mobile Number" value={formData2.cellPhone}
               onChange={handleChange}
             />
+          </div>
+
+
+          <div className="row">
+          {errors.email && (
+            <div className="error-message seven-twelfths">{errors.email}</div>
+          )}
+          {errors.cellPhone && (
+            <div className="error-message five-twelfths">{errors.cellPhone}</div>
+          )}
           </div>
 
           <label htmlFor="qualifications">Qualifications</label>

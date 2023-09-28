@@ -13,7 +13,12 @@ import RequiredStar from "../components/RequiredStar";
 
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
-    calander: "",
+    flowLevel: "",
+    Breif: "",
+    participants: "",
+    NoParticpants: "",
+    startDateTime: "",
+    endDateTime: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -28,14 +33,21 @@ export const Formpage3 = () => {
     if (!formData3.Breif) {
       newErrors.Breif = "Breif is required";
     }
-    if (!formData3.FlowRange) {
-      newErrors.FlowRange = "Flow Range is required";
-    }
-    if (!formData3.particpants) {
-      newErrors.FlowRange = "A short description of particpants is needed";
+
+    if (!formData3.participants) {
+      newErrors.participants = "A short description of particpants is needed";
     }
     if (!formData3.NoParticpants) {
       newErrors.NoParticpants = "Number of participants is required";
+    }
+    if (!formData3.flowLevel) {
+      newErrors.flowLevel = "Flow Level is required";
+    }
+    if (!formData3.startDateTime) {
+      newErrors.startDateTime = "Start date time is required";
+    }
+    if (!formData3.endDateTime) {
+      newErrors.endDateTime = "End date time is required";
     }
     // if (!formData3.selectedValue) {
     //   newErrors.selectedValue = "Area for activity is required";
@@ -49,8 +61,10 @@ export const Formpage3 = () => {
       // Validation passed, navigate to the next form page
       // You can also submit the form data to your server here
       // For now, let's print the data to the console
-      console.log(formData3);
+      // console.log(formData3);
+      console.log("Next button clicked"); // Add this line for debugging
 
+  
       // Reset the errors state to clear error messages
       setErrors({});
       saveFormData3();
@@ -60,6 +74,8 @@ export const Formpage3 = () => {
       setErrors(newErrors);
     }
   };
+
+  
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
@@ -81,8 +97,8 @@ export const Formpage3 = () => {
   };
   return (
     <div className="request-form">
+    <NavigationBarForm />
       <div className="third-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">First Preference Flow Details</h2>
@@ -98,70 +114,41 @@ export const Formpage3 = () => {
               name="flowLevel"
               className="text-box full-width"
               placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
-              value={formData3.FlowRange}
+              value={formData3.flowLevel}
               onChange={handleChange}
             />
-
-            <label htmlFor="requestArea">Area of Request</label>
-            <input
-              type="text"
-              name="requestArea"
-              className="text-box full-width"
-              placeholder="Area of Request"
-            />
-            <Dropdown />
-          </div>
-          {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-          <div className="errorMessagePrompt">
-            {errors.FlowRange && (
-              <div className="error-message">{errors.FlowRange}</div>
+            
+            </div>
+            {errors.flowLevel && (
+              <div className="error-message">{errors.flowLevel}</div>
             )}
-            {errors.calander && (
-              <div className="error-message">{errors.calander}</div>
-            )}
-            {errors.Breif && (
-              <div className="error-message">{errors.Breif}</div>
-            )}
-            {errors.NoParticpants && (
-              <div className="error-message">{errors.NoParticpants}</div>
-            )}
-            {errors.particpants && (
-              <div className="error-message">{errors.particpants}</div>
-            )}
-          </div>
+           
+            <Dropdown />         
 
           <div className="row">
-            {/* < Calander/> */}
-
-            <div className="calander">
-              <label htmlFor="calander"></label>
-              <input
-                type="datetime-local"
-                id="calander"
-                name="calander"
-                className="full-width1"
-                placeholder=""
-                value={formData3.calander}
-                onChange={handleChange}
-              />
-            </div>
-            {/* <label htmlFor="startDateTime">Start date & time</label>
-            <input
-              type="datetime-local"
-              name="startDateTime"
-              className="text-box six-twelfths calander"
-              placeholder="Start date & time (DD/MM/YYYY 00:00)"
+            <label htmlFor="startDateTime">Start date & time</label>
+            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" 
+            value={formData3.startDateTime}
+            onChange={handleChange}
             />
 
             <label htmlFor="endDateTime">End date & time</label>
-            <input
-              type="datetime-local"
-              name="endDateTime"
-              className="text-box six-twelfths calander"
-              placeholder="End date & time (DD/MM/YYYY 00:00)"
-            /> */}
+            <input type="datetime-local" name="endDateTime" className="text-box six-twelfths" placeholder="End date & time (DD/MM/YYYY 00:00)" 
+            value={formData3.endDateTime}
+            onChange={handleChange}
+            />
+          </div>
+
+          <div className="row">
+          {errors.startDateTime && (
+            <div className="error-message six-twelfths">{errors.startDateTime}</div>
+          )}
+          {errors.endDateTime && (
+            <div className="error-message six-twelfths">{errors.endDateTime}</div>
+          )}
           </div>
         </form>
+
         <br />
         <form className="container">
           <div className="label-invisible">
@@ -169,12 +156,15 @@ export const Formpage3 = () => {
             <label htmlFor="activityDetails">Brief activity description</label>
             <textarea
               type="text"
-              name="activityDetails"
+              name="Breif"
               className="text-box full-width"
               placeholder="Brief activity description"
               value={formData3.Breif}
               onChange={handleChange}
             />
+            {errors.Breif && (
+              <div className="error-message">{errors.Breif}</div>
+            )}
 
             <div className="row">
               <label htmlFor="participants">
@@ -185,20 +175,29 @@ export const Formpage3 = () => {
                 type="text"
                 name="participants"
                 placeholder="Brief participant(s) description"
-                value={formData3.particpants}
+                value={formData3.participants}
                 onChange={handleChange}
               />
-
-              <label htmlFor="participantNum">Number of Participants</label>
+              
+              <label htmlFor="NoParticpants">Number of participants</label>
               <input
                 className="text-box four-twelfths"
                 type="number"
-                name="participantNum"
-                placeholder="Number of Participants"
+                name="NoParticpants"
+                placeholder="Number of participants"
                 value={formData3.NoParticpants}
                 onChange={handleChange}
               />
             </div>
+            
+          </div>
+          <div className="row">
+          {errors.participants && (
+            <div className="error-message eight-twelfths">{errors.participants}</div>
+          )}
+          {errors.NoParticpants && (
+            <div className="error-message four-twelfths">{errors.NoParticpants}</div>
+          )}
           </div>
         </form>
 
@@ -216,13 +215,16 @@ export const Formpage3 = () => {
           rightButtonDest="/FourthForm"
         /> */}
 
-        <BottomButtons
-          page="3"
+        {/* <BottomButtons
+          page="4"
           leftButton="Back"
           leftButtonDest="/SecondForm"
           rightButton="Next"
           rightOnClick={nextClick}
-        />
+        /> */}
+
+        <BottomButtons  page="4" leftButton="Back" leftButtonDest="/ThirdForm" rightButton="Next" rightOnClick={nextClick} />
+
       </div>
     </div>
   );

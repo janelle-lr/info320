@@ -45,8 +45,7 @@ function Dropdown() {
   return (
     <div className="dropdown-container">
       {/* <label htmlFor="dropdown">Area of Request</label> */}
-      <select id="dropdown" value={selectedValue} onChange={handleChange}>
-        <option value="">Area of Request</option>
+      <select className="text-box full-width"  placeholder="Area of Request" value={selectedValue} onChange={handleChange} >
         <option value="Hawea River (The wave)">Hawea River (The wave)</option>
         <option value="Camphill">Camphill</option>
       </select>
