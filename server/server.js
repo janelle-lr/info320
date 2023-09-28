@@ -50,6 +50,35 @@ const form2Schema = new Schema({
 const form1Model = mongoose.model("form1Model", form1Schema);
 const form2Model = mongoose.model("form2Model", form2Schema);
 
+app.post("/postTest", (req, res) => {
+  // // res.send("Hello World");
+  // // res.sendFile(path.resolve(__dirname, './src', 'index.js'));
+  // res.json({ message: "Hello from server!" });
+  //const schemaModel = schema;
+  const fileName = "formInput.json";
+  const item =  {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      organization: req.body.organization,
+      address: req.body.address,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+    };
+
+    console.log("req body " +  req.body);
+
+  const items = JSON.stringify(item);
+
+  fs.writeFile(fileName, items, (err) => {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.status(200).send("saved to formInput.json");
+      console.log("saved to formInput.json");
+    }
+  });
+});
+
 function getData(req, res) {
   // app.get('/loadServer', (req, res) => {
   const fileName = "formInput.json";

@@ -15,24 +15,39 @@ export const Formpage1 = () => {
   }, []);
 
   function postData() {
-    const firstName = document.getElementsByName("firstName")[0].value;
-    const lastName = document.getElementsByName("lastName")[0].value;
-    const organization = document.getElementsByName("organization")[0].value;
-    const address = document.getElementsByName("address")[0].value;
-    const email = document.getElementsByName("email")[0].value;
-    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
+    // const firstName = document.getElementsByName("firstName")[0].value;
+    // const lastName = document.getElementsByName("lastName")[0].value;
+    // const organization = document.getElementsByName("organization")[0].value;
+    // const address = document.getElementsByName("address")[0].value;
+    // const email = document.getElementsByName("email")[0].value;
+    // const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
 
-    const formData = {
-      firstName,
-      lastName,
-      organization,
-      address,
-      email,
-      phoneNumber,
-    };
-    alert(JSON.stringify(formData));
+    // const formData = {
+    //   firstName,
+    //   lastName,
+    //   organization,
+    //   address,
+    //   email,
+    //   phoneNumber,
+    // };
+    // alert(JSON.stringify(formData));
+    alert(localStorage.getItem("formData"));
+    alert("pasrsing");
 
-    fetch("http://localhost:5000/initialForm/postData", {
+    // Model.item
+    // const parsedData = new Mod
+    
+    // {
+    //   formData.firstName: String,
+    //   lastName: "",
+    //   organization: "",
+    //   address: "",
+    //   email: "",
+    //   phoneNumber: "",
+    // }
+
+    // fetch("http://localhost:5000/initialForm/postData", {
+      fetch("http://localhost:5000/postTest", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -49,6 +64,8 @@ export const Formpage1 = () => {
         alert("An error occurred while connecting.");
       });
   }
+
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -179,10 +196,12 @@ export const Formpage1 = () => {
             
              */}
           </div>
-          <div className="row">
+          {/* <div className="row"> */}
+            <div className="test five-twelfths">
           {errors.firstName && (
             <div className="error-message five-twelfths">{errors.firstName}</div>
           )}
+          {/* </div> */}
           {errors.lastName && (
             <div className="error-message seven-twelfths">{errors.lastName}</div>
           )}
@@ -253,9 +272,9 @@ export const Formpage1 = () => {
           </Button>
         </div> */}
         </form>
-        {/* <Button variant="button-primary" onClick={postData}>
+        <Button variant="button-primary" onClick={postData}>
           Post
-        </Button> */}
+        </Button>
         {/* <BottomButtons
           page="2"
           leftButton="Back"
