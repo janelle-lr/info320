@@ -13,13 +13,13 @@ import RequiredStar from "../components/RequiredStar";
 
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
-    flowLevel: "",
-    Breif: "",
-    participants: "",
-    NoParticpants: "",
-    startDateTime: "",
-    endDateTime: ""
-  });
+        flowLevel: "",
+        Breif: "",
+        participants: "",
+        NoParticpants: "",
+        startDateTime: "",
+        endDateTime: ""  
+      });
 
   const [errors, setErrors] = useState({});
 
@@ -27,31 +27,28 @@ export const Formpage3 = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData3.calander) {
-      newErrors.calander = "Date is required";
-    }
-    if (!formData3.Breif) {
-      newErrors.Breif = "Breif is required";
-    }
 
-    if (!formData3.participants) {
-      newErrors.participants = "A short description of particpants is needed";
-    }
-    if (!formData3.NoParticpants) {
-      newErrors.NoParticpants = "Number of participants is required";
-    }
-    if (!formData3.flowLevel) {
-      newErrors.flowLevel = "Flow Level is required";
-    }
-    if (!formData3.startDateTime) {
-      newErrors.startDateTime = "Start date time is required";
-    }
-    if (!formData3.endDateTime) {
-      newErrors.endDateTime = "End date time is required";
-    }
-    // if (!formData3.selectedValue) {
-    //   newErrors.selectedValue = "Area for activity is required";
-    // }
+          if (!formData3.flowLevel) {
+            newErrors.flowLevel = "Flow Level is required";
+          }
+          if (!formData3.startDateTime) {
+            newErrors.startDateTime = "Start date time is required";
+          }
+          if (!formData3.endDateTime) {
+            newErrors.endDateTime = "End date time is required";
+          }
+    
+          if (!formData3.Breif) {
+            newErrors.Breif = "Breif is required";
+          }
+      
+          if (!formData3.participants) {
+            newErrors.participants = "A short description of particpants is needed";
+          }
+          if (!formData3.NoParticpants) {
+            newErrors.NoParticpants = "Number of participants is required";
+          }
+          
     return newErrors;
   };
 
@@ -61,10 +58,8 @@ export const Formpage3 = () => {
       // Validation passed, navigate to the next form page
       // You can also submit the form data to your server here
       // For now, let's print the data to the console
-      // console.log(formData3);
-      console.log("Next button clicked"); // Add this line for debugging
+      console.log(formData3);
 
-  
       // Reset the errors state to clear error messages
       setErrors({});
       saveFormData3();
@@ -74,8 +69,6 @@ export const Formpage3 = () => {
       setErrors(newErrors);
     }
   };
-
-  
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
@@ -99,7 +92,6 @@ export const Formpage3 = () => {
     <div className="request-form">
     <NavigationBarForm />
       <div className="third-form main-content">
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">First Preference Flow Details</h2>
 
@@ -114,16 +106,18 @@ export const Formpage3 = () => {
               name="flowLevel"
               className="text-box full-width"
               placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
-              value={formData3.flowLevel}
+              value={formData3.FlowRange}
               onChange={handleChange}
             />
-            
-            </div>
-            {errors.flowLevel && (
+          </div>
+          {errors.flowLevel && (
               <div className="error-message">{errors.flowLevel}</div>
             )}
-           
-            <Dropdown />         
+
+          <Dropdown 
+          name="Dropdown" 
+          value={formData3.Dropdown}
+          onChange={handleChange}/>
 
           <div className="row">
             <label htmlFor="startDateTime">Start date & time</label>
@@ -147,8 +141,8 @@ export const Formpage3 = () => {
             <div className="error-message six-twelfths">{errors.endDateTime}</div>
           )}
           </div>
+         
         </form>
-
         <br />
         <form className="container">
           <div className="label-invisible">
@@ -162,8 +156,9 @@ export const Formpage3 = () => {
               value={formData3.Breif}
               onChange={handleChange}
             />
+
             {errors.Breif && (
-              <div className="error-message">{errors.Breif}</div>
+            <div className="error-message">{errors.Breif}</div>
             )}
 
             <div className="row">
@@ -179,52 +174,35 @@ export const Formpage3 = () => {
                 onChange={handleChange}
               />
               
-              <label htmlFor="NoParticpants">Number of participants</label>
+              <label htmlFor="NoParticpants">Number of Participants</label>
               <input
                 className="text-box four-twelfths"
                 type="number"
                 name="NoParticpants"
-                placeholder="Number of participants"
+                placeholder="Number of Participants"
                 value={formData3.NoParticpants}
                 onChange={handleChange}
               />
             </div>
-            
+
+            <div className="row">
+              {errors.participants && (
+                <div className="error-message eight-twelfths">{errors.participants}</div>
+              )}
+              {errors.NoParticpants && (
+                <div className="error-message four-twelfths">{errors.NoParticpants}</div>
+                )}
           </div>
-          <div className="row">
-          {errors.participants && (
-            <div className="error-message eight-twelfths">{errors.participants}</div>
-          )}
-          {errors.NoParticpants && (
-            <div className="error-message four-twelfths">{errors.NoParticpants}</div>
-          )}
+
           </div>
         </form>
-
-        {/* <div className="Next-button">
-          <div className="overlap-group">
-            <button type='button' className="Next"> Next</button>
-          </div>
-        </div>  */}
-        {/* 
         <BottomButtons
           page="4"
           leftButton="Back"
           leftButtonDest="/SecondForm"
           rightButton="Next"
-          rightButtonDest="/FourthForm"
-        /> */}
-
-        {/* <BottomButtons
-          page="4"
-          leftButton="Back"
-          leftButtonDest="/SecondForm"
-          rightButton="Next"
           rightOnClick={nextClick}
-        /> */}
-
-        <BottomButtons  page="4" leftButton="Back" leftButtonDest="/ThirdForm" rightButton="Next" rightOnClick={nextClick} />
-
+        />
       </div>
     </div>
   );
