@@ -67,7 +67,6 @@ function MyForm() {
   };
 
   return (
-<<<<<<< HEAD
     <div className="form-4">
       <div className="form-v">
         < NavigationBar/>
@@ -121,14 +120,6 @@ function MyForm() {
             placeholder="End date & time (DD/MM/YYYY 00:00)"
           />
         </div>
-=======
-    <div className="request-form section-container">
-      <div className="first-form main-content">
-        <img src={logo} className="form-contact-logo" />
-        <h1 className="form-heading">Flow and Activity Details</h1>
-        <h2 className="form-title-secondary">Secondary Preference Flow Details</h2>
-        <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertake.</p>
->>>>>>> 7774d4cc8b2850331d6c202543f5ab58b40926d4
 
         <form className="container">
           <div className="label-invisible">
