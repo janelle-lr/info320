@@ -293,6 +293,9 @@ const downloadCSV = () => {
         <Button variant="button-primary" onClick={postData}>
           Post
         </Button>
+        <Button variant="button-primary" onClick={downloadCSV}>
+          Download CSV
+         </Button>
         {/* <BottomButtons
           page="3"
           leftButton="Back"
