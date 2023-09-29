@@ -6,7 +6,7 @@ import "../components/Texts.css";
 // Components
 import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForms from "../components/NavivagtionBarForms.js";
+import NavigationBarForm from "../components/NavivagtionBarForms.js";
 import Button from '../components/Button';
 
 function MyForm() {
@@ -69,7 +69,8 @@ function MyForm() {
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
-        <img src={logo} className="form-contact-logo" />
+        <NavigationBarForm />
+        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">Secondary Preference Flow Details</h2>
         <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertake.</p>

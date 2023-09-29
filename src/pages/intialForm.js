@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Form.css";
+
 // Components
 import BottomButtons from "../components/FormButtons";
 import Button from "../components/Button";
@@ -7,72 +7,13 @@ import logo from "../images/contactLogo.png";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 
 export const Formpage1 = () => {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:5000/initialForm").then((res) => res.json());
-    // .then((data) => setMessage(data.message));
-  }, []);
-
-  function postData() {
-    // const firstName = document.getElementsByName("firstName")[0].value;
-    // const lastName = document.getElementsByName("lastName")[0].value;
-    // const organization = document.getElementsByName("organization")[0].value;
-    // const address = document.getElementsByName("address")[0].value;
-    // const email = document.getElementsByName("email")[0].value;
-    // const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
-
-    // const formData = {
-    //   firstName,
-    //   lastName,
-    //   organization,
-    //   address,
-    //   email,
-    //   phoneNumber,
-    // };
-    // alert(JSON.stringify(formData));
-    alert(localStorage.getItem("formData"));
-    alert("pasrsing");
-
-    // Model.item
-    // const parsedData = new Mod
-    
-    // {
-    //   formData.firstName: String,
-    //   lastName: "",
-    //   organization: "",
-    //   address: "",
-    //   email: "",
-    //   phoneNumber: "",
-    // }
-
-    // fetch("http://localhost:5000/initialForm/postData", {
-      fetch("http://localhost:5000/postTest", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => {
-        if (res.ok) {
-          alert("Success");
-        } else {
-          alert("Error");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while connecting.");
-      });
-  }
-
-  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     organization: "",
     address: "",
     email: "",
-    phoneNumber: "",
+    cellPhone: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -103,10 +44,10 @@ export const Formpage1 = () => {
     // } else if (!/^\d{20}$/.test(formData.cellPhone)) {
     //   newErrors.cellPhone = "Invalid cell phone number format";
     // }
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = "Moblie number is required";
-    } else if (!/^\d{6,15}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = "Mobile number is invalid";
+    if (!formData.cellPhone) {
+      newErrors.cellPhone = "Moblie number is required";
+    } else if (!/^\d{6,15}$/.test(formData.cellPhone)) {
+      newErrors.cellPhone = "Mobile number is invalid";
     }
 
     return newErrors;
@@ -197,14 +138,18 @@ export const Formpage1 = () => {
              */}
           </div>
           {/* <div className="row"> */}
-            <div className="test five-twelfths">
-          {errors.firstName && (
-            <div className="error-message five-twelfths">{errors.firstName}</div>
-          )}
-          {/* </div> */}
-          {errors.lastName && (
-            <div className="error-message seven-twelfths">{errors.lastName}</div>
-          )}
+          <div className="error-message-group">
+            {/* {errors.firstName && ( */}
+            <div className="error-message five-twelfths">
+              {errors.firstName}
+            </div>
+            {/* )} */}
+            {/* </div> */}
+            {/* {errors.lastName && ( */}
+            <div className="error-message seven-twelfths">
+              {errors.lastName}
+            </div>
+            {/* )} */}
           </div>
 
           <label htmlFor="organization">Organization</label>
@@ -216,9 +161,12 @@ export const Formpage1 = () => {
             value={formData.organization}
             onChange={handleChange}
           />
-          {errors.organization && (
-              <div className="error-message">{errors.organization}</div>
-            )}
+          {/* {errors.organization && ( */}
+          {/* <div className="error-message">{errors.organization}</div> */}
+          {/* )} */}
+          {/* <div className="error-message-group"> */}
+          <div className="error-message">{errors.organization}</div>
+          {/* </div> */}
 
           <label htmlFor="address">Address</label>
           <input
@@ -229,9 +177,9 @@ export const Formpage1 = () => {
             value={formData.address}
             onChange={handleChange}
           />
-          {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
+          {/* {errors.address && ( */}
+          <div className="error-message">{errors.address}</div>
+          {/* )} */}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -244,25 +192,27 @@ export const Formpage1 = () => {
               onChange={handleChange}
             />
 
-            <label htmlFor="phoneNumber">Mobile Number</label>
+            <label htmlFor="cellPhone">Mobile Number</label>
             <input
               className="text-box five-twelfths"
               type="tel"
-              name="phoneNumber"
+              name="cellPhone"
               placeholder="Mobile Number"
-              value={formData.phoneNumber}
+              value={formData.cellPhone}
               onChange={handleChange}
             />
           </div>
 
-          <div className="row">
-          {errors.email && (
-              <div className="error-message seven-twelfths">{errors.email}</div>
-            )}
-            {errors.phoneNumber && (
-              <div className="error-message five-twelfths">{errors.phoneNumber}</div>
-            )}
+          <div className="error-message-group">
+            {/* {errors.email && ( */}
+            <div className="error-message seven-twelfths">{errors.email}</div>
+            {/* )} */}
+            {/* {errors.cellPhone && ( */}
+            <div className="error-message five-twelfths">
+              {errors.cellPhone}
             </div>
+            {/* )} */}
+          </div>
           {/* this part below is the button in terms of the validation - i have tried to 
         enable it to the FormButton but my one doesnt work as of now, if you want to see the validation work uncomment below section! */}
 
@@ -272,9 +222,7 @@ export const Formpage1 = () => {
           </Button>
         </div> */}
         </form>
-        <Button variant="button-primary" onClick={postData}>
-          Post
-        </Button>
+
         {/* <BottomButtons
           page="2"
           leftButton="Back"

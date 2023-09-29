@@ -66,7 +66,7 @@
     width: calc(50% - 0.5%);
   }
   
-  .row input:not(:last-child), .test:not(:last-child) {
+  .row input:not(:last-child), .error-message:not(:last-child) {
     margin-right: 1%;
   }
   
@@ -171,23 +171,18 @@
   }
   
   .request-form .error-message {
-    color: #ff0000; /* Red color for error text */
-    font-size: 14px; /* Adjust the font size as needed */
+    color: #ff0000; 
+    font-size: 14px;
     /* margin-left: 50%; */
-    /* margin-bottom: 1%; */
-    
-    display: inline-block;
+    /* margin-bottom: 1%; */    
+    /* display: inline-block; */
   }
-  
-  .test {
-    background-color: #ff0000;
-    display: inline-block;
-    height:10px;
+
+  .error-message-group {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
   }
-  /* .row span {
-    background-color: aqua;
-    border: 1px solid #ff0000;
-  } */
   
   /* Mobile and small devices */
   @media only screen and (max-width: 600px) {

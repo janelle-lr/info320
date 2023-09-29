@@ -1,7 +1,5 @@
 import React from "react";
-import "./Form.css";
 
-// Components
 // Components
 import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
@@ -20,9 +18,9 @@ import CancelPrompt from "../components/CancelPrompt";
 export const Form = () => {
   return (
     <div className="request-form section-container">
-      <NavigationBarForm />
-      {/* <img src={logo} className="form-contact-logo" /> */}
       <div className="first-form main-content">
+        <NavigationBarForm />
+        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Notice</h1>
 
         <p className="form-paragraph">
