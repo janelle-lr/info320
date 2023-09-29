@@ -139,52 +139,57 @@
     white-space: nowrap;
     width: 135px;
   } */
-
-.form .Cancel-button {
-  height: 72px;
-  left: 5%;
-  position: absolute;
-  top: 85%;
-  width: 176px;
-}
-
-.form .div-wrapper {
-  background-color: fffff;
-  border: 3px solid;
-  border-color: #9b9b9b;
-  border-radius: 15px;
-  height: 72px;
-  position: relative;
-  width: 174px;
-}
-
-.form .cancel-text {
-  color: #9b9b9b;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 24px;
-  font-weight: 600;
-  height: 20px;
-  left: 17px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 23px;
-  white-space: nowrap;
-  width: 135px;
-}
-
-.form .page-no {
-  color: #595959;
-  font-family: "Montserrat-Medium", Helvetica;
-  font-size: 24px;
-  font-weight: 500;
-  height: 29px;
-  left: 40%;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 87%;
-  width: 251px;
-}
+  
+  .form .Cancel-button {
+    height: 72px;
+    left: 5%;
+    position: absolute;
+    top: 85%;
+    width: 176px;
+  }
+  
+  .form .div-wrapper {
+    background-color: fffff;
+    border: 3px solid;
+    border-color: #9b9b9b;
+    border-radius: 15px;
+    height: 72px;
+    position: relative;
+    width: 174px;
+  }
+  
+  .form .cancel-text {
+    color: #9b9b9b;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    height: 20px;
+    left: 17px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 23px;
+    white-space: nowrap;
+    width: 135px;
+  }
+  
+  .form .page-no {
+    color: #595959;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 24px;
+    font-weight: 500;
+    height: 29px;
+    left: 40%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 87%;
+    width: 251px;
+  }
+  
+  .BottomButtons {
+    top: 10%;
+  }
+  

@@ -45,7 +45,7 @@ function App() {
 //   const [message, setMessage] = useState("");
 
 //   useEffect(() => {
-//     fetch("http://localhost:5000/message")
+//     fetch("http://localhost:5500/message")
 //       .then((res) => res.json())
 //       .then((data) => setMessage(data.message));
 //   }, []);

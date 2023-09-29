@@ -1,0 +1,135 @@
+.form .Button {
+    margin-left: 85%;
+    margin-top: 48%;
+  }
+  
+  .form {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .form .form-v {
+    background-color: #ffffff;
+    height: 982px;
+    position: relative;
+    width: 1512px;
+  }
+  
+  .form .form-title {
+    color: #303030;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 36px;
+    font-weight: 600;
+    left: 8.5%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 17%;
+  }
+  
+  .form input::placeholder {
+    color: #595959;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 1.5em;
+    font-weight: 500;
+    left: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 23px;
+    width: 491px;
+  }
+  
+  .form .last-name {
+    border: 2px solid;
+    border-color: #ededed;
+    height: 7.9%;
+    left: 46.1%;
+    position: absolute;
+    top: 24%;
+    width: 45.5%;
+    font-size: 1.0em;
+  }
+  
+  .form .firstName {
+    height: 10%;
+    left: 8.5%;
+    position: absolute;
+    top: 24%;
+    width: 46%;
+  }
+  
+  .form input {
+    border: 2px solid;
+    border-color: #ededed;
+    height: 77px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    padding-left: 2%;
+  }
+  
+  .form .half-width {
+    width: 77%;
+    font-size: 1.0em;
+    padding-left: 2%;
+  }
+  
+  .form .full-width {
+    margin: auto;
+    position: absolute;
+    top: 34%;
+    width: 90%;
+    font-size: 1.0em;
+  }
+  
+  .form .address {
+    height: 5%;
+    top: 42%;
+    left: 8.5%;
+    position: absolute;
+    width: 92.5%;
+  }
+  
+  .form .organization {
+    height: 5%;
+    top: 32%;
+    left: 8.5%;
+    position: absolute;
+    width: 92.5%;
+  }
+  
+  .form .email {
+    height: 5%;
+    top: 54%;
+    left: 8.5%;
+    position: absolute;
+    width: 88.5%;
+  }
+  
+  .form .cell-number {
+    height: 5%;
+    top: 54%;
+    left: 55.7%;
+    position: absolute;
+    width: 92.5%;
+  }
+  
+  .form .page-no {
+    color: #595959;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 24px;
+    font-weight: 500;
+    height: 29px;
+    left: 40%;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 87%;
+    width: 251px;
+  }
+  

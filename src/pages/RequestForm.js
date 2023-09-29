@@ -1,15 +1,26 @@
 import React from "react";
-import "./Form.css";
 
 // Components
 import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
+import NavigationBarForm from "../components/NavivagtionBarForms";
+import CancelPrompt from "../components/CancelPrompt";
+
+// const handleConfirmation = (decision) => {
+//   if (decision) {
+//     // User clicked "Yes" in the confirmation prompt
+//     // Perform your desired action here, e.g., navigate to another page
+//     window.location.href = '/'; // Change this to the desired URL
+//   }
+//   // Handle other cases if needed
+// };
 
 export const Form = () => {
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
-        <img src={logo} className="form-contact-logo" />
+        <NavigationBarForm />
+        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Notice</h1>
 
         <p className="form-paragraph">
@@ -39,7 +50,11 @@ export const Form = () => {
           Leader. The Trip Leader must be appropriately trained and experienced
           to lead their intended activity.
         </p>
+        
         <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" rightButton="Next" rightButtonDest="/intialForm" />
+        {/* <CancelPrompt onUserDecision={handleConfirmation}/> */}
+
+        
       </div>
     </div>
   );
