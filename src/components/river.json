@@ -99,25 +99,5 @@
             "Day": "Wed",
             "Month_Date": "Mar 01",
             "id": "4"
-        },
-        {
-            "TELEMETRY_LOCATION": "Hawea - CampHill",
-            "READING_NZST_DATETIME": "2023-03-01 00:25:00",
-            "APPLIES_FROM_DATETIME": "1/03/2023 2:26",
-            "APPLIES_TO_DATETIME": "31/12/9999 23:59",
-            "READING_NZDT_DATETIME": "1/03/2023 1:25",
-            "READING_VALUE": "106.952",
-            "ORIGINAL_READING_VALUE": "106952",
-            "UNIT_OF_MEASURE": "L/s",
-            "TRADING_PERIOD_ID": "2023030103",
-            "CREATED_FILE_ID": "33378350",
-            "CREATED_BY": "ESB_CONNECT",
-            "CREATED_DATETIME": "1/03/2023 2:26",
-            "MODIFIED_BY": "ESB_CONNECT",
-            "MODIFIED_DATETIME": "2/03/2023 2:26",
-            "Time": "12:25 AM",
-            "Day": "Wed",
-            "Month_Date": "Mar 01",
-            "id": "5"
         }
     ]}

@@ -15,7 +15,7 @@ export const Formpage2 = () => {
     address: "",
     email: "",
     cellPhone: "",
-    Qualifications: "",
+    qualifications: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -80,13 +80,52 @@ export const Formpage2 = () => {
   //   localStorage.setItem("formData2", JSON.stringify(formData2));
   // };
 
-  const saveFormData2 = () => {
-    try {
-      localStorage.setItem("formData2", JSON.stringify(formData2));
-    } catch (error) {
-      console.error("Error saving data to localStorage:", error);
-    }
-  };
+const saveFormData2 = () => {
+  try {
+    localStorage.setItem("formData2", JSON.stringify(formData2));
+  } catch (error) {
+    console.error("Error saving data to localStorage:", error);
+  }
+};
+
+// converting to csv const
+const convertToCSV = () => {
+  // data from form output in one object
+  const { firstName, lastName, organization, address, email, phoneNumber, qualifications} = formData2;
+// headers + data
+  const csvData = [
+    ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
+    [firstName, lastName, organization, address, email, phoneNumber, qualifications]
+  ];
+
+  // converts two-dimensional array into csv format 
+    // map iterates over each row, and joins each row into a string, with each element separated by a comma.
+  return csvData.map(row => row.join(',')).join('\n');
+};
+
+
+// download csv
+const downloadCSV = () => {
+  // converts object that has been formatted in csv to actual csv
+  const csvData = convertToCSV();
+  // creates blob with two arguments, first is the array containing data, second specifies the type of data
+  const csvBlob = new Blob([csvData], { type: 'text/csv' });
+  // generates url for downloading csv
+  const csvUrl = URL.createObjectURL(csvBlob);
+
+  // downloads with url
+  const a = document.createElement('a');
+  a.style.display = 'none';
+  a.href = csvUrl;
+  a.download = 'form_data.csv';
+  document.body.appendChild(a);
+
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(csvUrl);
+};
+
 
   function postData() {
     const localStorageItems = {};
@@ -168,14 +207,15 @@ export const Formpage2 = () => {
 
   return (
     <div className="request-form section-container">
+    <NavigationBarForm />
       <div className="first-form main-content">
-        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Trip Leader</h1>
         <form className="container label-invisible">
-          <div className="row">
+        <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
+              id="posting"
               className="text-box five-twelfths"
               type="text"
               name="firstName"
@@ -183,6 +223,7 @@ export const Formpage2 = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+
             <label htmlFor="lastName">Last Name</label>
             <input
               className="text-box seven-twelfths"
@@ -202,6 +243,8 @@ export const Formpage2 = () => {
             </div>
           </div>
 
+
+          <div class="row">
           <label htmlFor="organization">Organization</label>
           <input
             className="text-box full-width"
@@ -223,6 +266,12 @@ export const Formpage2 = () => {
             onChange={handleChange}
           />
           <div className="error-message">{errors.address}</div>
+
+          </div>
+
+          {errors.address && (
+              <div className="error-message">{errors.address}</div>
+            )}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -252,12 +301,24 @@ export const Formpage2 = () => {
             </div>
           </div>
 
+
+          <div className="row">
+          {errors.email && (
+            <div className="error-message seven-twelfths">{errors.email}</div>
+          )}
+          {errors.cellPhone && (
+            <div className="error-message five-twelfths">{errors.cellPhone}</div>
+          )}
+          </div>
+
           <label htmlFor="qualifications">Qualifications</label>
           <input
             className="text-box full-width"
             type="text"
             name="qualifications"
             placeholder="Qualifications"
+            value={formData2.qualifications}
+            onChange={handleChange}
           />
         </form>
         <Button variant="button-primary" onClick={postData}>

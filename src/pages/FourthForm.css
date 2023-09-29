@@ -1,13 +1,12 @@
 /*text-input1 = text inputs for form
-  .form input::placeholder = place holder text within  */
+  .form-4 input::placeholder = place holder text within  */
 
-  .form .Button {
+  .form-4 .Button {
     margin-left: 85%;
     margin-top: 48%;
     }
     
-
-      .form {
+      .form-4 {
         background-color: #ffffff;
         display: flex;
         flex-direction: row;
@@ -15,14 +14,14 @@
         width: 100%;
       }
       
-      .form .form-v {
+      .form-4 .form-v {
         background-color: #ffffff;
         height: 982px;
         position: relative;
         width: 1512px;
       }
       
-      .form .overlap {
+      .form-4 .overlap {
         background-color: #ffffff;
         height: 124px;
         left: 0;
@@ -31,7 +30,7 @@
         width: 1512px;
       }
       
-      .form .image {
+      .form-4 .image {
         height: 76px;
         left: 0;
         object-fit: cover;
@@ -40,7 +39,7 @@
         width: 1512px;
       }
       
-       .form .form-title {
+       .form-4 .form-title {
         color: #303030;
         font-family: "Montserrat-SemiBold", Helvetica;
         font-size: 36px;
@@ -53,7 +52,7 @@
         top: 166px;
       } 
     
-      .form .form-title-secondary {
+      .form-4 .form-title-secondary {
         color: #303030;
         font-family: "Montserrat-SemiBold", Helvetica;
         font-size: 28px;
@@ -66,7 +65,7 @@
         top: 235px;
       } 
     
-      .form .form-text {
+      .form-4 .form-text {
         color: #303030;
         font-family: "Montserrat-SemiBold", Helvetica;
         font-size: 24px;
@@ -81,7 +80,7 @@
       } 
     
       
-       .form input::placeholder{
+       .form-4 input::placeholder{
         color: #595959;
         font-family: "Montserrat-Medium", Helvetica;
         font-size: 1.5em;
@@ -96,7 +95,7 @@
     
      
       
-        /* .form .text-input {
+        /* .form-4 .text-input {
         border: 2px solid;
         border-color: #ededed;
         height: 77px;
@@ -106,7 +105,7 @@
         width: 716px;
       }   */
       
-      .form .last-name {
+      .form-4 .last-name {
         border: 2px solid;
         border-color: #ededed;
         height: 7.9%;
@@ -117,7 +116,7 @@
         font-size: 1.0em;
       }
       
-      .form .firstName {
+      .form-4 .firstName {
         height: 10%;
         left: 8.5%;
         position: absolute;
@@ -126,7 +125,7 @@
         
       }
       
-      /* .form .div {
+      /* .form-4 .div {
         color: #595959;
         font-family: "Montserrat-Medium", Helvetica;
         font-size: 24px;
@@ -139,7 +138,7 @@
         width: 491px;
       } */
       
-      .form input {
+      .form-4 input {
         border: 2px solid;
         border-color: #ededed;
         height: 77px;
@@ -151,14 +150,14 @@
         
       }
     
-      .form .half-width {
+      .form-4 .half-width {
             width: 77%;
             font-size: 1.0em;
             padding-left: 2%;
     
       }
       
-      .form .full-width {
+      .form-4 .full-width {
         /* height: 10%; */
         /* left: 8.5%; */
         margin: auto;
@@ -172,7 +171,7 @@
         border-color: #ededed; */
       }
       
-      /* .form .rectangle-2 {
+      /* .form-4 .rectangle-2 {
         border: 2px solid;
         border-color: #ededed;
         height: 77px;
@@ -182,7 +181,7 @@
         width: 1259px;
       } */
       
-      .form .address {
+      .form-4 .address {
         height: 5%;
         top: 46%;
         left: 8.5%;
@@ -202,7 +201,7 @@
         top: 23px;
         width: 491px;
       }
-      .form .organization {
+      .form-4 .organization {
         height: 5%;
         top: 36%;
         left: 8.5%;
@@ -212,7 +211,7 @@
       }
       
       
-      .form .email {
+      .form-4 .email {
         height: 5%;
         top: 58%;
         left: 8.5%;
@@ -221,32 +220,32 @@
         
       }
       
-      .form .email-width {
+      .form-4 .email-width {
         border: 2px solid;
         border-color: #ededed;
         height: 160%;
         left: 0;
         position: absolute;
         top: 0;
-        width: 44%;
+        width: 44.5%;
         font-size: 1.0em;
     
       }
       
-      .form .cell-number {
+      .form-4 .cell-number {
         height: 5%;
         top: 58%;
-        left: 51.21%;
+        left: 50.7%;
         position: absolute;
         width: 92.5%;
       }
       
-      .form .cell-width{
+      .form-4 .cell-width{
         border: 2px solid;
         border-color: #ededed;
         height: 160%;
         position: absolute;
-        width: 44%;
+        width: 44.5%;
         font-size: 1.0em;
     
         /* 7.9%;
@@ -254,9 +253,12 @@
         position: absolute;
         top: 24%;
         width: 47.5%; */
-      }
     
-      .form .Qualifications {
+    
+      }
+
+    
+      .form-4 .Qualifications {
         height: 5%;
         top: 63%;
         left: 8.5%;
@@ -264,7 +266,7 @@
         width: 92.5%;
       }
       
-      .form .Next-button {
+      .form-4 .Next-button {
         height: 72px;
         left: 80%;
         position: absolute;
@@ -272,7 +274,7 @@
         width: 176px;
       }
       
-      .form .overlap-group .Next {
+      .form-4 .overlap-group .Next {
         background-color: #d54141;
         border-radius: 15px;
         height: 72px;
@@ -283,7 +285,7 @@
         font-weight: 600;
       }
       
-      .form .div-wrapper {
+      .form-4 .div-wrapper {
         background-color: fffff;
         border: 3px solid;
         border-color: #9b9b9b;
@@ -293,7 +295,7 @@
         width: 174px;
       }
       
-      .form .text-wrapper-2 {
+      .form-4 .text-wrapper-2 {
         color: #ffffff;
         font-family: "Montserrat-SemiBold", Helvetica;
         font-size: 24px;
@@ -309,7 +311,7 @@
         width: 135px;
       }
       
-      .form .Cancel-button {
+      .form-4 .Cancel-button {
         height: 72px;
         left: 5%;
         position: absolute;
@@ -317,7 +319,7 @@
         width: 176px;
       }
       
-      .form .overlap-6 {
+      .form-4 .overlap-6 {
         background-color: #ffffff;
         border: 3px solid;
         border-color: #9b9b9b;
@@ -327,7 +329,7 @@
         width: 174px;
       }
       
-      .form .cancel-text {
+      .form-4 .cancel-text {
         color: #9b9b9b;
         font-family: "Montserrat-SemiBold", Helvetica;
         font-size: 24px;
@@ -343,7 +345,7 @@
         width: 135px;
       }
       
-      .form .page-no {
+      .form-4 .page-no {
         color: #595959;
         font-family: "Montserrat-Medium", Helvetica;
         font-size: 24px;
