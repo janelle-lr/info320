@@ -6,7 +6,7 @@ const Button = ({ variant, children, onClick, destination }) => {
   const classNames = `button ${variant}`;
 
   const handleClick = (e) => {     // Execute the provided onClick function, if any    
-    if (onClick) {       onClick(e);     }     // You can add additional logic here if needed    // For example, you can prevent navigation under certain conditions:    // if (someCondition) {    //   e.preventDefault();    // }  
+    if (onClick) { onClick(e); }     // You can add additional logic here if needed    // For example, you can prevent navigation under certain conditions:    // if (someCondition) {    //   e.preventDefault();    // }  
   };
   return (
     // <button className={classNames} onClick={onClick}>

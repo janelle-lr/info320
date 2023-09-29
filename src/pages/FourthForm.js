@@ -88,7 +88,7 @@ export const Formpage4 = () => {
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">Secondary Preference Flow Details</h2>
-        <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertake.</p>
+        <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertaken.</p>
 
 
         <form className="container">
@@ -107,9 +107,7 @@ export const Formpage4 = () => {
             />
             
             </div>
-            {errors.flowLevel && (
-              <div className="error-message">{errors.flowLevel}</div>
-            )}
+            <div className="error-message">{errors.flowLevel}</div>
 
             <Dropdown />
 
@@ -129,13 +127,9 @@ export const Formpage4 = () => {
             />
           </div>
 
-          <div className="row">
-          {errors.startDateTime && (
+          <div className="error-message-group">
             <div className="error-message six-twelfths">{errors.startDateTime}</div>
-          )}
-          {errors.endDateTime && (
             <div className="error-message six-twelfths">{errors.endDateTime}</div>
-          )}
           </div>
 
         </form>

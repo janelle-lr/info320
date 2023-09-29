@@ -127,40 +127,40 @@ const downloadCSV = () => {
 };
 
 
-  function postData() {
-    const localStorageItems = {};
+  // function postData() {
+  //   const localStorageItems = {};
 
-    // populating localStorageItems
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      alert(`Key: ${key}, Value: ${value}`);
-      localStorageItems[key] = JSON.parse(value); // parses values to JSON
-    }
+  //   // populating localStorageItems
+  //   for (let i = 0; i < localStorage.length; i++) {
+  //     const key = localStorage.key(i);
+  //     const value = localStorage.getItem(key);
+  //     alert(`Key: ${key}, Value: ${value}`);
+  //     localStorageItems[key] = JSON.parse(value); // parses values to JSON
+  //   }
 
-    fetch("http://localhost:5500/postData", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(localStorageItems),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.text();
-        } else {
-          alert("Error");
-        }
-      })
-      .then((message) => {
-        console.error(message);
-        alert(message);
-        sendEmail();
-        //localStorage.clear();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while saving form data.");
-      });
-  }
+  //   fetch("http://localhost:5500/postData", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(localStorageItems),
+  //   })
+  //     .then((res) => {
+  //       if (res.ok) {
+  //         return res.text();
+  //       } else {
+  //         alert("Error");
+  //       }
+  //     })
+  //     .then((message) => {
+  //       console.error(message);
+  //       alert(message);
+  //       sendEmail();
+  //       //localStorage.clear();
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //       alert("An error occurred while saving form data.");
+  //     });
+  // }
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
@@ -168,47 +168,10 @@ const downloadCSV = () => {
     setFormData2(savedFormData2);
   }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
-  function sendEmail() {
-    // get first form data
-    const applicantDetails = localStorage.getItem("formData");
-    const formData = JSON.parse(applicantDetails);
-
-    // Access the firstName property from the formData object
-    const applicantName = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-    };
-    // const firstName = formData.firstName;
-    // const lastName = formData.lastName;
-
-    //alert(firstName);
-
-    fetch("http://localhost:5500/sendEmail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(applicantName),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.text();
-        } else {
-          alert("Error");
-        }
-      })
-      .then((message) => {
-        console.error(message);
-        alert(message);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while saving form data.");
-      });
-  }
-
   return (
     <div className="request-form section-container">
-    <NavigationBarForm />
       <div className="first-form main-content">
+      <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Trip Leader</h1>
         <form className="container label-invisible">
@@ -321,9 +284,7 @@ const downloadCSV = () => {
             onChange={handleChange}
           />
         </form>
-        <Button variant="button-primary" onClick={postData}>
-          Post
-        </Button>
+
         {/* <BottomButtons
           page="3"
           leftButton="Back"
