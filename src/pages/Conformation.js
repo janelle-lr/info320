@@ -3,12 +3,13 @@ import React from "react";
 // Components
 import Button from "../components/Button";
 import logo from "../images/contactLogo.png";
+import NavigationBarForm from "../components/NavivagtionBarForms";
 
 export const Formpage6 = () => {
   return (
     <div className="request-form section-container">
+      <NavigationBarForm/>
       <div className="main-content">
-        <img src={logo} className="form-contact-logo" />
         <div className="dialogue-info">
           <h1>Request Sent</h1>
           <p id="request-id">Request ID: 1111111</p>

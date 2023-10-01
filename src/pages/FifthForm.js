@@ -16,7 +16,7 @@ export const Formpage5 = () => {
     const validateForm = () => {
       const newErrors = {};
       if (!formData5.termsConditons) {
-        newErrors.termsConditons = " is required";
+        newErrors.termsConditons = "Please accept terms & conditions";
       }
       return newErrors;
     };

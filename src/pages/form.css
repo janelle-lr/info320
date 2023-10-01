@@ -401,7 +401,26 @@ select {
     margin-bottom: 2.3%;
 
   }
+  .required {
+    color: #ff0000;
+  }
 
+}
 
+.placeholder{
+  color:rgb(73, 73, 73);
+  position:relative;
+  top:-30px;
+  left:15px;
+  font-size:.8rem;
+  margin:0px;
+}
 
+.placeholder:after{
+  content:' *';
+  color:red;
+}
+
+#hello:focus + .placeholder{
+  display:none;
 }

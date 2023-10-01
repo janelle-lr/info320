@@ -10,6 +10,7 @@ import FormButton from "../components/FormButtons.js";
 import Button from "../components/Button";
 import Dropdown from "../components/Dropdown.js";
 import RequiredStar from "../components/RequiredStar";
+import addtionalForms from "../components/addtionalForm.pdf";
 
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
@@ -18,12 +19,13 @@ export const Formpage3 = () => {
         participants: "",
         NoParticpants: "",
         startDateTime: "",
-        endDateTime: ""  
+        endDateTime: "" ,
+        Dropdown: ""
       });
 
   const [errors, setErrors] = useState({});
-
   // setting out the error validation prompts for each of the feilds where an input is required to be filled in
+  const text = <span>hi</span>;
 
   const validateForm = () => {
     const newErrors = {};
@@ -48,7 +50,11 @@ export const Formpage3 = () => {
           if (!formData3.NoParticpants) {
             newErrors.NoParticpants = "Number of participants is required";
           }
+          if (!formData3.Dropdown) {
+            newErrors.Dropdown = "Area of request is required";
+          }
           
+
     return newErrors;
   };
 
@@ -97,27 +103,39 @@ export const Formpage3 = () => {
 
         <form className="container">
           <div className="label-invisible">
-            <label htmlFor="flowLevel">
-              Required flow/level range (e.g. 30 - 40 m&sup3;/s)
+            <label htmlFor="flowLevel"> 
+              Required awdaw/level range (e.g. 30 - 40 m&sup3;/s)
             </label>
             <RequiredStar isRequired={true} />
             <input
+              id="hello"
               type="text"
               name="flowLevel"
               className="text-box full-width"
-              placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
               value={formData3.FlowRange}
+              required="required"
               onChange={handleChange}
             />
+            <span className="placeholder">Required flow/level range (e.g. 30 - 40 m&sup3;/s)</span>
           </div>
           {errors.flowLevel && (
               <div className="error-message">{errors.flowLevel}</div>
             )}
 
+
+
           <Dropdown 
           name="Dropdown" 
           value={formData3.Dropdown}
-          onChange={handleChange}/>
+          onChange={handleChange}
+          />
+          {errors.Dropdown && (
+              <div className="error-message">{errors.Dropdown}</div>
+            )}
+
+
+
+
 
           <div className="row">
             <label htmlFor="startDateTime">Start date & time</label>
@@ -147,12 +165,13 @@ export const Formpage3 = () => {
         <form className="container">
           <div className="label-invisible">
             <h2 className="form-title-secondary">Activity Details</h2>
-            <label htmlFor="activityDetails">Brief activity description</label>
+            <label htmlFor="activityDetails">Brief activity description
+            </label>
             <textarea
               type="text"
               name="Breif"
               className="text-box full-width"
-              placeholder="Brief activity description"
+              placeholder={`Brief activity description ${text}`}
               value={formData3.Breif}
               onChange={handleChange}
             />
@@ -174,12 +193,12 @@ export const Formpage3 = () => {
                 onChange={handleChange}
               />
               
-              <label htmlFor="NoParticpants">Number of Participants</label>
+              <label htmlFor="NoParticpants">Number of Participants <span class="required">*</span></label>
               <input
                 className="text-box four-twelfths"
                 type="number"
                 name="NoParticpants"
-                placeholder="Number of Participants"
+                placeholder="Number of Participants"  
                 value={formData3.NoParticpants}
                 onChange={handleChange}
               />
@@ -193,6 +212,16 @@ export const Formpage3 = () => {
                 <div className="error-message four-twelfths">{errors.NoParticpants}</div>
                 )}
           </div>
+
+        <br></br>
+        <a
+        href={addtionalForms}
+        download="Contact-Energy-Addtional-Request-Forms"
+        target="_blank"
+        rel="noreferrer"
+      > 
+      Download Addtional Reqeust Forms
+      </a>
 
           </div>
         </form>

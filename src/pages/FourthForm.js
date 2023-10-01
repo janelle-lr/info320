@@ -4,17 +4,16 @@ import React, { useState, useEffect } from "react";
 import "../components/Layout.css";
 import "../components/Texts.css";
 // Components
-import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
 import NavigationBarForms from "../components/NavivagtionBarForms.js";
-import Button from '../components/Button';
 import Dropdown from "../components/Dropdown";
 
 export const Formpage4 = () => {
   const [formData4, setFormData4, selectedValue] = useState({
     flowLevel: "",
     startDateTime: "",
-    endDateTime: ""
+    endDateTime: "",
+    Dropdown: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -31,6 +30,9 @@ export const Formpage4 = () => {
       }
       if (!formData4.endDateTime) {
         newErrors.endDateTime = "End date time is required";
+      }
+      if (!formData4.Dropdown) {
+        newErrors.Dropdown = "Area of request is required";
       }
 
       
@@ -101,6 +103,7 @@ export const Formpage4 = () => {
               name="flowLevel"
               className="text-box full-width"
               placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
+              required
               value={formData4.flowLevel}
               onChange={handleChange}
             />
@@ -110,7 +113,15 @@ export const Formpage4 = () => {
               <div className="error-message">{errors.flowLevel}</div>
             )}
 
-            <Dropdown />
+          <Dropdown 
+          name="Dropdown" 
+          value={formData4.Dropdown}
+          onChange={handleChange}
+          />
+          {errors.Dropdown && (
+              <div className="error-message">{errors.Dropdown}</div>
+            )}
+
 
             
 
