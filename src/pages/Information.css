@@ -159,3 +159,19 @@
     border-right: none;
   }
 }
+
+.cyldedam {
+  width: 50vw;
+}
+/* Assuming you want the image to take up 50% of the screen width */
+.cyldedam img {
+  width: 100%;
+  height: auto; /* To maintain the image's aspect ratio */
+  /* float: left; */
+  float: left;
+}
+.historyText{
+  text-align: center;
+  padding: 14%;
+}
+
