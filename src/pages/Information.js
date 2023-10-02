@@ -54,7 +54,7 @@ function Information() {
             <div className="historyText">
                 <h2 className="subsection-heading">History</h2>
                 <p>A blurb that will be refined early next week. Feel free to use any picture next to it
-                Hawea Whitewater Park (the Wave) is located on the Hāwea River at Camphill Bridge. It offers two 
+                Hawea Whitewater Park (The Wave) is located on the Hāwea River at Camphill Bridge. It offers two 
                 river-waves with different characteristics, providing an exhilarating experience for both beginners 
                 and experienced individuals. The wave was established in 2012, designed by Scott Shipley and paid for 
                 by Contact. The wave caters to adrenaline-seeking enthusiasts of kayaking, white water, bodyboarding, 
