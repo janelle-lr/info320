@@ -1,0 +1,33 @@
+Hi, Janelle! Thanks for submitting your flow request. Please note (insert the disclaimer about not being guaranteed). 
+
+Requested flow:
+	Request ID# OTGE00001
+	Applicant Details
+		Name: Janelle LR
+		Organisation: VUW
+		Address: 101 Newtown
+		Email: Dad@awdawd.com
+		Cellphone: 0217488739
+  
+	Trip Leader Details
+		Name: Janelle LR
+		Organisation: VUW
+		Address: 101 Newtown
+		Email: limrajane@myvuw.ac.nz
+		Cellphone: 0217488739
+		Qualifications: Left blank
+
+	Primary Flow Preference
+		Flow Range(ms³): 20 - 30
+		Start Date and Time:2023-10-03T16:25
+		End Date and Time: 2023-10-04T16:25
+		Area of Request: Hawea River (The wave)
+		Activity Description: Surfing lessons
+		Participants: Students and Teacher
+		Number of Participants: 15
+
+	Secondary Flow Preference
+		Flow Range(ms³): 20 - 35
+		Start Date and Time:2023-10-03T16:26
+		End Date and Time: 2023-10-04T16:26
+		Area of Request: Hawea River (The wave)

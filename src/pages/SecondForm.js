@@ -80,87 +80,51 @@ export const Formpage2 = () => {
   //   localStorage.setItem("formData2", JSON.stringify(formData2));
   // };
 
-const saveFormData2 = () => {
-  try {
-    localStorage.setItem("formData2", JSON.stringify(formData2));
-  } catch (error) {
-    console.error("Error saving data to localStorage:", error);
-  }
-};
+  const saveFormData2 = () => {
+    try {
+      localStorage.setItem("formData2", JSON.stringify(formData2));
+    } catch (error) {
+      console.error("Error saving data to localStorage:", error);
+    }
+  };
 
-// converting to csv const
-const convertToCSV = () => {
-  // data from form output in one object
-  const { firstName, lastName, organization, address, email, phoneNumber, qualifications} = formData2;
-// headers + data
-  const csvData = [
-    ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
-    [firstName, lastName, organization, address, email, phoneNumber, qualifications]
-  ];
+  // converting to csv const
+  const convertToCSV = () => {
+    // data from form output in one object
+    const { firstName, lastName, organization, address, email, phoneNumber, qualifications } = formData2;
+    // headers + data
+    const csvData = [
+      ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
+      [firstName, lastName, organization, address, email, phoneNumber, qualifications]
+    ];
 
-  // converts two-dimensional array into csv format 
+    // converts two-dimensional array into csv format 
     // map iterates over each row, and joins each row into a string, with each element separated by a comma.
-  return csvData.map(row => row.join(',')).join('\n');
-};
+    return csvData.map(row => row.join(',')).join('\n');
+  };
 
 
-// download csv
-const downloadCSV = () => {
-  // converts object that has been formatted in csv to actual csv
-  const csvData = convertToCSV();
-  // creates blob with two arguments, first is the array containing data, second specifies the type of data
-  const csvBlob = new Blob([csvData], { type: 'text/csv' });
-  // generates url for downloading csv
-  const csvUrl = URL.createObjectURL(csvBlob);
+  // download csv
+  const downloadCSV = () => {
+    // converts object that has been formatted in csv to actual csv
+    const csvData = convertToCSV();
+    // creates blob with two arguments, first is the array containing data, second specifies the type of data
+    const csvBlob = new Blob([csvData], { type: 'text/csv' });
+    // generates url for downloading csv
+    const csvUrl = URL.createObjectURL(csvBlob);
 
-  // downloads with url
-  const a = document.createElement('a');
-  a.style.display = 'none';
-  a.href = csvUrl;
-  a.download = 'form_data.csv';
-  document.body.appendChild(a);
+    // downloads with url
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = csvUrl;
+    a.download = 'form_data.csv';
+    document.body.appendChild(a);
 
-  a.click();
+    a.click();
 
-  document.body.removeChild(a);
-  URL.revokeObjectURL(csvUrl);
-};
-
-
-  // function postData() {
-  //   const localStorageItems = {};
-
-  //   // populating localStorageItems
-  //   for (let i = 0; i < localStorage.length; i++) {
-  //     const key = localStorage.key(i);
-  //     const value = localStorage.getItem(key);
-  //     alert(`Key: ${key}, Value: ${value}`);
-  //     localStorageItems[key] = JSON.parse(value); // parses values to JSON
-  //   }
-
-  //   fetch("http://localhost:5500/postData", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(localStorageItems),
-  //   })
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.text();
-  //       } else {
-  //         alert("Error");
-  //       }
-  //     })
-  //     .then((message) => {
-  //       console.error(message);
-  //       alert(message);
-  //       sendEmail();
-  //       //localStorage.clear();
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //       alert("An error occurred while saving form data.");
-  //     });
-  // }
+    document.body.removeChild(a);
+    URL.revokeObjectURL(csvUrl);
+  };
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
@@ -171,11 +135,11 @@ const downloadCSV = () => {
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
-      <NavigationBarForm />
+        <NavigationBarForm />
         {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Trip Leader</h1>
         <form className="container label-invisible">
-        <div className="row">
+          <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
               id="posting"
@@ -186,6 +150,7 @@ const downloadCSV = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+            {/* <span>*</span> */}
 
             <label htmlFor="lastName">Last Name</label>
             <input
@@ -208,33 +173,29 @@ const downloadCSV = () => {
 
 
           <div class="row">
-          <label htmlFor="organization">Organization</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="organization"
-            placeholder="Organization"
-            value={formData2.organization}
-            onChange={handleChange}
-          />
-          <div className="error-message">{errors.organization}</div>
+            <label htmlFor="organization">Organization</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="organization"
+              placeholder="Organization"
+              value={formData2.organization}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.organization}</div>
 
-          <label htmlFor="address">Address</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="address"
-            placeholder="Full Address"
-            value={formData2.address}
-            onChange={handleChange}
-          />
-          <div className="error-message">{errors.address}</div>
+            <label htmlFor="address">Address</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="address"
+              placeholder="Full Address"
+              value={formData2.address}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.address}</div>
 
           </div>
-
-          {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -262,16 +223,6 @@ const downloadCSV = () => {
             <div className="error-message five-twelfths">
               {errors.cellPhone}
             </div>
-          </div>
-
-
-          <div className="row">
-          {errors.email && (
-            <div className="error-message seven-twelfths">{errors.email}</div>
-          )}
-          {errors.cellPhone && (
-            <div className="error-message five-twelfths">{errors.cellPhone}</div>
-          )}
           </div>
 
           <label htmlFor="qualifications">Qualifications</label>

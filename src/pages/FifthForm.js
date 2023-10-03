@@ -57,7 +57,6 @@ export const Formpage5 = () => {
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       const value = localStorage.getItem(key);
-      //alert(`Key: ${key}, Value: ${value}`);
       localStorageItems[key] = JSON.parse(value); // parses values to JSON
     }
 
@@ -80,8 +79,7 @@ export const Formpage5 = () => {
   }
 
   function sendEmail() {
-    // get first form data
-    alert("sendEmail");
+    // get first form data from localStorage
     const applicantDetails = localStorage.getItem("formData");
     const formData = JSON.parse(applicantDetails);
 
@@ -111,9 +109,6 @@ export const Formpage5 = () => {
       });
   }
 
-
-
-
   return (
     <div className="request-form section-container">
       <div className="fifth-form main-content">
@@ -122,14 +117,13 @@ export const Formpage5 = () => {
         <h1 className="form-heading">Health and Safety</h1>
         <form className="label-visible">
           <br></br>
-
           <p className="form-paragraph">
-            The H&S that contact lads get us will slot in here as the T&C's
+          By submitting a flow request, you acknowledge that Hawea river use is at your own risk, and Contact assumes no responsibility or liability for any injuries, accidents, or damages that may occur during your activities on the river. Please exercise caution, adhere to your prepared Health and Safety plan, and ensure your own well-being while enjoying the river.
           </p>
           <div className="checkbox">
             <input className="checkbox" type="checkbox" name="termsConditons" value={formData5.termsConditons}
               onChange={handleChange} />
-            <label> I have read the health and saftey</label>
+            <label> I acknowledge the above, have considered the hazards on the river and have prepared a Health and Safety plan</label>
           </div>
 
           <div className="error-message">{errors.termsConditons}</div>

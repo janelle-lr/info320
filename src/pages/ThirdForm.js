@@ -19,6 +19,7 @@ export const Formpage3 = () => {
     NoParticpants: "",
     startDateTime: "",
     endDateTime: "",
+    Dropdown: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -48,6 +49,10 @@ export const Formpage3 = () => {
 
     if (!formData3.NoParticpants) {
       newErrors.NoParticpants = "Number of participants is required";
+    }
+
+    if (!formData3.Dropdown) {
+      newErrors.Dropdown = "Area of request is required";
     }
 
     return newErrors;
@@ -89,6 +94,8 @@ export const Formpage3 = () => {
       console.error("Error saving data to localStorage:", error);
     }
   };
+  const currentDateTime = new Date().toISOString().slice(0, 16);
+
   return (
     <div className="request-form">
       <div className="third-form main-content">
@@ -98,19 +105,34 @@ export const Formpage3 = () => {
 
         <form className="container">
           <div className="label-invisible">
-            <label htmlFor="flowLevel">
+          <label htmlFor="flowLevel">
               Required flow/level range (e.g. 30 - 40 m&sup3;/s)
             </label>
-            <RequiredStar isRequired={true} />
-            <input type="text" name="flowLevel" className="text-box full-width" placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)" value={formData3.FlowRange} onChange={handleChange} />
-          </div>
-          <div className="error-message">{errors.flowLevel}</div>
+            <input
+              type="text"
+              name="flowLevel"
+              className="text-box full-width"
+              placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
+              value={formData3.flowLevel}
+              onChange={handleChange}
+            />
+            
+            </div>
+            <div className="error-message">{errors.flowLevel}</div>
 
-          <Dropdown name="Dropdown" value={formData3.Dropdown} onChange={handleChange} />
+          <Dropdown 
+          name="Dropdown" 
+          value={formData3.Dropdown}
+          onChange={handleChange}
+          />
+          {errors.Dropdown && (
+              <div className="error-message">{errors.Dropdown}</div>
+            )}
+
           <div className="row">
             <label htmlFor="startDateTime">Start date & time</label>
-            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" value={formData3.startDateTime} onChange={handleChange} />
-
+            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" min={currentDateTime} value={formData3.startDateTime} onChange={handleChange}  />
+            
             <label htmlFor="endDateTime">End date & time</label>
             <input type="datetime-local" name="endDateTime" className="text-box six-twelfths" placeholder="End date & time (DD/MM/YYYY 00:00)" value={formData3.endDateTime} onChange={handleChange} />
           </div>

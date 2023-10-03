@@ -14,7 +14,8 @@ export const Formpage4 = () => {
   const [formData4, setFormData4, selectedValue] = useState({
     flowLevel: "",
     startDateTime: "",
-    endDateTime: ""
+    endDateTime: "",
+    Dropdown: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -32,10 +33,15 @@ export const Formpage4 = () => {
       if (!formData4.endDateTime) {
         newErrors.endDateTime = "End date time is required";
       }
+      if (!formData4.Dropdown) {
+        newErrors.Dropdown = "Area of request is required";
+      }
 
       
       return newErrors;
     };
+
+    const currentDateTime = new Date().toISOString().slice(0, 16);
   
   
   // nextClick triggers the repsonse from the next button at the button 
@@ -109,13 +115,20 @@ export const Formpage4 = () => {
             </div>
             <div className="error-message">{errors.flowLevel}</div>
 
-            <Dropdown />
-
+          <Dropdown 
+          name="Dropdown" 
+          value={formData4.Dropdown}
+          onChange={handleChange}
+          />
+          {errors.Dropdown && (
+              <div className="error-message">{errors.Dropdown}</div>
+            )}
             
 
           <div className="row">
             <label htmlFor="startDateTime">Start date & time</label>
             <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" 
+            min={currentDateTime}
             value={formData4.startDateTime}
             onChange={handleChange}
             />

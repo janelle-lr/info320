@@ -32,7 +32,7 @@ export const Formpage6 = () => {
 
           <img id="checkIcon" src={check} alt="" />
           <p>
-            Thank your for you request, our team will review your request
+            Thank you for your request, our team will review your request
             shortly.
             <br />
             You can view approved flow requests on the wave information page.

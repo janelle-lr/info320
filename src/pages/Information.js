@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./Information.css";
 import { Link } from "react-router-dom";
@@ -12,15 +12,16 @@ import HeroImage from "../components/HeroImage";
 import Footer from "../components/Footer";
 import data from "../components/river.json"
 import NavigationBar from "../components/NavigationBar";
+import Clydedam from "../images/Clydedam.jpg";
 
 function Information() {
-    // const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
 
-    // useEffect(() => {
-    //   fetch("http://localhost:5500/")
-    //     .then((res) => res.json())
-    //     .then((data) => setMessage(data.message));
-    // }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5500/")
+  //     .then((res) => res.json())
+  //     .then((data) => setMessage(data.message));
+  // }, []);
 
   const flows = data.river;
 
@@ -38,6 +39,20 @@ function Information() {
     <>
       <NavigationBar />
       <HeroImage />
+
+      <div className="two-columns mobile-single-col">
+        <div className="layout-column history">
+          <div className="cyldedam">
+            <img src={Clydedam} />
+          </div>
+          <div className="two-columns">
+            <div className="historyText">
+              <h2 className="subsection-heading">History</h2>
+              <p>Hawea Whitewater Park (The Wave) is located on the Hāwea River at Camphill Bridge. It offers two river-waves with different characteristics, providing an exhilarating experience for both beginners and experienced individuals. The wave was established in 2012, designed by Scott Shipley and paid for by Contact. The wave caters to adrenaline-seeking enthusiasts of kayaking, white water, bodyboarding, and surfing. </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="section-container locations">
         <h2 className="subsection-heading">Key Locations</h2>
@@ -60,8 +75,8 @@ function Information() {
               <h3 className="subtitle">Albert Town Campground</h3>
               {/* <br /> */}
               <p className="location-paragraph">Time for flow requested to reach location: 2 Hours </p>
-              </div>
             </div>
+          </div>
         </div>
       </div>
       <div className="flow-requests">
@@ -78,17 +93,17 @@ function Information() {
                     <th>Flow Level</th>
                   </tr>
                   {sortedFlows.map((post) => (
-                  <tr key={post.id}>
-                    <td> 
-                    {post.Day}
-                      <br/>
-                    {post.Month_Date}
-                    </td>
-                    <td>{post.Time}</td>
-                    <td>{post.TELEMETRY_LOCATION}</td>
-                    <td>{post.READING_VALUE}ms&sup3;</td>
-                  </tr>
-                ))}
+                    <tr key={post.id}>
+                      <td>
+                        {post.Day}
+                        <br />
+                        {post.Month_Date}
+                      </td>
+                      <td>{post.Time}</td>
+                      <td>{post.TELEMETRY_LOCATION}</td>
+                      <td>{post.READING_VALUE}ms&sup3;</td>
+                    </tr>
+                  ))}
                 </table>
               </div>
             </div>

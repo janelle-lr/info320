@@ -3,7 +3,7 @@
     padding: 2% 0;
     /* padding: 0; */
   }
-  
+
   .request-form .main-content {
     /* background-color: blue; */
     position: relative;
@@ -118,7 +118,7 @@
   }
   
   select {
-    background-color: aqua;
+    background-color: none;
   }
   
   .form-title-secondary {
