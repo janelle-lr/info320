@@ -3,13 +3,8 @@ import { Link } from "react-router-dom";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import logo from "../images/contactLogo.png";
-import NavigationBar from "../components/NavigationBar";
 import NavigationBarForm from "../components/NavivagtionBarForms";
-import FormButton from "../components/FormButtons.js";
-import Button from "../components/Button";
 import Dropdown from "../components/Dropdown.js";
-import RequiredStar from "../components/RequiredStar";
 import addtionalForms from "../components/addtionalForm.pdf";
 
 export const Formpage3 = () => {
@@ -62,9 +57,6 @@ export const Formpage3 = () => {
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      // Validation passed, navigate to the next form page
-      // You can also submit the form data to your server here
-      // For now, let's print the data to the console
       console.log(formData3);
 
       // Reset the errors state to clear error messages
@@ -178,6 +170,7 @@ export const Formpage3 = () => {
               </div>
             </div>
           </div>
+          <BottomButtons page="4" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightOnClick={nextClick} />
         </form>
         <BottomButtons page="4" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightOnClick={nextClick} />
       </div>

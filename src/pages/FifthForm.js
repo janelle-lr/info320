@@ -29,16 +29,14 @@ export const Formpage5 = () => {
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      // Validation passed, navigate to the next form page
-      // You can also submit the form data to your server here
-      // For now, let's print the data to the console
+
       console.log(formData5);
 
       // Reset the errors state to clear error messages
       setErrors({});
       postData();
       sendEmail();
-      // localStorage.clear();
+      localStorage.clear();
       window.location.href = "/Conformation";
     } else {
       // Validation failed, set the errors state to display error messages

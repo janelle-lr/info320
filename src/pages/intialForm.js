@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import Button from "../components/Button";
-import logo from "../images/contactLogo.png";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 
 export const Formpage1 = () => {
