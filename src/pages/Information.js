@@ -108,32 +108,32 @@ function Information() {
               </div>
             </div>
 
-            <div className="two-columns">
-              <h2 className="subsection-heading">Active Requests</h2>
-              <table className="current-flows">
-                <tr>
-                  <th>Day</th>
-                  <th>Time</th>
-                </tr>
-                <tr>
-                  <td>Hawea Flat</td>
-                  <td>00:00 pm</td>
-                </tr>
-                <tr>
-                  <td>Albert Park</td>
-                  <td>00:00 pm</td>
-                </tr>
-                <tr>
-                  <td>Hawea Flat</td>
-                  <td>00:00 pm</td>
-                </tr>
-              </table>
-            </div>
-            <Button variant="button-primary" destination="/RequestForm">
-              Send a wave request
-            </Button>
+              <div className="two-columns">
+                <h2 className="subsection-heading">Active Requests</h2>
+                <table className="current-flows">
+                  <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                  </tr>
+                  <tr>
+                    <td>Hawea Flat</td>
+                    <td>00:00 pm</td>
+                  </tr>
+                  <tr>
+                    <td>Albert Park</td>
+                    <td>00:00 pm</td>
+                  </tr>
+                  <tr>
+                    <td>Hawea Flat</td>
+                    <td>00:00 pm</td>
+                  </tr>
+                </table>
+              </div>
+              <Button variant="button-primary" destination="/RequestForm">
+                Send a wave request
+              </Button>
 
-            {/* <Button
+              {/* <Button
               id="toForm"
               variant="button-primary"
 
@@ -142,12 +142,12 @@ function Information() {
               Send a wave request
              </Link>
             </Button> */}
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </>
-  );
+        <Footer />
+      </>
+      );
 }
 
-export default Information;
+      export default Information;

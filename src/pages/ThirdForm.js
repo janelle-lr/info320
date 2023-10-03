@@ -10,6 +10,7 @@ import FormButton from "../components/FormButtons.js";
 import Button from "../components/Button";
 import Dropdown from "../components/Dropdown.js";
 import RequiredStar from "../components/RequiredStar";
+import addtionalForms from "../components/addtionalForm.pdf";
 
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
@@ -23,8 +24,8 @@ export const Formpage3 = () => {
   });
 
   const [errors, setErrors] = useState({});
-
   // setting out the error validation prompts for each of the feilds where an input is required to be filled in
+  const text = <span>hi</span>;
 
   const validateForm = () => {
     const newErrors = {};
@@ -109,6 +110,7 @@ export const Formpage3 = () => {
               Required flow/level range (e.g. 30 - 40 m&sup3;/s)
             </label>
             <input
+              id="hello"
               type="text"
               name="flowLevel"
               className="text-box full-width"
@@ -119,6 +121,8 @@ export const Formpage3 = () => {
             
             </div>
             <div className="error-message">{errors.flowLevel}</div>
+
+
 
           <Dropdown 
           name="Dropdown" 

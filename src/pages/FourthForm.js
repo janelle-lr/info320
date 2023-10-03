@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import "../components/Layout.css";
 import "../components/Texts.css";
 // Components
-import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
 import NavigationBarForm from "../components/NavivagtionBarForms.js";
 import Button from '../components/Button';
@@ -32,6 +31,9 @@ export const Formpage4 = () => {
       }
       if (!formData4.endDateTime) {
         newErrors.endDateTime = "End date time is required";
+      }
+      if (!formData4.Dropdown) {
+        newErrors.Dropdown = "Area of request is required";
       }
       if (!formData4.Dropdown) {
         newErrors.Dropdown = "Area of request is required";
@@ -108,6 +110,7 @@ export const Formpage4 = () => {
               name="flowLevel"
               className="text-box full-width"
               placeholder="Required flow/level range (e.g. 30 - 40 m&sup3;/s)"
+              required
               value={formData4.flowLevel}
               onChange={handleChange}
             />

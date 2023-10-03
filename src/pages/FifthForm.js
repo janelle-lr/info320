@@ -14,16 +14,16 @@ export const Formpage5 = () => {
   const [errors, setErrors] = useState({});
 
   // setting out the error validation prompts for each of the feilds where an input is required to be filled in 
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData5.termsConditons) {
-      newErrors.termsConditons = " is required";
-    }
-    return newErrors;
-  };
-
-
+  
+    const validateForm = () => {
+      const newErrors = {};
+      if (!formData5.termsConditons) {
+        newErrors.termsConditons = "Please accept terms & conditions";
+      }
+      return newErrors;
+    };
+  
+  
   // nextClick triggers the repsonse from the next button at the button 
 
   const nextClick = () => {
