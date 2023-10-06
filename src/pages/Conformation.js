@@ -21,6 +21,13 @@ export const Formpage6 = () => {
       });
   }, []);
 
+  
+  const nextClick = () => {
+      localStorage.clear();
+      // window.location.href = "/Conformation";
+
+  };
+
   return (
     <div className="request-form section-container">
       <div className="main-content">
@@ -40,7 +47,7 @@ export const Formpage6 = () => {
             For urgent issues please contact us on 03 440 0329.
             <br />
           </p>
-          <Button variant="button-primary dialogue-button" destination="/">
+          <Button variant="button-primary dialogue-button" destination="/" onClick={nextClick}>
             Dismiss
           </Button>
         </div>
