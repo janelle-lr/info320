@@ -14,16 +14,16 @@ export const Formpage5 = () => {
   const [errors, setErrors] = useState({});
 
   // setting out the error validation prompts for each of the feilds where an input is required to be filled in 
-  
-    const validateForm = () => {
-      const newErrors = {};
-      if (!formData5.termsConditons) {
-        newErrors.termsConditons = "Please accept terms & conditions";
-      }
-      return newErrors;
-    };
-  
-  
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData5.termsConditons) {
+      newErrors.termsConditons = "Please accept terms & conditions";
+    }
+    return newErrors;
+  };
+
+
   // nextClick triggers the repsonse from the next button at the button 
 
   const nextClick = () => {
@@ -36,13 +36,13 @@ export const Formpage5 = () => {
       setErrors({});
       postData();
       sendEmail();
-      localStorage.clear();
       window.location.href = "/Conformation";
     } else {
       // Validation failed, set the errors state to display error messages
       setErrors(newErrors);
     }
   };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData5({ ...formData5, [name]: value });
@@ -116,11 +116,16 @@ export const Formpage5 = () => {
         <form className="label-visible">
           <br></br>
           <p className="form-paragraph">
-          By submitting a flow request, you acknowledge that Hawea river use is at your own risk, and Contact assumes no responsibility or liability for any injuries, accidents, or damages that may occur during your activities on the river. Please exercise caution, adhere to your prepared Health and Safety plan, and ensure your own well-being while enjoying the river.
+            By submitting a flow request, you acknowledge that Hawea river use is at your own risk, and Contact assumes no responsibility or liability for any injuries, accidents, or damages that may occur during your activities on the river. Please exercise caution, adhere to your prepared Health and Safety plan, and ensure your own well-being while enjoying the river.
           </p>
           <div className="checkbox">
-            <input className="checkbox" type="checkbox" name="termsConditons" value={formData5.termsConditons}
-              onChange={handleChange} />
+            <input
+              className="checkbox"
+              type="checkbox"
+              name="termsConditons"
+              checked={formData5.termsConditons}
+              onChange={handleChange}
+            />
             <label> I acknowledge the above, have considered the hazards on the river and have prepared a Health and Safety plan</label>
           </div>
 

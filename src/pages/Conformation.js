@@ -22,10 +22,8 @@ export const Formpage6 = () => {
   }, []);
 
   
-  const nextClick = () => {
+  const clearLocalstorage = () => {
       localStorage.clear();
-      // window.location.href = "/Conformation";
-
   };
 
   return (
@@ -47,7 +45,7 @@ export const Formpage6 = () => {
             For urgent issues please contact us on 03 440 0329.
             <br />
           </p>
-          <Button variant="button-primary dialogue-button" destination="/" onClick={nextClick}>
+          <Button variant="button-primary dialogue-button" destination="/" onClick={clearLocalstorage}>
             Dismiss
           </Button>
         </div>

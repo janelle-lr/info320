@@ -83,9 +83,9 @@ function Information() {
         <div className="section-container">
           <div className="layout-column">
             <div className="two-columns">
-              <h2 className="subsection-heading">Active Flow Requests</h2>
+              <h2 className="subsection-heading">Active Flows</h2>
               <div className="">
-                <table className="active-requests">
+                <table className="active-flows">
                   <tr>
                     <th>Day</th>
                     <th>Time</th>
@@ -109,23 +109,31 @@ function Information() {
             </div>
 
               <div className="two-columns">
-                <h2 className="subsection-heading">Active Requests</h2>
-                <table className="current-flows">
+                <h2 className="subsection-heading">Pending Wave Requests</h2>
+                <table className="pending-requests">
                   <tr>
                     <th>Day</th>
                     <th>Time</th>
+                    <th>Location</th>
+                    <th>Flow Level</th>
                   </tr>
                   <tr>
+                    <td>Wed<br />Oct 11</td>
+                    <td>12:00 pm</td>
                     <td>Hawea Flat</td>
-                    <td>00:00 pm</td>
+                    <td>30ms&sup3;</td>
                   </tr>
                   <tr>
-                    <td>Albert Park</td>
-                    <td>00:00 pm</td>
+                    <td>Thurs<br />Oct 12</td>
+                    <td>11:00 am</td>
+                    <td>Albert Town</td>
+                    <td>50ms&sup3;</td>
                   </tr>
                   <tr>
+                    <td>Wed<br />Oct 18</td>
+                    <td>12:00 pm</td>
                     <td>Hawea Flat</td>
-                    <td>00:00 pm</td>
+                    <td>30ms&sup3;</td>
                   </tr>
                 </table>
               </div>

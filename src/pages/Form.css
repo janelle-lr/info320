@@ -101,6 +101,56 @@
     height: 50vw;
     padding: 0;
   }
+
+  .info-icon {
+    position: absolute;
+    top: 28%;
+    right: 1.5%;
+    width: 2em;
+    height: auto;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 2%;
+    z-index: 1000;
+    width: 60%;
+    text-align: center;
+  }
+
+  .grey-out {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .flow-info {
+    padding: 1%;
+    width: 90%;
+    margin: 3% auto;
+  }
+
+  .flow-info tr, .flow-info td, .flow-info th {
+    text-align: center;
+    padding: 2%;
+    border: 1px solid #ccc;
+  }
+
+  .flow-info td:first-child, .flow-info tr:first-child {
+    width: 20%;
+  }
   
   /* FOURTH FORM STYLING */
   
@@ -129,6 +179,10 @@
   
   .form-paragraph {
     margin-bottom: 2%;
+  }
+
+  .fourth-form .info-icon {
+    top: 40.5%;
   }
   
   /* FIFTH FORM STYLING */

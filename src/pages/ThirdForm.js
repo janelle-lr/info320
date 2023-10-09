@@ -6,6 +6,8 @@ import BottomButtons from "../components/FormButtons";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 import Dropdown from "../components/Dropdown.js";
 import addtionalForms from "../components/addtionalForm.pdf";
+import InformationIcon from "../images/information-outline.png";
+import Button from "../components/Button";
 
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
@@ -89,10 +91,45 @@ export const Formpage3 = () => {
   };
   const currentDateTime = new Date().toISOString().slice(0, 16);
 
+  const [isDivShow, setIsDivShow] = useState(false);
+
+  // Function to toggle the div's visibility on button click
+  const toggleDiv = () => {
+    setIsDivShow(!isDivShow);
+  };
+
+  // Define the style for the div based on the state
+  const divStyle = {
+    display: isDivShow ? 'block' : 'none',
+  };
+
   return (
     <div className="request-form">
       <div className="third-form main-content">
       <NavigationBarForm />
+        <div class="grey-out" id="grey-out"  style={divStyle}></div>
+        <div className="popup" style={divStyle}>
+          <h3>Ideal Flows</h3>
+            <table className="flow-info">
+              <tr>
+                <th>Flow Level</th>
+                <th>Activity</th>
+                <th>Notes</th>
+              </tr>
+              <tr>
+                <td>30 - 50 m&sup3;/s</td>
+                <td>River kayaking</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>64 m&sup3;/s</td>
+                <td>Surfing</td>
+                <td>A local favourite!</td>
+              </tr>
+            </table>
+          <br />
+          <Button variant="button-primary" onClick={toggleDiv}>Close</Button>
+        </div>
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">First Preference Flow Details</h2>
 
@@ -110,7 +147,9 @@ export const Formpage3 = () => {
               value={formData3.flowLevel}
               onChange={handleChange}
             />
-            
+            <Link className="" id="info" onClick={toggleDiv}>
+              <img src={InformationIcon} className="info-icon" />
+            </Link>
             </div>
             <div className="error-message">{errors.flowLevel}</div>
 
