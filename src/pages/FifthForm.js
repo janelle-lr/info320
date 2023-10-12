@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 
 // Components
-import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
-import Button from "../components/Button";
+import NavigationBarForm from "../components/NavigationBarForms";
 
 export const Formpage5 = () => {
   const [formData5, setFormData5,] = useState({
@@ -25,7 +23,6 @@ export const Formpage5 = () => {
 
 
   // nextClick triggers the repsonse from the next button at the button 
-
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
@@ -36,7 +33,7 @@ export const Formpage5 = () => {
       setErrors({});
       postData();
       sendEmail();
-      window.location.href = "/Conformation";
+      window.location.href = "/Confirmation";
     } else {
       // Validation failed, set the errors state to display error messages
       setErrors(newErrors);
@@ -86,8 +83,6 @@ export const Formpage5 = () => {
       firstName: formData.firstName,
       lastName: formData.lastName,
     };
-    // const firstName = formData.firstName;
-    // const lastName = formData.lastName;
 
     fetch("http://localhost:5500/sendEmail", {
       method: "POST",
@@ -111,7 +106,6 @@ export const Formpage5 = () => {
     <div className="request-form section-container">
       <div className="fifth-form main-content">
         <NavigationBarForm />
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Health and Safety</h1>
         <form className="label-visible">
           <br></br>

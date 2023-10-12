@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
 import "./Information.css";
-import { Link } from "react-router-dom";
 
 // Components
 import "../components/Layout.css";
@@ -15,14 +13,6 @@ import NavigationBar from "../components/NavigationBar";
 import Clydedam from "../images/Clydedam.jpg";
 
 function Information() {
-  // const [message, setMessage] = useState("");
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5500/")
-  //     .then((res) => res.json())
-  //     .then((data) => setMessage(data.message));
-  // }, []);
-
   const flows = data.river;
 
   // sort the flows by "READING_NZST_DATETIME" and get the last three items
@@ -56,7 +46,6 @@ function Information() {
 
       <div className="section-container locations">
         <h2 className="subsection-heading">Key Locations</h2>
-        {/* <h2 className="subsection-heading">{message}</h2> */}
         <div className="layout-column main-content">
           <div className="two-columns mobile-single-col">
             <img src={locationIcon} alt="Hero Image" />
@@ -73,7 +62,6 @@ function Information() {
             <img src={locationIcon} alt="Hero Image" />
             <div className="location-text">
               <h3 className="subtitle">Albert Town Campground</h3>
-              {/* <br /> */}
               <p className="location-paragraph">Time for flow requested to reach location: 2 Hours </p>
             </div>
           </div>
@@ -140,16 +128,6 @@ function Information() {
               <Button variant="button-primary" destination="/RequestForm">
                 Send a wave request
               </Button>
-
-              {/* <Button
-              id="toForm"
-              variant="button-primary"
-
-            >
-                <Link to="/RequestForm">
-              Send a wave request
-             </Link>
-            </Button> */}
             </div>
           </div>
         </div>
@@ -158,4 +136,4 @@ function Information() {
       );
 }
 
-      export default Information;
+export default Information;

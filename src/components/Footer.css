@@ -1,16 +1,9 @@
 .footer {
-  background-color: rgb(48, 48, 48);
-  height: 100%;
   width: 100%;
   color: #ffffff;
   font-size: 12px;
-
-
-.footer-content {
-  padding-top: 2em;
-  /* border-top: 1px solid rgb(255, 255, 255); */
+  bottom: 0;
 }
-
 
 .footer .footer_image {
   position: absolute;
@@ -18,36 +11,25 @@
   display: flex;
   justify-content: center;
   z-index: 0;
-  
-}
-
+  background-color: rgb(48, 48, 48);
 }
 
 .footer a {
   color: #ffffff;
   font-weight: 300;
-  padding-right: 32px;
-}
-
-.footer_blocks {
-  padding: 0 30%;
-  padding-bottom: 2.5%;
-  z-index: 1;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  padding-left: 32px;
 }
 
 #footerLogo {
-  width: 100px; /* Set your desired width here */
-  height: auto; /* Auto adjust the height to maintain aspect ratio */
+  width: 100px;
+  height: auto;
+  margin-left: 2em;
+  margin-right: 2em;
 }
-
-/* .footer_blocks_links{
-} */
 
 .footer_blocks_links {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5em 0;
 }

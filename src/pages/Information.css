@@ -1,7 +1,3 @@
-/* NavigationBar {
-  position: fixed;
-} */
-
 .locations h5 {
   margin: 0;
 }
@@ -26,23 +22,18 @@
 
 .flow-requests .section-container {
   background-color: rgb(247, 247, 247);
-  /* padding: auto; */
   padding-bottom: 0;
-  /* background-color: blueviolet; */
 }
 
 .flow-requests .layout-column {
-  /* background-color: blueviolet; */
   flex-wrap: wrap;
 }
 
 .flow-requests table {
-  /* background-color: aqua; */
   margin: auto;
 }
 
 .active-flows td, .pending-requests td {
-  /* background-color: saddlebrown; */
   width: 6.5em;
 }
 
@@ -51,12 +42,7 @@
   height: 3.5em;
 }
 
-/* .pending-requests td {
-  width: 10em;
-} */
-
 .two-columns:first-child {
-  /* background-color: chartreuse; */
   border-right: 2px solid rgb(146, 146, 146);
 }
 
@@ -136,13 +122,10 @@
 
   .flow-requests .section-container {
     background-color: rgb(247, 247, 247);
-    /* padding: auto; */
     padding-bottom: 0;
-    /* background-color: blueviolet; */
   }
 
   .flow-requests table {
-    /* background-color: aqua; */
     margin: auto;
     font-size: 0.87em;
   }
@@ -168,11 +151,9 @@
   width: 50vw;
 }
 
-/* Assuming you want the image to take up 50% of the screen width */
 .cyldedam img {
   width: 100%;
   height: auto; /* To maintain the image's aspect ratio */
-  /* float: left; */
   float: left;
 }
 

@@ -1,19 +1,8 @@
 import React from "react";
 
 // Components
-import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
-import CancelPrompt from "../components/CancelPrompt";
-
-// const handleConfirmation = (decision) => {
-//   if (decision) {
-//     // User clicked "Yes" in the confirmation prompt
-//     // Perform your desired action here, e.g., navigate to another page
-//     window.location.href = '/'; // Change this to the desired URL
-//   }
-//   // Handle other cases if needed
-// };
+import NavigationBarForm from "../components/NavigationBarForms";
 
 const clearLocalstorage = () => {
   localStorage.clear();
@@ -54,7 +43,7 @@ export const Form = () => {
           to lead their intended activity.
         </p>
         
-        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" leftOnClick={clearLocalstorage} rightButton="Next" rightButtonDest="/intialForm" />    
+        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" leftOnClick={clearLocalstorage} rightButton="Next" rightButtonDest="/FirstForm" />    
       </div>
     </div>
   );
