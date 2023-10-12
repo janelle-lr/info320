@@ -4,13 +4,11 @@
   width: 100%;
   color: #ffffff;
   font-size: 12px;
-
+}
 
 .footer-content {
   padding-top: 2em;
-  /* border-top: 1px solid rgb(255, 255, 255); */
 }
-
 
 .footer .footer_image {
   position: absolute;
@@ -18,9 +16,6 @@
   display: flex;
   justify-content: center;
   z-index: 0;
-  
-}
-
 }
 
 .footer a {
@@ -39,12 +34,9 @@
 }
 
 #footerLogo {
-  width: 100px; /* Set your desired width here */
-  height: auto; /* Auto adjust the height to maintain aspect ratio */
+  width: 100px;
+  height: auto;
 }
-
-/* .footer_blocks_links{
-} */
 
 .footer_blocks_links {
   display: flex;

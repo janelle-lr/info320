@@ -1,6 +1,5 @@
 // ROUTING
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
 import RequestFormPage from "./pages/RequestForm";
 import InformationPage from "./pages/Information";
 import IntialFormPage from "./pages/intialForm";
@@ -17,8 +16,7 @@ import "./components/Texts.css";
 import "./pages/Form.css";
 import "./App.css";
 
-function App() {
-  
+function App() {  
   return (
     <Router>
       <Routes>
@@ -30,31 +28,9 @@ function App() {
         <Route path="/FourthForm" element={<FourthFormPage />} />
         <Route path="/FifthForm" element={<FifthFormPage />} />
         <Route path="/Conformation" element={<ConfirmationPage />} />
-        {/* <Route path="/send-data" element={<postData />} /> */}
       </Routes>
     </Router>
   );
 }
-
-// export default App;
-
-// import React, { useState, useEffect } from "react";
-// import "./App.css";
-
-// function App() {
-//   const [message, setMessage] = useState("");
-
-//   useEffect(() => {
-//     fetch("http://localhost:5500/message")
-//       .then((res) => res.json())
-//       .then((data) => setMessage(data.message));
-//   }, []);
-
-//   return (
-//     <div className="App">
-//       <h1>{message}</h1>
-//     </div>
-//   );
-// }
 
 export default App

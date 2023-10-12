@@ -3,16 +3,11 @@
   width: 80%;
   max-width: 1524px;
   min-height: 100px;
-  /* min-width: 1143px;
-    max-width: 1524px; */
   box-sizing: border-box;
-  /* background-color: aqua; */
 }
 
 .section-container {
-  /* padding: 50px; */
   padding: 2.5em;
-  /* background-color: red; */
 }
 
 .layout-column {
@@ -21,10 +16,8 @@
   display: flex;
   flex-wrap: nowrap;
   text-align: center;
-  /* max-width: 75%; */
   height: auto;
   margin: auto;
-  /* background-color: aqua; */
 }
 
 .layout-column h3 {
@@ -39,32 +32,21 @@
 }
 
 .two-columns {
-  /* padding: 2%;
-  margin: 0.5%; */
   padding: 0%;
   margin: 0%;
   flex: 45%;
-  /* background-color: blueviolet; */
-}
-
-@media only screen and (min-width: 600px) {
-
-  
 }
 
 /* Mobile and small devices */
 @media only screen and (max-width: 600px) {
   .main-content {
-    /* width: 90%; */
     width: 100%;
-    /* background-color: aqua; */
   }
-  
+
   .section-container {
     padding: 1em;
-    /* background-color: red; */
   }
-  
+
   .layout-column {
     display: flex;
     flex-direction: column;
@@ -72,33 +54,23 @@
     max-width: 100%;
     height: auto;
     margin: auto;
-    /* background-color: pink; */
   }
-  
+
   .layout-column h3 {
     font-weight: 700;
     font-size: 1.25em;
     margin-top: 1.2em;
   }
-  
+
   .layout-column p {
     font-weight: normal;
     margin-top: 1.2em;
   }
-  
+
   /* THREE COLUMN LAYOUT STYLING */
   .three-columns {
-    /* background-color: blue; */
-    /* padding: 10px; */
     padding: 1em;
     margin: 0px 5px;
-    /* flex: 30%; */
-    /* width: 0px; */
     flex: 30%;
   }
-  
-  .two-columns {
-    /* background-color: blueviolet; */
-  }
-  
 }
