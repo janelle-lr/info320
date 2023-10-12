@@ -1,11 +1,8 @@
 .navigation {
-  /* margin-top: 0; */
   background-color: rgb(255, 255, 255);
-  /* background-color: aqua; */
   height: 7.4%;
   display: flex;
   align-items: center; /* Center vertically */
-  /* position: fixed; */
 }
 
 .navigation a {
@@ -15,8 +12,11 @@
   padding: 0 1em;
 }
 
+.form-nav a {
+  padding: 0;
+}
+
 .navbar {
-  /* background-color: rosybrown; */
   height: 7.4%;
   display: flex;
   align-items: center; /* Center vertically */
@@ -31,7 +31,6 @@
   height: 4.3em;
 }
 
-
 @media only screen and (max-width: 600px) {
   .navigation {
     background-color: rgb(255, 255, 255);
@@ -40,9 +39,8 @@
     display: flex;
     align-items: center;
   }
-  
+
   .navigation a:not(:first-child) {
     display: none;
   }
-  
 }

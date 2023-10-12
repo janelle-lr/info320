@@ -1,0 +1,250 @@
+.request-form {
+    padding: 2% 0;
+  }
+
+  .request-form .main-content {
+    position: relative;
+    height: 85vh;
+    padding: 0;
+  }
+  
+  .form-contact-logo {
+    height: auto;
+    width: 10%;
+  }
+  
+  .request-form h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    padding-top: 3%;
+    padding-bottom: 1%;
+  }
+  
+  .label-invisible label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .text-box {
+    padding: 1.3%;
+    border: 2px solid rgb(237, 237, 237);
+    margin-top: 1%;
+  }
+  
+  .container {
+    margin-right: 1%;
+  }
+  
+  .one-twelfth {
+    width: calc(8.333% - 0.5%);
+  }
+  
+  .two-twelfths {
+    width: calc(16.666% - 0.5%);
+  }
+  
+  .three-twelfths {
+    width: calc(25% - 0.5%);
+  }
+  
+  .four-twelfths {
+    width: calc(33.333% - 0.5%);
+  }
+  
+  .five-twelfths {
+    width: calc(41.666% - 0.5%);
+  }
+  
+  .six-twelfths {
+    width: calc(50% - 0.5%);
+  }
+  
+  .row input:not(:last-child), .error-message:not(:last-child) {
+    margin-right: 1%;
+  }
+  
+  .seven-twelfths {
+    width: calc(58.333% - 0.5%);
+  }
+  
+  .eight-twelfths {
+    width: calc(66.666% - 0.5%);
+  }
+  
+  .nine-twelfths {
+    width: calc(75% - 0.5%);
+  }
+  
+  .ten-twelfths {
+    width: calc(83.333% - 0.5%);
+  }
+  
+  .eleven-twelfths {
+    width: calc(91.666% - 0.5%);
+  }
+  
+  .full-width {
+    width: calc(100%);
+  }
+  
+  /* THIRD FORM STYLING */
+  .request-form .third-form {
+    position: relative;
+    height: 50vw;
+    padding: 0;
+  }
+
+  .info-icon {
+    position: absolute;
+    top: 29.5vh;
+    right: 1.5%;
+    width: 2em;
+    height: auto;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 2%;
+    z-index: 1000;
+    width: 60%;
+    text-align: center;
+  }
+
+  .grey-out {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .flow-info {
+    padding: 1%;
+    width: 90%;
+    margin: 3% auto;
+  }
+
+  .flow-info tr, .flow-info td, .flow-info th {
+    text-align: center;
+    padding: 2%;
+    border: 1px solid #ccc;
+  }
+
+  .flow-info td:first-child, .flow-info tr:first-child {
+    width: 20%;
+  }
+  
+  /* FOURTH FORM STYLING */
+  
+  .row label {
+    font-size: 0.7em;
+    font-weight: 600;
+    position: absolute;
+    margin-top: 1.8%;
+    margin-left: 1.3%;
+  }
+  
+  .row input[type="datetime-local"] {
+    padding-top: 2.6em;
+    padding-bottom: 1.3%;
+  }
+  
+  select {
+    background-color: none;
+  }
+  
+  .form-title-secondary {
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-bottom: 2%;
+  }
+  
+  .form-paragraph {
+    margin-bottom: 2%;
+  }
+
+  .fourth-form .info-icon {
+    top: 40.5%;
+  }
+  
+  /* FIFTH FORM STYLING */
+  .fifth-form input.checkbox {
+    transform: scale(1.5);
+    margin: 1% 1% 0.5% 1%;
+  }
+  
+  .fifth-form .label-visible {
+    font-size: 1em;
+  }
+  
+  /* CONFIRMATION PAGE STYLING */
+  .dialogue-info {
+    text-align: center;
+    align-items: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dialogue-info h1 {
+    padding-bottom: 0;
+  }
+  
+  .dialogue-info img {
+    width: 15%;
+    height: auto;
+    padding: 2% 0;
+  }
+  
+  .dialogue-info #request-id {
+    font-size: 1em;
+    font-weight: 400;
+    padding-top: 0;
+  }
+  
+  .dialogue-info .dialogue-button {
+    margin-top: 13vh;
+  }
+  
+  .request-form .error-message {
+    color: #ff0000; 
+    font-size: 14px;
+  }
+
+  .error-message-group {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  /* Mobile and small devices */
+  @media only screen and (max-width: 600px) {
+    .request-form h1 {
+      font-size: 1.5em;
+      padding-bottom: 5%;
+    }
+  
+    .form-paragraph {
+      font-size: 0.9em;
+    }
+  
+    .text-box {
+      width: 100%;
+      padding: 2.9%;
+      margin-bottom: 2.3%;
+    }
+  }
+  

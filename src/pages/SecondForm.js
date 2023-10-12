@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-
+import React, { useState, useEffect } from "react";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import logo from "../images/contactLogo.png";
-import Button from "../components/Button";
-import NavigationBarForm from '../components/NavivagtionBarForms';
+import NavigationBarForm from "../components/NavigationBarForms";
 
 export const Formpage2 = () => {
   const [formData2, setFormData2] = useState({
@@ -16,12 +12,12 @@ export const Formpage2 = () => {
     address: "",
     email: "",
     cellPhone: "",
-    Qualifications: ""
+    qualifications: ""
   });
 
   const [errors, setErrors] = useState({});
 
-// setting out the error validation prompts for each of the feilds where an input is required to be filled in 
+  // setting out the error validation prompts for each of the feilds where an input is required to be filled in
 
   const validateForm = () => {
     const newErrors = {};
@@ -49,68 +45,76 @@ export const Formpage2 = () => {
       newErrors.cellPhone = "Mobile number is invalid";
     }
 
-    
     return newErrors;
   };
 
-// converting to csv const
-const convertToCSV = () => {
-  // data from form output in one object
-  const { firstName, lastName, organization, address, email, phoneNumber, qualifications} = formData2;
-// headers + data
-  const csvData = [
-    ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
-    [firstName, lastName, organization, address, email, phoneNumber, qualifications]
-  ];
+  // nextClick triggers the repsonse from the next button at the button
+  const nextClick = () => {
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length === 0) {
+      // Validation passed, navigate to the next form page
+      console.log(formData2);
 
-  // converts two-dimensional array into csv format 
+      // Reset the errors state to clear error messages
+      setErrors({});
+      saveFormData2();
+      window.location.href = "/ThirdForm";
+    } else {
+      // Validation failed, set the errors state to display error messages
+      setErrors(newErrors);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData2({ ...formData2, [name]: value });
+  };
+
+  const saveFormData2 = () => {
+    try {
+      localStorage.setItem("formData2", JSON.stringify(formData2));
+    } catch (error) {
+      console.error("Error saving data to localStorage:", error);
+    }
+  };
+
+  // converting to csv const
+  const convertToCSV = () => {
+    // data from form output in one object
+    const { firstName, lastName, organization, address, email, phoneNumber, qualifications } = formData2;
+    // headers + data
+    const csvData = [
+      ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
+      [firstName, lastName, organization, address, email, phoneNumber, qualifications]
+    ];
+
+    // converts two-dimensional array into csv format 
     // map iterates over each row, and joins each row into a string, with each element separated by a comma.
-  return csvData.map(row => row.join(',')).join('\n');
-};
+    return csvData.map(row => row.join(',')).join('\n');
+  };
 
 
-// download csv
-const downloadCSV = () => {
-  // converts object that has been formatted in csv to actual csv
-  const csvData = convertToCSV();
-  // creates blob with two arguments, first is the array containing data, second specifies the type of data
-  const csvBlob = new Blob([csvData], { type: 'text/csv' });
-  // generates url for downloading csv
-  const csvUrl = URL.createObjectURL(csvBlob);
+  // download csv
+  const downloadCSV = () => {
+    // converts object that has been formatted in csv to actual csv
+    const csvData = convertToCSV();
+    // creates blob with two arguments, first is the array containing data, second specifies the type of data
+    const csvBlob = new Blob([csvData], { type: 'text/csv' });
+    // generates url for downloading csv
+    const csvUrl = URL.createObjectURL(csvBlob);
 
-  // downloads with url
-  const a = document.createElement('a');
-  a.style.display = 'none';
-  a.href = csvUrl;
-  a.download = 'form_data.csv';
-  document.body.appendChild(a);
+    // downloads with url
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = csvUrl;
+    a.download = 'form_data.csv';
+    document.body.appendChild(a);
 
-  a.click();
+    a.click();
 
-  document.body.removeChild(a);
-  URL.revokeObjectURL(csvUrl);
-};
-
-
-// nextClick triggers the repsonse from the next button at the button 
-
-const nextClick = () => {
-  const newErrors = validateForm();
-  if (Object.keys(newErrors).length === 0) {
-    // Validation passed, navigate to the next form page
-    // You can also submit the form data to your server here
-    // For now, let's print the data to the console
-    console.log(formData2);
-
-    // Reset the errors state to clear error messages
-    setErrors({});
-    saveFormData2();
-    window.location.href = "/ThirdForm";
-  } else {
-    // Validation failed, set the errors state to display error messages
-    setErrors(newErrors);
-  }
-};
+    document.body.removeChild(a);
+    URL.revokeObjectURL(csvUrl);
+  };
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
@@ -118,63 +122,6 @@ const nextClick = () => {
     setFormData2(savedFormData2);
   }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
-
-
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData2({ ...formData2, [name]: value });
-};
-
-// const saveFormData2 = () => {
-//   localStorage.setItem("formData2", JSON.stringify(formData2));
-// };
-
-const saveFormData2 = () => {
-  try {
-    localStorage.setItem("formData2", JSON.stringify(formData2));
-  } catch (error) {
-    console.error("Error saving data to localStorage:", error);
-  }
-};
-
-
-  function postData() {
-    const firstName = document.getElementsByName("firstName")[0].value;
-    const lastName = document.getElementsByName("lastName")[0].value;
-    const organization = document.getElementsByName("organization")[0].value;
-    const address = document.getElementsByName("address")[0].value;
-    const email = document.getElementsByName("email")[0].value;
-    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
-    const qualifications = document.getElementsByName("qualifications")[0].value;
-  
-    const formData = {
-      firstName,
-      lastName,
-      organization,
-      address,
-      email,
-      phoneNumber,
-      qualifications,
-    };
-    alert(JSON.stringify(formData));
-  
-    fetch("http://localhost:5000/SecondForm/postData", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => {
-        if (res.ok) {
-          alert("Success");
-        } else {
-          alert("Error");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while connecting.");
-      });
-  }
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
@@ -185,6 +132,7 @@ const saveFormData2 = () => {
           <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
+              id="posting"
               className="text-box five-twelfths"
               type="text"
               name="firstName"
@@ -192,6 +140,8 @@ const saveFormData2 = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+            {/* <span>*</span> */}
+
             <label htmlFor="lastName">Last Name</label>
             <input
               className="text-box seven-twelfths"
@@ -202,45 +152,40 @@ const saveFormData2 = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="errorMessage">
-            {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-            {errors.firstName && (
-              <div className="error-message">{errors.firstName}</div>
-            )}
-            {errors.lastName && (
-              <div className="error-message">{errors.lastName}</div>
-            )}
-            {errors.organization && (
-              <div className="error-message">{errors.organization}</div>
-            )}
-            {errors.address && (
-              <div className="error-message">{errors.address}</div>
-            )}
-            {errors.email && (
-              <div className="error-message">{errors.email}</div>
-            )}
-            {errors.cellPhone && (
-              <div className="error-message">{errors.cellPhone}</div>
-            )}
+          <div className="error-message-group">
+            <div className="error-message five-twelfths">
+              {errors.firstName}
+            </div>
+            <div className="error-message seven-twelfths">
+              {errors.lastName}
+            </div>
           </div>
 
-          <label htmlFor="organization">Organization</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="organization"
-            placeholder="Organization" value={formData2.organization}
-            onChange={handleChange}
-          />
 
-          <label htmlFor="address">Address</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="address"
-            placeholder="Full Address" value={formData2.address}
-            onChange={handleChange}
-          />
+          <div class="row">
+            <label htmlFor="organization">Organization</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="organization"
+              placeholder="Organization"
+              value={formData2.organization}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.organization}</div>
+
+            <label htmlFor="address">Address</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="address"
+              placeholder="Full Address"
+              value={formData2.address}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.address}</div>
+
+          </div>
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -248,18 +193,26 @@ const saveFormData2 = () => {
               className="text-box seven-twelfths"
               type="email"
               name="email"
-              placeholder="Email" value={formData2.email}
+              placeholder="Email"
+              value={formData2.email}
               onChange={handleChange}
             />
 
-            <label htmlFor="phoneNumber">Mobile Number</label>
+            <label htmlFor="cellPhone">Mobile Number</label>
             <input
               className="text-box five-twelfths"
               type="tel"
-              name="phoneNumber"
-              placeholder="Mobile Number" value={formData2.cellPhone}
+              name="cellPhone"
+              placeholder="Mobile Number"
+              value={formData2.cellPhone}
               onChange={handleChange}
             />
+          </div>
+          <div className="error-message-group">
+            <div className="error-message seven-twelfths">{errors.email}</div>
+            <div className="error-message five-twelfths">
+              {errors.cellPhone}
+            </div>
           </div>
 
           <label htmlFor="qualifications">Qualifications</label>
@@ -268,24 +221,18 @@ const saveFormData2 = () => {
             type="text"
             name="qualifications"
             placeholder="Qualifications"
+            value={formData2.qualifications}
+            onChange={handleChange}
           />
         </form>
-        <Button variant="button-primary" onClick={postData}>
-          Post
-        </Button>
-    
-        <Button variant="button-primary" onClick={downloadCSV}>
-          Download CSV
-         </Button>
 
-        {/* <BottomButtons
+        <BottomButtons
           page="3"
           leftButton="Back"
-          leftButtonDest="/intialForm"
+          leftButtonDest="/FirstForm"
           rightButton="Next"
-          rightButtonDest="/ThirdForm"
-        /> */}
-        <BottomButtons  page="3" leftButton="Back" leftButtonDest="/intialForm" rightButton="Next" rightOnClick={nextClick} />
+          rightOnClick={nextClick}
+        />
       </div>
     </div>
   );

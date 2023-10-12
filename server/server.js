@@ -1,283 +1,94 @@
 const express = require("express");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5500;
 const app = express();
 const cors = require("cors");
 const fs = require("fs");
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const nodemailer = require("nodemailer");
-let formInputsMap = {};
-
-// // Add key-value pairs
-// hashMap['key1'] = 'value1';
-// hashMap['key2'] = 'value2';
+let requestId = null;
 
 app.use(express.json());
 app.use(cors());
-// app.use(express.static("public"));
-// app.use(express.static(path.resolve(__dirname, './src')));
 
 app.get("/initialForm", (req, res) => {
-  // res.send("Hello World");
-  // res.sendFile(path.resolve(__dirname, './src', 'index.js'));
   res.json({ message: "Hello from server!" });
 });
 
-// SCHEMAS
-const form1Schema = new Schema({
-  applicantDetails: {
-    firstName: String,
-    lastName: String,
-    organization: String,
-    address: String,
-    email: String,
-    phoneNumber: Number,
-  },
+app.post("/postData", (req, res) => {
+  const currentReqData = "currentRequest.json";
+  const allReqData = "allRequests.json";
+
+  try {
+    // Read allRequests.json file and concat it
+    let allRequests = [];
+    if (fs.existsSync(allReqData)) {
+      const fileData = fs.readFileSync(allReqData, "utf-8");
+      allRequests = JSON.parse(fileData);
+    }
+
+    const jsonData = req.body;
+    jsonData.requestId = genReqId(allRequests.length);
+
+    // Write current request form data to the currentRequest.json file
+    fs.writeFileSync(currentReqData, JSON.stringify(jsonData));
+
+    // Add the current request data to the all requests array
+    allRequests.push(jsonData);
+
+    // Overwrite allRequests.json with the updated allRequests array
+    fs.writeFileSync(allReqData, JSON.stringify(allRequests));
+
+    res.status(200).send("Data saved successfully");
+    console.log("Data saved successfully");
+  } catch (error) {
+    console.error("Unable to save JSON: ", error);
+    res.status(400).send("Unable to save JSON");
+  }
 });
 
-const form2Schema = new Schema({
-  tripLeader: {
-    firstName: String,
-    lastName: String,
-    organization: String,
-    address: String,
-    email: String,
-    phoneNumber: Number,
-    qualifications: String,
-  },
-});
+app.post("/sendEmail", (req, res) => {
+  const firstName = req.body.firstName;
+  const email = "confirmationEmail.txt";
 
-const form1Model = mongoose.model("form1Model", form1Schema);
-const form2Model = mongoose.model("form2Model", form2Schema);
+  // read form data from currentRequest.json
+  const currentReqData = "currentRequest.json";
+  const fileData = fs.readFileSync(currentReqData, "utf-8");
+  const formData = JSON.parse(fileData);
+  // Applicant details
+  const applicantDetails = formData.formData;
+  const leaderDetails = formData.formData2;
+  const primaryFlowDetails = formData.formData3;
+  const secondaryFlowDetails = formData.formData4;
 
-function getData(req, res) {
-  // app.get('/loadServer', (req, res) => {
-  const fileName = "formInput.json";
+  let emailMessage = `Hi, ${firstName}! Thanks for submitting your flow request. Please note Contact will make \"reasonable endeavors\" to provide the requested flow or level, however all approvals are subject to generation requirements including, but not limited to, unexpected changes in electricity demand, generation plant availability or significant flow changes in the Clutha Catchment. \n\nRequested flow:\n\tRequest ID# ${requestId}\n\tApplicant Details\n\t\tName: ${applicantDetails.firstName} ${applicantDetails.lastName}\n\t\tOrganisation: ${applicantDetails.organization}\n\t\tAddress: ${applicantDetails.address}\n\t\tEmail: ${applicantDetails.email}\n\t\tCellphone: ${applicantDetails.cellPhone}
+  \n\tTrip Leader Details\n\t\tName: ${leaderDetails.firstName} ${leaderDetails.lastName}\n\t\tOrganisation: ${leaderDetails.organization}\n\t\tAddress: ${leaderDetails.address}\n\t\tEmail: ${leaderDetails.email}\n\t\tCellphone: ${leaderDetails.cellPhone}\n\t\tQualifications: `;
 
-  if (fs.existsSync(fileName)) {
-    // if file exists read and send its contents
-    fs.readFile(fileName, (err, data) => {
-      if (err) {
-        res.status(500).json(err);
-      } else {
-        let items = JSON.parse(data);
-        res.status(200).json(items);
-        console.log("Loaded from formInput.json");
-      }
-    });
+  if (formData.formData2.qualifications !== null && formData.formData2.qualifications !== undefined && formData.formData2.qualifications !== "") {
+    emailMessage += `${leaderDetails.qualifications}`;
   } else {
-    res.status(404).send("formInput.json file not found");
-  }
-}
-
-function postData(req, res, schema, input, key) {
-  const fileName = "formInput.json";
-  const schemaModel = schema;
-  const item = input;
-  //   const jsonObj2 = JSON.stringify(item);
-  const jsonObj2 = item;
-  const jsonArray = [];
-  // const newJsonEntry = input;
-
-  if (fs.existsSync(fileName)) {
-    // if (key in formInputsMap){
-    //   console.log("key exists");
-    // }
-
-    fs.readFile(fileName, (err, data) => {
-      if (err) {
-        res.status(500).json(err);
-      } else {
-      }
-    });
-    fs.readFile(fileName, (err, data) => {
-      if (err) {
-        res.status(500).json(err);
-      } else {
-        let item2 = JSON.parse(data);
-        // const jsonObj1 = JSON.stringify(item2);
-        const jsonObj1 = item2;
-
-        console.log(jsonObj1[0]);
-        jsonArray.push(jsonObj1);
-        jsonArray.push(jsonObj2);
-        console.log("jsonArr0 = " + jsonArray[0]);
-        console.log("jsonArr1 = " + jsonArray[1]);
-        console.log("jsonArr = " + jsonArray.toString());
-        fs.writeFile(fileName, JSON.stringify(jsonArray), (err) => {
-          if (err) {
-            res.status(500).json(err);
-          } else {
-            res.status(200).send("saved to formInput.json");
-            console.log("saved to formInput.json");
-          }
-        });
-      }
-    });
-  } else {
-    fs.writeFile(fileName, JSON.stringify(jsonObj2), (err) => {
-      if (err) {
-        res.status(500).json(err);
-      } else {
-        res.status(200).send("saved to formInput.json");
-        console.log("saved to formInput.json");
-      }
-    });
-    // fs.writeFile(fileName, JSON.stringify(newJsonEntry), (err) => {
-    //   if (err) {
-    //     res.status(500).json(err);
-    //   } else {
-    //     res.status(200).send("saved to formInput.json");
-    //     console.log("saved to formInput.json");
-    //     formInputsMap[key] = newJsonEntry;
-    //   }
-    // });
+    emailMessage += `Left blank`;
   }
 
-  //   const schemaModel = schema;
-  //   const item = input;
-  //   const items = JSON.stringify(item);
+  emailMessage += `\n\n\tPrimary Flow Preference\n\t\tFlow Range(ms³): ${primaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${primaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${primaryFlowDetails.endDateTime}\n\t\tArea of Request: ${primaryFlowDetails.Dropdown}\n\t\tActivity Description: ${primaryFlowDetails.Breif}\n\t\tParticipants: ${primaryFlowDetails.participants}\n\t\tNumber of Participants: ${primaryFlowDetails.NoParticpants}\n\n\tSecondary Flow Preference\n\t\tFlow Range(ms³): ${secondaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${secondaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${secondaryFlowDetails.endDateTime}\n\t\tArea of Request: ${secondaryFlowDetails.Dropdown}\n\nThanks again,\nContact Energy\n\nThis is an automated email, please do not reply to this email.`;
 
-  //   fs.writeFile(fileName, items, (err) => {
-  //     if (err) {
-  //       res.status(500).json(err);
-  //     } else {
-  //       res.status(200).send("saved to items.json");
-  //       console.log("saved to items.json");
-  //     }
-  //   });
-}
-
-function loadServer(req, res) {
-  // app.get('/loadServer', (req, res) => {
-  const fileName = "formInput.json";
-
-  if (fs.existsSync(fileName)) {
-    // if file exists read and send its contents
-    fs.readFile(fileName, (err, data) => {
-      if (err) {
-        res.status(500).json(err);
-      } else {
-        let items = JSON.parse(data);
-        res.status(200).json(items);
-        console.log("Loaded from items.json");
-      }
-    });
-  } else {
-    res.status(404).send("items.json file not found");
-  }
-  //   });
-}
-
-app.post("/initialForm/postData", (req, res) => {
-  //   const schemaModel = new Schema({
-  //     applicantDetails: {
-  //       firstName: String,
-  //       lastName: String,
-  //       organization: String,
-  //       address: String,
-  //       email: String,
-  //       phoneNumber: Number,
-  //     },
-  //   });
-
-  //   const Model = mongoose.model("Model", schemaModel);
-
-  const input = new form1Model({
-    applicantDetails: {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      organization: req.body.organization,
-      address: req.body.address,
-      email: req.body.email,
-      phoneNumber: req.body.phoneNumber,
-    },
+  // Write data to the text file
+  fs.writeFile(email, emailMessage, (err) => {
+    if (err) {
+      console.error("Error writing to file:", err);
+      console.log("Data has been written to the file.");
+    }
   });
-
-  // console.log("email = " + input.applicantDetails.email);
-  // // Create a transport using a local SMTP server (e.g., MailHog)
-  // const transporter = nodemailer.createTransport({
-  //   host: 'smtp.gmail.com',
-  //   port: 587, // SMTP server port (MailHog default)
-  //   ignoreTLS: true, // Disable TLS (for local testing)
-  // });
-
-  // // Define email data
-  // const mailOptions = {
-  //   from: "limrajane@gmail.com", // Sender's email address
-  //   to: input.applicantDetails.email, // Recipient's email address
-  //   subject: "Test Email", // Email subject
-  //   text: "This is a test email sent without authentication.", // Plain text body
-  // };
-
-  // // Send the email
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (error) {
-  //     console.error("Error sending email:", error);
-  //   } else {
-  //     console.log("Email sent:", info.response);
-  //   }
-  // });
-  postData(req, res, form1Schema, input, "applicantDetails");
-  //   let items = JSON.stringify(item);
-
-  //   fs.writeFile("items.json", items, (err) => {
-  //     if (err) {
-  //       res.status(500).json(err);
-  //     }
-  //     res.status(200).send("saved to items.json");
-  //     console.log("saved to items.json");
-  //   });
 });
 
-app.post("/SecondForm/postData", (req, res) => {
-  //   const schemaModel = new Schema({
-  //     tripLeader: {
-  //       firstName: String,
-  //       lastName: String,
-  //       organization: String,
-  //       address: String,
-  //       email: String,
-  //       phoneNumber: Number,
-  //       qualifications: String,
-  //     },
-  //   });
+function genReqId(allRequestsLength) {
+  let idPrefix = "OTGE";
+  let idNum = String(allRequestsLength + 1).padStart(5, '0');
+  requestId = idPrefix + idNum;
+  return requestId;
+}
 
-  //   const Leader = mongoose.model("Leader", schemaModel);
-  const input = new form2Model({
-    tripLeader: {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      organization: req.body.organization,
-      address: req.body.address,
-      email: req.body.email,
-      phoneNumber: req.body.phoneNumber,
-      qualifications: req.body.qualifications,
-    },
-  });
-
-  postData(req, res, form2Schema, input);
-  //   let items = JSON.stringify(input);
-
-  //   fs.writeFile("items.json", items, (err) => {
-  //     if (err) {
-  //       res.status(500).json(err);
-  //     }
-  //     res.status(200).send("saved to items.json");
-  //     console.log("saved to items.json");
-  //   });
-});
-
-// app.get("/message", (req, res) => {
-//   res.json({ message: "Hello from server!" });
-// });
-
-// app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static("public"));
-// app.get("/", (req, res) => {
-//     // res.send("Hello World");
-//     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-// });
+app.get("/getReqId", (req, res) => {
+  if (requestId != null)
+  res.send({requestId});
+})
 
 // starting the server
 app.listen(port, () => {

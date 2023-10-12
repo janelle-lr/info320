@@ -1,19 +1,7 @@
-/*text-input1 = text inputs for form
-  .form input::placeholder = place holder text within  */
-
 .form .Button {
   margin-left: 85%;
   margin-top: 48%;
 }
-
-/* Add this section for error prompts */
-
-.form .error-message {
-  color: #ff0000; /* Red color for error text */
-  font-size: 14px; /* Adjust the font size as needed */
-  margin-left: 50%;}
-
-/* Rest of your existing CSS code */
 
 .form {
   background-color: #ffffff;
@@ -54,38 +42,11 @@
   font-size: 36px;
   font-weight: 600;
   height: 44px;
-  left: 130px;
+  left: 126px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
   top: 166px;
-}
-
-.form .form-title-secondary {
-  color: #303030;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 28px;
-  font-weight: 600;
-  height: 44px;
-  left: 130px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 220px;
-}
-
-.form .form-text {
-  color: #303030;
-  font-family: "Montserrat-SemiBold", Helvetica;
-  font-size: 24px;
-  font-weight: 400;
-  height: 44px;
-  left: 130px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  top: 258px;
-  width: 1256px;
 }
 
 .form input::placeholder {

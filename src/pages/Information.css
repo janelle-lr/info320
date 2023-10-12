@@ -1,7 +1,3 @@
-/* NavigationBar {
-  position: fixed;
-} */
-
 .locations h5 {
   margin: 0;
 }
@@ -26,37 +22,27 @@
 
 .flow-requests .section-container {
   background-color: rgb(247, 247, 247);
-  /* padding: auto; */
   padding-bottom: 0;
-  /* background-color: blueviolet; */
 }
 
 .flow-requests .layout-column {
-  /* background-color: blueviolet; */
   flex-wrap: wrap;
 }
 
 .flow-requests table {
-  /* background-color: aqua; */
   margin: auto;
 }
 
-.active-requests td {
-  /* background-color: saddlebrown; */
+.active-flows td, .pending-requests td {
   width: 6.5em;
 }
 
-.current-flows tr,
-.active-requests tr {
+.pending-requests tr,
+.active-flows tr {
   height: 3.5em;
 }
 
-.current-flows td {
-  width: 10em;
-}
-
 .two-columns:first-child {
-  /* background-color: chartreuse; */
   border-right: 2px solid rgb(146, 146, 146);
 }
 
@@ -136,18 +122,15 @@
 
   .flow-requests .section-container {
     background-color: rgb(247, 247, 247);
-    /* padding: auto; */
     padding-bottom: 0;
-    /* background-color: blueviolet; */
   }
 
   .flow-requests table {
-    /* background-color: aqua; */
     margin: auto;
     font-size: 0.87em;
   }
 
-  .active-requests td {
+  .active-flows td {
     width: 6.5em;
   }
 
@@ -158,4 +141,23 @@
   .two-columns:first-child {
     border-right: none;
   }
+}
+
+.history {
+  background-color: rgb(247, 247, 247);
+}
+
+.cyldedam {
+  width: 50vw;
+}
+
+.cyldedam img {
+  width: 100%;
+  height: auto; /* To maintain the image's aspect ratio */
+  float: left;
+}
+
+.historyText{
+  text-align: left;
+  padding: 14%;
 }
