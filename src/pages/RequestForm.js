@@ -4,16 +4,6 @@ import React from "react";
 import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
 import NavigationBarForm from "../components/NavivagtionBarForms";
-import CancelPrompt from "../components/CancelPrompt";
-
-// const handleConfirmation = (decision) => {
-//   if (decision) {
-//     // User clicked "Yes" in the confirmation prompt
-//     // Perform your desired action here, e.g., navigate to another page
-//     window.location.href = '/'; // Change this to the desired URL
-//   }
-//   // Handle other cases if needed
-// };
 
 const clearLocalstorage = () => {
   localStorage.clear();

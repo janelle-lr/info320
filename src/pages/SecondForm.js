@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import logo from "../images/contactLogo.png";
-import Button from "../components/Button";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 
 export const Formpage2 = () => {
@@ -52,13 +49,10 @@ export const Formpage2 = () => {
   };
 
   // nextClick triggers the repsonse from the next button at the button
-
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       // Validation passed, navigate to the next form page
-      // You can also submit the form data to your server here
-      // For now, let's print the data to the console
       console.log(formData2);
 
       // Reset the errors state to clear error messages
@@ -75,10 +69,6 @@ export const Formpage2 = () => {
     const { name, value } = e.target;
     setFormData2({ ...formData2, [name]: value });
   };
-
-  // const saveFormData2 = () => {
-  //   localStorage.setItem("formData2", JSON.stringify(formData2));
-  // };
 
   const saveFormData2 = () => {
     try {

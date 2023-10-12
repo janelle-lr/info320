@@ -16,8 +16,7 @@ export const Formpage1 = () => {
 
   const [errors, setErrors] = useState({});
 
-  // setting out the error validation prompts for each of the feilds where an input is required to be filled in
-
+  // setting out the error validation prompts for each of the fields where an input is required to be filled in
   const validateForm = () => {
     const newErrors = {};
     if (!formData.firstName) {
@@ -37,11 +36,7 @@ export const Formpage1 = () => {
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-    // if (!formData.cellPhone) {
-    //   newErrors.cellPhone = "Cell phone number is required";
-    // } else if (!/^\d{20}$/.test(formData.cellPhone)) {
-    //   newErrors.cellPhone = "Invalid cell phone number format";
-    // }
+
     if (!formData.cellPhone) {
       newErrors.cellPhone = "Moblie number is required";
     } else if (!/^\d{6,15}$/.test(formData.cellPhone)) {
