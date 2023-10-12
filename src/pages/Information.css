@@ -41,19 +41,19 @@
   margin: auto;
 }
 
-.active-requests td {
+.active-flows td, .pending-requests td {
   /* background-color: saddlebrown; */
   width: 6.5em;
 }
 
-.current-flows tr,
-.active-requests tr {
+.pending-requests tr,
+.active-flows tr {
   height: 3.5em;
 }
 
-.current-flows td {
+/* .pending-requests td {
   width: 10em;
-}
+} */
 
 .two-columns:first-child {
   /* background-color: chartreuse; */
@@ -147,7 +147,7 @@
     font-size: 0.87em;
   }
 
-  .active-requests td {
+  .active-flows td {
     width: 6.5em;
   }
 
@@ -158,4 +158,25 @@
   .two-columns:first-child {
     border-right: none;
   }
+}
+
+.history {
+  background-color: rgb(247, 247, 247);
+}
+
+.cyldedam {
+  width: 50vw;
+}
+
+/* Assuming you want the image to take up 50% of the screen width */
+.cyldedam img {
+  width: 100%;
+  height: auto; /* To maintain the image's aspect ratio */
+  /* float: left; */
+  float: left;
+}
+
+.historyText{
+  text-align: left;
+  padding: 14%;
 }

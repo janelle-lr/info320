@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Button from "../components/Button";
-import logo from "../images/contactLogo.png";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 import check from "../images/check-o.svg";
 
@@ -21,18 +20,22 @@ export const Formpage6 = () => {
       });
   }, []);
 
+  
+  const clearLocalstorage = () => {
+      localStorage.clear();
+  };
+
   return (
     <div className="request-form section-container">
       <div className="main-content">
         <NavigationBarForm />
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <div className="dialogue-info">
           <h1>Request Sent</h1>
           <p id="request-id">Request ID: {requestId}</p>
 
           <img id="checkIcon" src={check} alt="" />
           <p>
-            Thank your for you request, our team will review your request
+            Thank you for your request, our team will review your request
             shortly.
             <br />
             You can view approved flow requests on the wave information page.
@@ -40,7 +43,7 @@ export const Formpage6 = () => {
             For urgent issues please contact us on 03 440 0329.
             <br />
           </p>
-          <Button variant="button-primary dialogue-button" destination="/">
+          <Button variant="button-primary dialogue-button" destination="/" onClick={clearLocalstorage}>
             Dismiss
           </Button>
         </div>

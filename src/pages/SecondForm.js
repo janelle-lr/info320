@@ -15,7 +15,7 @@ export const Formpage2 = () => {
     address: "",
     email: "",
     cellPhone: "",
-    Qualifications: "",
+    qualifications: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -88,83 +88,49 @@ export const Formpage2 = () => {
     }
   };
 
-  function postData() {
-    const localStorageItems = {};
+  // converting to csv const
+  const convertToCSV = () => {
+    // data from form output in one object
+    const { firstName, lastName, organization, address, email, phoneNumber, qualifications } = formData2;
+    // headers + data
+    const csvData = [
+      ["First Name", "Last Name", "Organization", "Address", "Email", "Mobile Number", "Qualifications"],
+      [firstName, lastName, organization, address, email, phoneNumber, qualifications]
+    ];
 
-    // populating localStorageItems
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      const value = localStorage.getItem(key);
-      alert(`Key: ${key}, Value: ${value}`);
-      localStorageItems[key] = JSON.parse(value); // parses values to JSON
-    }
+    // converts two-dimensional array into csv format 
+    // map iterates over each row, and joins each row into a string, with each element separated by a comma.
+    return csvData.map(row => row.join(',')).join('\n');
+  };
 
-    fetch("http://localhost:5500/postData", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(localStorageItems),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.text();
-        } else {
-          alert("Error");
-        }
-      })
-      .then((message) => {
-        console.error(message);
-        alert(message);
-        sendEmail();
-        //localStorage.clear();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while saving form data.");
-      });
-  }
+
+  // download csv
+  const downloadCSV = () => {
+    // converts object that has been formatted in csv to actual csv
+    const csvData = convertToCSV();
+    // creates blob with two arguments, first is the array containing data, second specifies the type of data
+    const csvBlob = new Blob([csvData], { type: 'text/csv' });
+    // generates url for downloading csv
+    const csvUrl = URL.createObjectURL(csvBlob);
+
+    // downloads with url
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = csvUrl;
+    a.download = 'form_data.csv';
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+    URL.revokeObjectURL(csvUrl);
+  };
 
   // Load saved form data from localStorage when the component mounts
   useEffect(() => {
     const savedFormData2 = JSON.parse(localStorage.getItem("formData2")) || {};
     setFormData2(savedFormData2);
   }, []); // The empty dependency array ensures this effect runs once when the component mounts
-
-  function sendEmail() {
-    // get first form data
-    const applicantDetails = localStorage.getItem("formData");
-    const formData = JSON.parse(applicantDetails);
-
-    // Access the firstName property from the formData object
-    const applicantName = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-    };
-    // const firstName = formData.firstName;
-    // const lastName = formData.lastName;
-
-    //alert(firstName);
-
-    fetch("http://localhost:5500/sendEmail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(applicantName),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.text();
-        } else {
-          alert("Error");
-        }
-      })
-      .then((message) => {
-        console.error(message);
-        alert(message);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred while saving form data.");
-      });
-  }
 
   return (
     <div className="request-form section-container">
@@ -176,6 +142,7 @@ export const Formpage2 = () => {
           <div className="row">
             <label htmlFor="firstName">First Name</label>
             <input
+              id="posting"
               className="text-box five-twelfths"
               type="text"
               name="firstName"
@@ -183,6 +150,8 @@ export const Formpage2 = () => {
               value={formData2.firstName}
               onChange={handleChange}
             />
+            {/* <span>*</span> */}
+
             <label htmlFor="lastName">Last Name</label>
             <input
               className="text-box seven-twelfths"
@@ -202,27 +171,31 @@ export const Formpage2 = () => {
             </div>
           </div>
 
-          <label htmlFor="organization">Organization</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="organization"
-            placeholder="Organization"
-            value={formData2.organization}
-            onChange={handleChange}
-          />
-          <div className="error-message">{errors.organization}</div>
 
-          <label htmlFor="address">Address</label>
-          <input
-            className="text-box full-width"
-            type="text"
-            name="address"
-            placeholder="Full Address"
-            value={formData2.address}
-            onChange={handleChange}
-          />
-          <div className="error-message">{errors.address}</div>
+          <div class="row">
+            <label htmlFor="organization">Organization</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="organization"
+              placeholder="Organization"
+              value={formData2.organization}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.organization}</div>
+
+            <label htmlFor="address">Address</label>
+            <input
+              className="text-box full-width"
+              type="text"
+              name="address"
+              placeholder="Full Address"
+              value={formData2.address}
+              onChange={handleChange}
+            />
+            <div className="error-message">{errors.address}</div>
+
+          </div>
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -258,11 +231,11 @@ export const Formpage2 = () => {
             type="text"
             name="qualifications"
             placeholder="Qualifications"
+            value={formData2.qualifications}
+            onChange={handleChange}
           />
         </form>
-        <Button variant="button-primary" onClick={postData}>
-          Post
-        </Button>
+
         {/* <BottomButtons
           page="3"
           leftButton="Back"

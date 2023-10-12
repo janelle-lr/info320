@@ -15,6 +15,10 @@
   padding: 0 1em;
 }
 
+.form-nav a {
+  padding: 0;
+}
+
 .navbar {
   /* background-color: rosybrown; */
   height: 7.4%;

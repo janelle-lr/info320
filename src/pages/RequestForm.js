@@ -15,12 +15,15 @@ import CancelPrompt from "../components/CancelPrompt";
 //   // Handle other cases if needed
 // };
 
+const clearLocalstorage = () => {
+  localStorage.clear();
+};
+
 export const Form = () => {
   return (
     <div className="request-form section-container">
       <div className="first-form main-content">
         <NavigationBarForm />
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Notice</h1>
 
         <p className="form-paragraph">
@@ -51,10 +54,7 @@ export const Form = () => {
           to lead their intended activity.
         </p>
         
-        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" rightButton="Next" rightButtonDest="/intialForm" />
-        {/* <CancelPrompt onUserDecision={handleConfirmation}/> */}
-
-        
+        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" leftOnClick={clearLocalstorage} rightButton="Next" rightButtonDest="/intialForm" />    
       </div>
     </div>
   );
