@@ -34,8 +34,7 @@
 .text-box {
   padding: 1.3%;
   border: 2px solid rgb(237, 237, 237);
-  /* margin-bottom: 1%; */
-  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .container {
@@ -66,7 +65,7 @@
   width: calc(50% - 0.5%);
 }
 
-.row input:not(:last-child), .row .error-message:not(:last-child) {
+.row input:not(:last-child) {
   margin-right: 1%;
 }
 
@@ -101,6 +100,7 @@
   height: 50vw;
   padding: 0;
 }
+
 
 /* FOURTH FORM STYLING */
 
@@ -169,20 +169,6 @@ select {
 .dialogue-info .dialogue-button {
   margin-top: 13vh;
 }
-
-.request-form .error-message {
-  color: #ff0000; /* Red color for error text */
-  font-size: 14px; /* Adjust the font size as needed */
-  /* margin-left: 50%; */
-  /* margin-bottom: 1%; */
-  margin-top: 0.5%;
-  display: inline-block;
-}
-
-/* .row span {
-  background-color: aqua;
-  border: 1px solid #ff0000;
-} */
 
 /* Mobile and small devices */
 @media only screen and (max-width: 600px) {
