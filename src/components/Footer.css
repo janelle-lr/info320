@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  color: #ffffff;
+  font-size: 12px;
+  bottom: 0;
+}
+
+.footer .footer_image {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  background-color: rgb(48, 48, 48);
+}
+
+.footer a {
+  color: #ffffff;
+  font-weight: 300;
+  padding-left: 32px;
+}
+
+#footerLogo {
+  width: 100px;
+  height: auto;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.footer_blocks_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 0;
+}

@@ -1,0 +1,36 @@
+/* For anything to do with text or fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Nunito:wght@800&display=swap");
+
+body, button, input, select, textarea {
+  font-family: "Montserrat", Helvetica;
+  color: rgb(48, 48, 48);
+}
+
+.subsection-heading {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: rgb(48, 48, 48);
+  text-align: center;
+  margin: 0 0 1.5em 0;
+}
+
+p {
+  font-size: 1em;
+}
+
+/* Tablets */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .subsection-heading {
+    font-size: 1.6em;
+    margin-bottom: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subsection-heading {
+    font-size: 1.45em;
+    margin-bottom: 0.25em;
+  }
+}
+
+

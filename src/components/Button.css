@@ -1,0 +1,40 @@
+.button {
+  font-size: 0.95em;
+  font-weight: 600;
+  padding: 16px 30px;
+  border-radius: 10px;
+  border: none;
+  margin: 40px auto;
+}
+
+.button-primary {
+  background-color: rgb(214, 66, 66);
+  color: rgb(247, 247, 247);
+  border: 2px solid rgb(214, 66, 66);
+}
+
+.button-primary:hover {
+  background-color: rgb(214, 66, 66, 0.8);
+}
+
+.button-secondary {
+  color: rgb(48, 48, 48);
+  border: 2px solid rgb(48, 48, 48);
+  background-color: inherit;
+}
+
+.button-secondary:hover {
+  background-color: rgb(48, 48, 48, 0.2);
+}
+
+.button a {
+  color: inherit;
+}
+
+/* Mobile and small devices */
+@media only screen and (max-width: 600px) {
+  .button {
+    font-size: 0.8em;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,76 @@
+.main-content {
+  margin: auto;
+  width: 80%;
+  max-width: 1524px;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.section-container {
+  padding: 2.5em;
+}
+
+.layout-column {
+  font-family: "Montserrat", Helvetica;
+  color: rgb(48, 48, 48);
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+.layout-column h3 {
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-top: 1.2em;
+}
+
+.layout-column p {
+  font-weight: normal;
+  margin-top: 1.2em;
+}
+
+.two-columns {
+  padding: 0%;
+  margin: 0%;
+  flex: 45%;
+}
+
+/* Mobile and small devices */
+@media only screen and (max-width: 600px) {
+  .main-content {
+    width: 100%;
+  }
+
+  .section-container {
+    padding: 1em;
+  }
+
+  .layout-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  .layout-column h3 {
+    font-weight: 700;
+    font-size: 1.25em;
+    margin-top: 1.2em;
+  }
+
+  .layout-column p {
+    font-weight: normal;
+    margin-top: 1.2em;
+  }
+
+  /* THREE COLUMN LAYOUT STYLING */
+  .three-columns {
+    padding: 1em;
+    margin: 0px 5px;
+    flex: 30%;
+  }
+}

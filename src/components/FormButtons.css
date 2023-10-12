@@ -1,0 +1,27 @@
+.form-bottom-buttons {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-bottom-buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.third-form .form-bottom-buttons {
+  position: absolute;
+  bottom: 0;
+  top: 85%;
+}
+
+.form-bottom-buttons .button-primary, .form-bottom-buttons .button-secondary {
+  margin: auto 0;
+}
+
+.form-bottom-buttons h4 {
+  font-weight: 600;
+  display: inherit;
+  align-items: center;
+}
