@@ -1,9 +1,8 @@
 import React from "react";
 
 // Components
-import logo from "../images/contactLogo.png";
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 
 const clearLocalstorage = () => {
   localStorage.clear();
@@ -44,7 +43,7 @@ export const Form = () => {
           to lead their intended activity.
         </p>
         
-        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" leftOnClick={clearLocalstorage} rightButton="Next" rightButtonDest="/intialForm" />    
+        <BottomButtons page="1" leftButton="Cancel" leftButtonDest="/" leftOnClick={clearLocalstorage} rightButton="Next" rightButtonDest="/FirstForm" />    
       </div>
     </div>
   );

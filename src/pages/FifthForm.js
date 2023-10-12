@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 
 export const Formpage5 = () => {
   const [formData5, setFormData5,] = useState({
@@ -33,7 +33,7 @@ export const Formpage5 = () => {
       setErrors({});
       postData();
       sendEmail();
-      window.location.href = "/Conformation";
+      window.location.href = "/Confirmation";
     } else {
       // Validation failed, set the errors state to display error messages
       setErrors(newErrors);

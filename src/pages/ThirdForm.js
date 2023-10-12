@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 import Dropdown from "../components/Dropdown.js";
 import InformationIcon from "../images/information-outline.png";
 import Button from "../components/Button";

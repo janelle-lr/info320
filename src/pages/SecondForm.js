@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 
 export const Formpage2 = () => {
   const [formData2, setFormData2] = useState({
@@ -226,17 +226,10 @@ export const Formpage2 = () => {
           />
         </form>
 
-        {/* <BottomButtons
-          page="3"
-          leftButton="Back"
-          leftButtonDest="/intialForm"
-          rightButton="Next"
-          rightButtonDest="/ThirdForm"
-        /> */}
         <BottomButtons
           page="3"
           leftButton="Back"
-          leftButtonDest="/intialForm"
+          leftButtonDest="/FirstForm"
           rightButton="Next"
           rightOnClick={nextClick}
         />

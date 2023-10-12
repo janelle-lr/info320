@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 
 export const Formpage1 = () => {
   const [formData, setFormData] = useState({

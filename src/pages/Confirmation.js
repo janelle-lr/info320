@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Button from "../components/Button";
-import NavigationBarForm from "../components/NavivagtionBarForms";
+import NavigationBarForm from "../components/NavigationBarForms";
 import check from "../images/check-o.svg";
 
 export const Formpage6 = () => {

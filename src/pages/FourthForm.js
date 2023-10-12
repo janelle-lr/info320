@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../components/Layout.css";
 import "../components/Texts.css";
 import BottomButtons from "../components/FormButtons";
-import NavigationBarForm from "../components/NavivagtionBarForms.js";
+import NavigationBarForm from "../components/NavigationBarForms.js";
 import Button from '../components/Button';
 import Dropdown from "../components/Dropdown";
 import InformationIcon from "../images/information-outline.png";
