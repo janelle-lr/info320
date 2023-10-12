@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to run project
+While inside the info320 directory:
+  1. run `npm install` to install all dependencies.
+  2. run `npm start`.
+
+While inside the info320/server directory:
+  1. run `npm install` to install all dependencies.
+  2. run `npm start`.
+
 ## Available Scripts
 
 In the project directory, you can run:
