@@ -51,27 +51,10 @@ export const Formpage1 = () => {
     return newErrors;
   };
 
-  // const nextClick = () => {
-  //   const newErrors = validateForm();
-  //   if (Object.keys(newErrors).length === 0) {
-  //     // Validation passed, navigate to the next form page
-  //     // You can also submit the form data to your server here
-  //     // For now, let's print the data to the console
-  //     console.log(formData);
-  //   } else {
-  //     // Validation failed, set the errors state to display error messages
-  //     setErrors(newErrors);
-  //   }
-  // };
-
-  // nextClick triggers the repsonse from the next button at the button
-
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       // Validation passed, navigate to the next form page
-      // You can also submit the form data to your server here
-      // For now, let's print the data to the console
       console.log(formData);
 
       // Reset the errors state to clear error messages
@@ -103,9 +86,7 @@ export const Formpage1 = () => {
     <div className="request-form section-container">
       <div className="first-form main-content">
       <NavigationBarForm />
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Applicant Details</h1>
-        {/* <h1 className="form-heading">{message}</h1> */}
         <form className="container label-invisible">
           <div className="row">
             <label htmlFor="firstName">First Name</label>
@@ -128,26 +109,14 @@ export const Formpage1 = () => {
               value={formData.lastName}
               onChange={handleChange}
             />
-            {/* All of the error messages are printing here - this is so that its easy to see in dev stage */}
-
-            {/* 
-            
-            
-             */}
           </div>
-          {/* <div className="row"> */}
           <div className="error-message-group">
-            {/* {errors.firstName && ( */}
             <div className="error-message five-twelfths">
               {errors.firstName}
             </div>
-            {/* )} */}
-            {/* </div> */}
-            {/* {errors.lastName && ( */}
             <div className="error-message seven-twelfths">
               {errors.lastName}
             </div>
-            {/* )} */}
           </div>
 
           <label htmlFor="organization">Organization</label>
@@ -159,12 +128,7 @@ export const Formpage1 = () => {
             value={formData.organization}
             onChange={handleChange}
           />
-          {/* {errors.organization && ( */}
-          {/* <div className="error-message">{errors.organization}</div> */}
-          {/* )} */}
-          {/* <div className="error-message-group"> */}
           <div className="error-message">{errors.organization}</div>
-          {/* </div> */}
 
           <label htmlFor="address">Address</label>
           <input
@@ -175,9 +139,7 @@ export const Formpage1 = () => {
             value={formData.address}
             onChange={handleChange}
           />
-          {/* {errors.address && ( */}
           <div className="error-message">{errors.address}</div>
-          {/* )} */}
 
           <div className="row">
             <label htmlFor="email">Email</label>
@@ -202,32 +164,13 @@ export const Formpage1 = () => {
           </div>
 
           <div className="error-message-group">
-            {/* {errors.email && ( */}
             <div className="error-message seven-twelfths">{errors.email}</div>
-            {/* )} */}
-            {/* {errors.cellPhone && ( */}
             <div className="error-message five-twelfths">
               {errors.cellPhone}
             </div>
-            {/* )} */}
           </div>
-          {/* this part below is the button in terms of the validation - i have tried to 
-        enable it to the FormButton but my one doesnt work as of now, if you want to see the validation work uncomment below section! */}
-
-          {/* <div className="Button">
-          <Button variant="button-primary" onClick={nextClick} >
-            Next
-          </Button>
-        </div> */}
         </form>
 
-        {/* <BottomButtons
-          page="2"
-          leftButton="Back"
-          leftButtonDest="/RequestForm"
-          rightButton="Next"
-          rightButtonDest="/SecondForm"
-        /> */}
         <BottomButtons
           page="2"
           leftButton="Back"
@@ -235,9 +178,6 @@ export const Formpage1 = () => {
           rightButton="Next"
           rightOnClick={nextClick}
         />
-        {/* this button is for saving data intially before merging it  */}
-
-        {/* <FormButton  onClick={nextClick}  page="2" leftButton="Back" leftButtonDest="/SecondForm" rightButton="Next" rightButtonDest="/FourthForm" /> */}
       </div>
     </div>
   );

@@ -99,7 +99,7 @@ app.post("/sendEmail", (req, res) => {
     emailMessage += `Left blank`;
   }
 
-  emailMessage += `\n\n\tPrimary Flow Preference\n\t\tFlow Range(ms³): ${primaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${primaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${primaryFlowDetails.endDateTime}\n\t\tArea of Request: ${primaryFlowDetails.Dropdown}\n\t\tActivity Description: ${primaryFlowDetails.Breif}\n\t\tParticipants: ${primaryFlowDetails.participants}\n\t\tNumber of Participants: ${primaryFlowDetails.NoParticpants}\n\n\tSecondary Flow Preference\n\t\tFlow Range(ms³): ${secondaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${secondaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${secondaryFlowDetails.endDateTime}\n\t\tArea of Request: ${secondaryFlowDetails.Dropdown}`;
+  emailMessage += `\n\n\tPrimary Flow Preference\n\t\tFlow Range(ms³): ${primaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${primaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${primaryFlowDetails.endDateTime}\n\t\tArea of Request: ${primaryFlowDetails.Dropdown}\n\t\tActivity Description: ${primaryFlowDetails.Breif}\n\t\tParticipants: ${primaryFlowDetails.participants}\n\t\tNumber of Participants: ${primaryFlowDetails.NoParticpants}\n\n\tSecondary Flow Preference\n\t\tFlow Range(ms³): ${secondaryFlowDetails.flowLevel}\n\t\tStart Date and Time:${secondaryFlowDetails.startDateTime}\n\t\tEnd Date and Time: ${secondaryFlowDetails.endDateTime}\n\t\tArea of Request: ${secondaryFlowDetails.Dropdown}\n\nThanks again,\nContact Energy\n\nThis is an automated email, please do not reply to this email.`;
 
   // Write data to the text file
   fs.writeFile(email, emailMessage, (err) => {

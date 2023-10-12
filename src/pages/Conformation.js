@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Button from "../components/Button";
-import logo from "../images/contactLogo.png";
 import NavigationBarForm from "../components/NavivagtionBarForms";
 import check from "../images/check-o.svg";
 
@@ -30,7 +29,6 @@ export const Formpage6 = () => {
     <div className="request-form section-container">
       <div className="main-content">
         <NavigationBarForm />
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <div className="dialogue-info">
           <h1>Request Sent</h1>
           <p id="request-id">Request ID: {requestId}</p>

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // Components
 import "../components/Layout.css";
 import "../components/Texts.css";
-// Components
 import BottomButtons from "../components/FormButtons";
 import NavigationBarForm from "../components/NavivagtionBarForms.js";
 import Button from '../components/Button';
@@ -22,7 +21,6 @@ export const Formpage4 = () => {
   const [errors, setErrors] = useState({});
 
   // setting out the error validation prompts for each of the feilds where an input is required to be filled in 
-  
     const validateForm = () => {
       const newErrors = {};
       if (!formData4.flowLevel) {
@@ -42,18 +40,13 @@ export const Formpage4 = () => {
       }
       return newErrors;
     };
-
     const currentDateTime = new Date().toISOString().slice(0, 16);
   
-  
   // nextClick triggers the repsonse from the next button at the button 
-  
   const nextClick = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       // Validation passed, navigate to the next form page
-      // You can also submit the form data to your server here
-      // For now, let's print the data to the console
       console.log(formData4);
   
       // Reset the errors state to clear error messages
@@ -71,8 +64,6 @@ export const Formpage4 = () => {
       const savedFormData4 = JSON.parse(localStorage.getItem("formData4")) || {};
       setFormData4(savedFormData4);
     }, []); // The empty dependency array ensures this effect runs once when the component mounts
-  
-  
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,30 +94,33 @@ export const Formpage4 = () => {
     <div className="request-form section-container">
       <div className="fourth-form main-content">
         <NavigationBarForm />
-        <div class="grey-out" id="grey-out"  style={divStyle}></div>
+        <div className="grey-out" id="grey-out"  style={divStyle}></div>
         <div className="popup" style={divStyle}>
           <h3>Ideal Flows</h3>
             <table className="flow-info">
-              <tr>
-                <th>Flow Level</th>
-                <th>Activity</th>
-                <th>Notes</th>
-              </tr>
-              <tr>
-                <td>30 - 50 m&sup3;/s</td>
-                <td>River kayaking</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>64 m&sup3;/s</td>
-                <td>Surfing</td>
-                <td>A local favourite!</td>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Flow Level</th>
+                  <th>Activity</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>30 - 50 m&sup3;/s</td>
+                  <td>River kayaking</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>64 m&sup3;/s</td>
+                  <td>Surfing</td>
+                  <td>A local favourite!</td>
+                </tr>
+              </tbody>
             </table>
           <br />
           <Button variant="button-primary" onClick={toggleDiv}>Close</Button>
         </div>
-        {/* <img src={logo} className="form-contact-logo" /> */}
         <h1 className="form-heading">Flow and Activity Details</h1>
         <h2 className="form-title-secondary">Secondary Preference Flow Details</h2>
         <p className="form-paragraph">In case your preferred flow request gets declined, please provide other suitable times and areas the activity can be undertaken.</p>
@@ -159,7 +153,7 @@ export const Formpage4 = () => {
           />
           {errors.Dropdown && (
               <div className="error-message">{errors.Dropdown}</div>
-            )}
+          )}
             
 
           <div className="row">
@@ -181,10 +175,8 @@ export const Formpage4 = () => {
             <div className="error-message six-twelfths">{errors.startDateTime}</div>
             <div className="error-message six-twelfths">{errors.endDateTime}</div>
           </div>
-
         </form>
 
-        {/* <BottomButtons page="5" leftButton="Back" leftButtonDest="/ThirdForm" rightButton="Next" rightButtonDest="/FifthForm" /> */}
         <BottomButtons  page="5" leftButton="Back" leftButtonDest="/ThirdForm" rightButton="Next" rightOnClick={nextClick} />
 
       </div>
