@@ -11,7 +11,7 @@ import Button from "../components/Button";
 export const Formpage3 = () => {
   const [formData3, setFormData3, selectedValue] = useState({
     flowLevel: "",
-    Breif: "",
+    Brief: "",
     participants: "",
     NoParticpants: "",
     startDateTime: "",
@@ -36,8 +36,8 @@ export const Formpage3 = () => {
       newErrors.endDateTime = "End date time is required";
     }
 
-    if (!formData3.Breif) {
-      newErrors.Breif = "Breif is required";
+    if (!formData3.Brief) {
+      newErrors.Brief = "Brief is required";
     }
 
     if (!formData3.participants) {
@@ -105,27 +105,27 @@ export const Formpage3 = () => {
   return (
     <div className="request-form">
       <div className="third-form main-content">
-      <NavigationBarForm />
-        <div class="grey-out" id="grey-out"  style={divStyle}></div>
+        <NavigationBarForm />
+        <div class="grey-out" id="grey-out" style={divStyle}></div>
         <div className="popup" style={divStyle}>
           <h3>Ideal Flows</h3>
-            <table className="flow-info">
-              <tr>
-                <th>Flow Level</th>
-                <th>Activity</th>
-                <th>Notes</th>
-              </tr>
-              <tr>
-                <td>30 - 50 m&sup3;/s</td>
-                <td>River kayaking</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>64 m&sup3;/s</td>
-                <td>Surfing</td>
-                <td>A local favourite!</td>
-              </tr>
-            </table>
+          <table className="flow-info">
+            <tr>
+              <th>Flow Level</th>
+              <th>Activity</th>
+              <th>Notes</th>
+            </tr>
+            <tr>
+              <td>30 - 50 m&sup3;/s</td>
+              <td>River kayaking</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>64 m&sup3;/s</td>
+              <td>Surfing</td>
+              <td>A local favourite!</td>
+            </tr>
+          </table>
           <br />
           <Button variant="button-primary" onClick={toggleDiv}>Close</Button>
         </div>
@@ -134,7 +134,7 @@ export const Formpage3 = () => {
 
         <form className="container">
           <div className="label-invisible">
-          <label htmlFor="flowLevel">
+            <label htmlFor="flowLevel">
               Required flow/level range (e.g. 30 - 40 m&sup3;/s)
             </label>
             <input
@@ -149,26 +149,26 @@ export const Formpage3 = () => {
             <Link className="" id="info" onClick={toggleDiv}>
               <img src={InformationIcon} className="info-icon" />
             </Link>
-            </div>
-            <div className="error-message">{errors.flowLevel}</div>
+          </div>
+          <div className="error-message">{errors.flowLevel}</div>
 
 
 
-          <Dropdown 
-          name="Dropdown" 
-          value={formData3.Dropdown}
-          onChange={handleChange}
+          <Dropdown
+            name="Dropdown"
+            value={formData3.Dropdown}
+            onChange={handleChange}
           />
           {errors.Dropdown && (
-              <div className="error-message">{errors.Dropdown}</div>
-            )}
+            <div className="error-message">{errors.Dropdown}</div>
+          )}
 
           <div className="row">
             <label htmlFor="startDateTime">Start date & time</label>
-            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" min={currentDateTime} value={formData3.startDateTime} onChange={handleChange}  />
-            
+            <input type="datetime-local" name="startDateTime" className="text-box six-twelfths" placeholder="Start date & time (DD/MM/YYYY 00:00)" min={currentDateTime} value={formData3.startDateTime} onChange={handleChange} />
+
             <label htmlFor="endDateTime">End date & time</label>
-            <input type="datetime-local" name="endDateTime" className="text-box six-twelfths" placeholder="End date & time (DD/MM/YYYY 00:00)" value={formData3.endDateTime} onChange={handleChange} />
+            <input type="datetime-local" name="endDateTime" className="text-box six-twelfths" placeholder="End date & time (DD/MM/YYYY 00:00)" value={formData3.endDateTime} min={currentDateTime} onChange={handleChange} />
           </div>
 
           <div className="error-message-group">
@@ -185,9 +185,9 @@ export const Formpage3 = () => {
           <div className="label-invisible">
             <h2 className="form-title-secondary">Activity Details</h2>
             <label htmlFor="activityDetails">Brief activity description</label>
-            <textarea type="text" name="Breif" className="text-box full-width" placeholder="Brief activity description" value={formData3.Breif} onChange={handleChange} />
+            <textarea type="text" name="Brief" className="text-box full-width" placeholder="Brief activity description" value={formData3.Brief} onChange={handleChange} />
 
-            <div className="error-message">{errors.Breif}</div>
+            <div className="error-message">{errors.Brief}</div>
 
             <div className="row">
               <label htmlFor="participants">
